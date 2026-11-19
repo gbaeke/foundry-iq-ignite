@@ -1,0 +1,3811 @@
+[
+  {
+    "id": "C1",
+    "category": "counting",
+    "strategy": "entity_g",
+    "question": "How many projects has Amira El Idrissi worked on, and which ones?",
+    "answer": "Amira El Idrissi has worked on **7 projects**:\n\n1. Leak Detection Analytics  \n2. Fortalis Landing Zone  \n3. Claims Triage Automation  \n4. Clinical Knowledge Assistant  \n5. Discharge Letter Summarisation  \n6. Container Dwell-Time Forecasting  \n7. Customs Document Extraction",
+    "retrieval_ms": 12151,
+    "total_ms": 15677,
+    "answer_input_tokens": 39618,
+    "answer_output_tokens": 93,
+    "retrieval_tokens": 22902,
+    "context_sources": [
+      "aquanova/2024-10-18_data-mapping-notes_leak-detection-analytics.md",
+      "aquanova/2025-03-28_workshop-notes_leak-detection-analytics.md",
+      "aquanova/2025-05-27_handover-notes_leak-detection-analytics.md",
+      "fortalis/2024-08-28_email-thread_claims-triage-automation.md",
+      "fortalis/2024-11-15_sprint-review-notes_claims-triage-automation.md",
+      "fortalis/2025-02-21_retrospective_claims-triage-automation.md",
+      "graphSearch",
+      "kestrel/2023-09-15_all-hands-notes_september-2023.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-03-28_pipeline-review_q1-2025.md",
+      "kestrel/2025-08-29_newsletter_august-2025.md",
+      "kestrel/2025-11-21_org-update.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "kestrel/2026-01-30_newsletter_january-2026.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "kestrel/2026-10-23_lunch-and-learn_evaluating-knowledge-assistants.md",
+      "knowledge-base-response",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md",
+      "mediva/2024-03-18_kickoff-notes_discharge-letter-summarisation.md",
+      "mediva/2024-03-22_adr-01_discharge-letter-summarisation.md",
+      "mediva/2024-04-09_email-thread_discharge-letter-summarisation.md",
+      "mediva/2024-06-14_evaluation-protocol_discharge-letter-summarisation.md",
+      "mediva/2024-08-30_evaluation-report_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "mediva/2026-01-12_kickoff-notes_clinical-knowledge-assistant.md",
+      "mediva/2026-03-06_email-thread_clinical-knowledge-assistant.md",
+      "mediva/2026-08-21_email-thread_clinical-knowledge-assistant.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-10-13_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-10_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-10-16_workshop-notes_customs-document-extraction.md",
+      "scaldis/2026-01-23_status-report_customs-document-extraction.md",
+      "scaldis/2026-03-13_email-thread_customs-document-extraction.md",
+      "scaldis/2026-10-30_status-report_customs-document-extraction.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-03-28_workshop-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-04-11_design-note_quality-inspection-vision.md",
+      "verhaeghe/2025-05-19_status-report_quality-inspection-vision.md",
+      "verhaeghe/2025-07-16_email-thread_quality-inspection-vision.md",
+      "verhaeghe/2025-08-25_status-report_quality-inspection-vision.md",
+      "verhaeghe/2025-09-29_incident-note_quality-inspection-vision.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:32:34.9483907Z",
+          "completedAt": "2026-11-18T20:32:37.0250423Z",
+          "inputTokens": 1219,
+          "outputTokens": 152,
+          "elapsedMs": 2076,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:32:37.0253231Z",
+          "completedAt": "2026-11-18T20:32:40.3522037Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:32:38.8174653Z",
+          "count": 49,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Amira El Idrissi projects worked on"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:32:38.9075637Z",
+          "completedAt": "2026-11-18T20:32:40.3522051Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:32:39.7184905Z",
+          "count": 48,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Amira El Idrissi\" project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:32:39.7924336Z",
+          "completedAt": "2026-11-18T20:32:40.3522054Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:32:40.2884822Z",
+          "count": 47,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Amira El Idrissi project participation"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:32:37.0252735Z",
+          "completedAt": "2026-11-18T20:32:43.2861041Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:32:43.2859833Z",
+          "count": 8,
+          "elapsedMs": 6260,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find the person/entity Amira El Idrissi and list every consultancy project she worked on, including project names and the relationship/evidence. Return the total number of distinct projects.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`workedOn`]->(pr:`Project`) WHERE LOWER(p.name) = LOWER('Amira El Idrissi') RETURN DISTINCT pr.name AS project_name, type(r) AS relationship, r.confidence AS evidence, NULL AS total_projects UNION ALL MATCH (p:`Person`)-[r:`workedOn`]->(pr:`Project`) WHERE LOWER(p.name) = LOWER('Amira El Idrissi') RETURN NULL AS project_name, NULL AS relationship, NULL AS evidence, count(DISTINCT pr) AS total_projects",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12271,
+            "outputTokens": 739,
+            "modelElapsedMs": 5969,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:32:43.2952278Z",
+          "completedAt": "2026-11-18T20:32:44.807662Z",
+          "inputTokens": 21468,
+          "outputTokens": 63,
+          "elapsedMs": 1512,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 6,
+          "startedAt": "2026-11-18T20:32:44.8121396Z",
+          "completedAt": "2026-11-18T20:32:44.8121396Z",
+          "reasoningTokens": 52000,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.857,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": true
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": false
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer correctly states there are seven projects and lists six required projects, but it omits Quality Inspection Vision and incorrectly includes Fortalis Landing Zone."
+    }
+  },
+  {
+    "id": "C1",
+    "category": "counting",
+    "strategy": "gql_agent_g",
+    "question": "How many projects has Amira El Idrissi worked on, and which ones?",
+    "answer": "Amira El Idrissi has worked on **8 projects**:\n\n1. Leak Detection Analytics\n2. Fortalis Landing Zone\n3. Claims Triage Automation\n4. Quality Inspection Vision\n5. Clinical Knowledge Assistant\n6. Discharge Letter Summarisation\n7. Container Dwell-Time Forecasting\n8. Customs Document Extraction",
+    "retrieval_ms": 9332,
+    "total_ms": 10932,
+    "answer_input_tokens": 427,
+    "answer_output_tokens": 71,
+    "retrieval_tokens": 4390,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph"
+    ],
+    "debug": {
+      "steps": 1,
+      "gql": [
+        "MATCH (p:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND (p.name CONTAINS 'Amira' OR p.name CONTAINS 'Idrissi') RETURN DISTINCT p.name AS person, j.name AS project"
+      ]
+    },
+    "correct": false,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": true
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer includes all seven required projects, but incorrectly claims there are eight and adds Fortalis Landing Zone. The expected answer is seven projects."
+    }
+  },
+  {
+    "id": "C2",
+    "category": "counting",
+    "strategy": "entity_g",
+    "question": "Which projects used Databricks?",
+    "answer": "The projects that used Databricks are:\n\n- **Container Dwell-Time Forecasting**\n- **Line Sensor Data Platform**\n- **Leak Detection Analytics**",
+    "retrieval_ms": 26982,
+    "total_ms": 29453,
+    "answer_input_tokens": 37042,
+    "answer_output_tokens": 119,
+    "retrieval_tokens": 22980,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2024-09-02_kickoff-notes_leak-detection-analytics.md",
+      "aquanova/2024-09-27_status-report_leak-detection-analytics.md",
+      "aquanova/2024-10-18_data-mapping-notes_leak-detection-analytics.md",
+      "aquanova/2025-01-17_adr_leak-detection-analytics.md",
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "aquanova/2025-03-14_design-note_leak-detection-analytics.md",
+      "aquanova/2025-05-27_handover-notes_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "graphSearch",
+      "kestrel/2025-02-14_engineering-guideline_coding-standards.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "kestrel/2026-11-13_finops-tips_ai-workloads.md",
+      "knowledge-base-response",
+      "mediva/2023-05-08_kickoff-notes_bed-capacity-dashboard.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-09-29_data-profiling-note_container-dwell-time-forecasting.md",
+      "scaldis/2023-10-20_design-note_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-10_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-02-09_adr_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2024-06-03_kickoff-notes_line-sensor-data-platform.md",
+      "verhaeghe/2024-07-19_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2024-08-02_adr_line-sensor-data-platform.md",
+      "verhaeghe/2024-10-25_data-mapping-notes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-10_runbook_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-17_handover-notes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:33:06.2042059Z",
+          "completedAt": "2026-11-18T20:33:08.1907162Z",
+          "inputTokens": 1210,
+          "outputTokens": 147,
+          "elapsedMs": 1986,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:33:08.1908965Z",
+          "completedAt": "2026-11-18T20:33:10.0862473Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:08.8406175Z",
+          "count": 45,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Databricks projects"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:33:08.9146016Z",
+          "completedAt": "2026-11-18T20:33:10.0862485Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:09.3800899Z",
+          "count": 41,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "projects using Databricks"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:33:09.4575562Z",
+          "completedAt": "2026-11-18T20:33:10.086249Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:10.0215537Z",
+          "count": 45,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Databricks implementation project"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:33:08.1908386Z",
+          "completedAt": "2026-11-18T20:33:20.0061647Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:20.0060461Z",
+          "count": 2,
+          "elapsedMs": 11815,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find all projects in the consultancy document corpus that used, implemented, integrated, or otherwise mention Databricks. Return project names and the evidence describing Databricks usage, with source references.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Project`)-[r:`usesTechnology`]->(t:`Technology`) WHERE LOWER(t.name) CONTAINS 'databricks' RETURN DISTINCT p.name AS project_name, r.chunk_id AS source_reference, r.parent_id AS parent_source_reference",
+            "outcome": "Success",
+            "attempts": 3,
+            "inputTokens": 38063,
+            "outputTokens": 1222,
+            "modelElapsedMs": 11537,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:33:20.0158735Z",
+          "completedAt": "2026-11-18T20:33:22.1823504Z",
+          "inputTokens": 21415,
+          "outputTokens": 208,
+          "elapsedMs": 2166,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 6,
+          "startedAt": "2026-11-18T20:33:22.1824862Z",
+          "completedAt": "2026-11-18T20:33:25.7911572Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:22.8615011Z",
+          "count": 41,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Databricks\" project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 8,
+          "startedAt": "2026-11-18T20:33:22.9317221Z",
+          "completedAt": "2026-11-18T20:33:25.7911586Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:23.6001364Z",
+          "count": 35,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Databricks jobs\" project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 9,
+          "startedAt": "2026-11-18T20:33:23.6681622Z",
+          "completedAt": "2026-11-18T20:33:25.7911592Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:24.2660573Z",
+          "count": 26,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Databricks notebooks\" project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 10,
+          "startedAt": "2026-11-18T20:33:24.3435631Z",
+          "completedAt": "2026-11-18T20:33:25.7911599Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:25.0219162Z",
+          "count": 28,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Databricks workspace\" project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 11,
+          "startedAt": "2026-11-18T20:33:25.092993Z",
+          "completedAt": "2026-11-18T20:33:25.7911602Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:25.7150907Z",
+          "count": 34,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Databricks pipelines\" project"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 7,
+          "startedAt": "2026-11-18T20:33:22.1825003Z",
+          "completedAt": "2026-11-18T20:33:31.8700691Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:31.8699452Z",
+          "count": 0,
+          "elapsedMs": 9687,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "List every distinct project entity connected to Databricks by any usage, implementation, pipeline, notebook, job, workspace, engineer role, or deliverable relationship. Include project name and relationship/evidence source reference.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Project`)-[r:`usesTechnology`]->(t:`Technology`) WHERE LOWER(t.name) = 'tech:databricks' RETURN DISTINCT p.name AS project_name, r.predicate AS relationship",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38048,
+            "outputTokens": 1001,
+            "modelElapsedMs": 9433,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 12,
+          "startedAt": "2026-11-18T20:33:31.8806874Z",
+          "completedAt": "2026-11-18T20:33:31.8806874Z",
+          "reasoningTokens": 165006,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null,
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Line Sensor Data Platform",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies all three projects that used Databricks. It does not mention that all three had Bram Visser of DataForge as subcontractor, but this does not affect the project list."
+    }
+  },
+  {
+    "id": "C2",
+    "category": "counting",
+    "strategy": "gql_agent_g",
+    "question": "Which projects used Databricks?",
+    "answer": "- Leak Detection Analytics\n- Container Dwell-Time Forecasting",
+    "retrieval_ms": 5807,
+    "total_ms": 7350,
+    "answer_input_tokens": 200,
+    "answer_output_tokens": 15,
+    "retrieval_tokens": 4137,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph"
+    ],
+    "debug": {
+      "steps": 1,
+      "gql": [
+        "MATCH (j:Project)-[e]->(t:Technology) WHERE e.predicate = 'usesTechnology' AND t.name CONTAINS 'Databricks' RETURN DISTINCT j.name AS project"
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.667,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Line Sensor Data Platform",
+          "present": false
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer lists two of the three projects but omits Line Sensor Data Platform and does not mention that all three used Bram Visser of DataForge as subcontractor."
+    }
+  },
+  {
+    "id": "C3",
+    "category": "counting",
+    "strategy": "entity_g",
+    "question": "How many projects did Thomas Maes manage as project manager?",
+    "answer": "Thomas Maes managed **4 projects** as project manager:\n\n1. **Claims Triage Automation**\n2. **Broker Portal Modernisation**\n3. **Discharge Letter Summarisation**\n4. **Container Dwell-Time Forecasting**",
+    "retrieval_ms": 12520,
+    "total_ms": 15366,
+    "answer_input_tokens": 35683,
+    "answer_output_tokens": 207,
+    "retrieval_tokens": 12851,
+    "context_sources": [
+      "fortalis/2024-04-08_kickoff-notes_claims-triage-automation.md",
+      "fortalis/2024-05-17_status-report_claims-triage-automation.md",
+      "fortalis/2024-06-14_email-thread_claims-triage-automation.md",
+      "fortalis/2024-07-19_status-report_claims-triage-automation.md",
+      "fortalis/2024-08-09_sprint-review-notes_claims-triage-automation.md",
+      "fortalis/2024-08-28_email-thread_claims-triage-automation.md",
+      "fortalis/2024-09-13_change-request_claims-triage-automation.md",
+      "fortalis/2024-09-20_status-report_claims-triage-automation.md",
+      "fortalis/2024-10-17_steering-committee-minutes_claims-triage-automation.md",
+      "fortalis/2024-11-29_uat-report_claims-triage-automation.md",
+      "fortalis/2025-01-24_status-report_claims-triage-automation.md",
+      "fortalis/2025-04-14_kickoff-notes_broker-portal-modernisation.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "graphSearch",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2025-08-29_newsletter_august-2025.md",
+      "kestrel/2025-11-21_org-update.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "knowledge-base-response",
+      "mediva/2024-03-18_kickoff-notes_discharge-letter-summarisation.md",
+      "mediva/2024-04-12_status-report_discharge-letter-summarisation.md",
+      "mediva/2024-05-15_steering-committee-minutes_discharge-letter-summarisation.md",
+      "scaldis/2023-09-04_kickoff-notes_container-dwell-time-forecasting.md",
+      "scaldis/2023-10-13_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-10_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:33:47.2184138Z",
+          "completedAt": "2026-11-18T20:33:49.2466155Z",
+          "inputTokens": 1215,
+          "outputTokens": 92,
+          "elapsedMs": 2028,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:33:49.2466929Z",
+          "completedAt": "2026-11-18T20:33:54.9595217Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:54.9594065Z",
+          "count": 5,
+          "elapsedMs": 5712,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find the person/entity Thomas Maes and count the distinct projects for which he served as project manager. Return the project names/IDs and the evidence for each project-manager relationship.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (person:`Person`)-[r:`managedProject`]->(project:`Project`) WHERE LOWER(person.name) = 'thomas maes' RETURN DISTINCT project.name AS project_name, project.id AS project_id, r.confidence AS confidence, r.chunk_id AS chunk_id, r.parent_id AS parent_id",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12271,
+            "outputTokens": 597,
+            "modelElapsedMs": 5418,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 2,
+          "startedAt": "2026-11-18T20:33:54.9626358Z",
+          "completedAt": "2026-11-18T20:33:56.8543867Z",
+          "inputTokens": 11400,
+          "outputTokens": 144,
+          "elapsedMs": 1891,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:33:56.8545013Z",
+          "completedAt": "2026-11-18T20:33:58.6425978Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:57.4467Z",
+          "count": 44,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes Project Manager project names"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 5,
+          "startedAt": "2026-11-18T20:33:57.567116Z",
+          "completedAt": "2026-11-18T20:33:58.6425992Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:58.0558367Z",
+          "count": 49,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Thomas Maes\" \"Project Manager\""
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 6,
+          "startedAt": "2026-11-18T20:33:58.1187074Z",
+          "completedAt": "2026-11-18T20:33:58.6425999Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:58.5797394Z",
+          "count": 48,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes managed projects"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 4,
+          "startedAt": "2026-11-18T20:33:56.8545147Z",
+          "completedAt": "2026-11-18T20:33:58.9903652Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:33:58.9902625Z",
+          "count": 1,
+          "elapsedMs": 2135,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Return all distinct projects in the corpus where Thomas Maes has the role Project Manager, including the total count and project names.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (person:`Person`)-[r:`managedProject`]->(project:`Project`) WHERE LOWER(person.name) = LOWER('Thomas Maes') RETURN count(project) AS project_count, COLLECT_LIST(DISTINCT project.name) AS project_names",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12261,
+            "outputTokens": 168,
+            "modelElapsedMs": 2048,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 7,
+          "startedAt": "2026-11-18T20:33:59.0005071Z",
+          "completedAt": "2026-11-18T20:33:59.0005071Z",
+          "reasoningTokens": 54588,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null,
+        null
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.8,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": false
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Broker Portal Modernisation",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer lists only four projects and omits Scaldis Ops Copilot; the correct total is five."
+    }
+  },
+  {
+    "id": "C3",
+    "category": "counting",
+    "strategy": "gql_agent_g",
+    "question": "How many projects did Thomas Maes manage as project manager?",
+    "answer": "Thomas Maes managed **6 projects** as project manager. This includes the “Ops Copilot” project listed under “Thomas.”",
+    "retrieval_ms": 7397,
+    "total_ms": 9139,
+    "answer_input_tokens": 325,
+    "answer_output_tokens": 70,
+    "retrieval_tokens": 4345,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph"
+    ],
+    "debug": {
+      "steps": 1,
+      "gql": [
+        "MATCH (p:Person)-[e]->(j:Project) WHERE p.name CONTAINS 'Thomas' AND e.predicate = 'managedProject' RETURN DISTINCT p.name AS person, j.name AS project"
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": false
+        },
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": false
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": false
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": false
+        },
+        {
+          "fact": "Broker Portal Modernisation",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer incorrectly states 6 projects instead of five and does not identify the five required projects."
+    }
+  },
+  {
+    "id": "C4",
+    "category": "counting",
+    "strategy": "entity_g",
+    "question": "Which projects used Azure OpenAI?",
+    "answer": "The projects that used Azure OpenAI are:\n\n- **Discharge Letter Summarisation** — used Azure OpenAI for generating draft discharge letters.\n- **Clinical Knowledge Assistant** — uses Azure OpenAI with Microsoft Foundry and Foundry IQ.\n- **Scaldis Ops Copilot** — uses Azure OpenAI to generate answers grounded in retrieved SharePoint content.",
+    "retrieval_ms": 14635,
+    "total_ms": 18005,
+    "answer_input_tokens": 39396,
+    "answer_output_tokens": 290,
+    "retrieval_tokens": 22762,
+    "context_sources": [
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-02-02_kickoff-notes_asset-management-agent.md",
+      "aquanova/2026-05-08_status-report_asset-management-agent.md",
+      "fortalis/2023-10-02_kickoff-notes_landing-zone.md",
+      "fortalis/2023-10-27_design-review-notes_landing-zone.md",
+      "fortalis/2023-11-17_status-report_landing-zone.md",
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "fortalis/2024-04-08_kickoff-notes_claims-triage-automation.md",
+      "fortalis/2024-06-21_design-note_claims-triage-automation.md",
+      "fortalis/2025-02-28_closing-report_claims-triage-automation.md",
+      "kestrel/2023-11-10_engineering-guideline_bicep-conventions.md",
+      "kestrel/2024-04-26_policy-note_gdpr-customer-data.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-01-31_newsletter_january-2025.md",
+      "kestrel/2025-04-25_lunch-and-learn_teams-bot-development.md",
+      "kestrel/2025-11-07_tech-talk_permission-aware-retrieval.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "kestrel/2026-10-23_lunch-and-learn_evaluating-knowledge-assistants.md",
+      "knowledge-base-response",
+      "mediva/2023-05-08_kickoff-notes_bed-capacity-dashboard.md",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md",
+      "mediva/2024-03-18_kickoff-notes_discharge-letter-summarisation.md",
+      "mediva/2024-03-22_adr-01_discharge-letter-summarisation.md",
+      "mediva/2024-09-27_email-thread_discharge-letter-summarisation.md",
+      "mediva/2024-10-11_handover-notes_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "mediva/2026-01-12_kickoff-notes_clinical-knowledge-assistant.md",
+      "mediva/2026-02-06_adr-01_clinical-knowledge-assistant.md",
+      "mediva/2026-02-13_status-report_clinical-knowledge-assistant.md",
+      "mediva/2026-03-06_email-thread_clinical-knowledge-assistant.md",
+      "mediva/2026-10-09_load-test-report_clinical-knowledge-assistant.md",
+      "mediva/2026-11-04_steering-committee-minutes_clinical-knowledge-assistant.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-02-14_design-note_ops-copilot.md",
+      "verhaeghe/2025-04-11_design-note_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:34:17.2488095Z",
+          "completedAt": "2026-11-18T20:34:19.2608269Z",
+          "inputTokens": 1210,
+          "outputTokens": 150,
+          "elapsedMs": 2011,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:34:19.2609967Z",
+          "completedAt": "2026-11-18T20:34:21.3140012Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:19.8807888Z",
+          "count": 37,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "projects that used Azure OpenAI"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:34:20.0065036Z",
+          "completedAt": "2026-11-18T20:34:21.3140026Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:20.5908069Z",
+          "count": 45,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Azure OpenAI project implementation"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:34:20.6729203Z",
+          "completedAt": "2026-11-18T20:34:21.3140032Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:21.2447605Z",
+          "count": 31,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Azure OpenAI integration project names"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:34:19.2609456Z",
+          "completedAt": "2026-11-18T20:34:29.695205Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:29.6950899Z",
+          "count": 0,
+          "elapsedMs": 10433,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find all projects in the consultancy corpus that used, implemented, integrated, or mention Azure OpenAI. Return project names and supporting details, including any relationship between each project and Azure OpenAI.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Project`)-[r:`usesTechnology`]->(t:`Technology`) WHERE LOWER(t.name) = 'tech:azure-openai' RETURN DISTINCT p.name AS project_name, type(r) AS relationship",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38054,
+            "outputTokens": 1062,
+            "modelElapsedMs": 10155,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:34:29.7042674Z",
+          "completedAt": "2026-11-18T20:34:30.617489Z",
+          "inputTokens": 21372,
+          "outputTokens": 30,
+          "elapsedMs": 912,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 6,
+          "startedAt": "2026-11-18T20:34:30.6216972Z",
+          "completedAt": "2026-11-18T20:34:30.6216972Z",
+          "reasoningTokens": 62785,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies all three projects that used Azure OpenAI."
+    }
+  },
+  {
+    "id": "C4",
+    "category": "counting",
+    "strategy": "gql_agent_g",
+    "question": "Which projects used Azure OpenAI?",
+    "answer": "- Scaldis Ops Copilot\n- Clinical Knowledge Assistant\n- Discharge Letter Summarisation",
+    "retrieval_ms": 5771,
+    "total_ms": 6773,
+    "answer_input_tokens": 247,
+    "answer_output_tokens": 22,
+    "retrieval_tokens": 4191,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph"
+    ],
+    "debug": {
+      "steps": 1,
+      "gql": [
+        "MATCH (j:Project)-[e]->(t:Technology) WHERE e.predicate = 'usesTechnology' AND t.name CONTAINS 'Azure OpenAI' RETURN DISTINCT j.name AS project, t.name AS technology"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer lists all three projects that used Azure OpenAI, matching the expected answer."
+    }
+  },
+  {
+    "id": "C5",
+    "category": "counting",
+    "strategy": "entity_g",
+    "question": "What is the total contract value of all Kestrel projects for Scaldis Logistics?",
+    "answer": "The documented contract/budget values for Scaldis Logistics projects are:\n\n- **Container Dwell-Time Forecasting:** EUR 185,000\n- **Scaldis Ops Copilot:** EUR 150,000 estimate\n- **Customs Document Extraction:** EUR 95,000 first-phase budget\n\n**Total documented value: EUR 430,000 excl. VAT.**\n\nThe values of later quarterly continuations for Customs Document Extraction are not specified, so they are not included.",
+    "retrieval_ms": 18502,
+    "total_ms": 21981,
+    "answer_input_tokens": 37561,
+    "answer_output_tokens": 300,
+    "retrieval_tokens": 23049,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-02-02_kickoff-notes_asset-management-agent.md",
+      "fortalis/2024-09-13_change-request_claims-triage-automation.md",
+      "graphSearch",
+      "kestrel/2023-09-15_all-hands-notes_september-2023.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-01-31_newsletter_january-2025.md",
+      "kestrel/2025-03-28_pipeline-review_q1-2025.md",
+      "kestrel/2025-04-25_lunch-and-learn_teams-bot-development.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "knowledge-base-response",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-10-13_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-10_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-27_retrospective_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-02-20_steering-committee-minutes_ops-copilot.md",
+      "scaldis/2025-03-14_status-report_ops-copilot.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2025-10-16_workshop-notes_customs-document-extraction.md",
+      "scaldis/2025-10-17_hypercare-closure-note_ops-copilot.md",
+      "scaldis/2025-11-28_status-report_customs-document-extraction.md",
+      "scaldis/2026-08-28_summer-peak-review_customs-document-extraction.md",
+      "scaldis/2026-09-24_workshop-notes_customs-document-extraction.md",
+      "scaldis/2026-10-30_status-report_customs-document-extraction.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-24_retrospective_line-sensor-data-platform.md",
+      "verhaeghe/2025-04-07_status-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:34:44.5568803Z",
+          "completedAt": "2026-11-18T20:34:46.4607357Z",
+          "inputTokens": 1220,
+          "outputTokens": 158,
+          "elapsedMs": 1903,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:34:46.4609796Z",
+          "completedAt": "2026-11-18T20:34:48.8855365Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:47.594956Z",
+          "count": 45,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Kestrel projects Scaldis Logistics contract value"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:34:47.6897893Z",
+          "completedAt": "2026-11-18T20:34:48.8855378Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:48.2058096Z",
+          "count": 30,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Scaldis Logistics Kestrel total contract value"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:34:48.2857966Z",
+          "completedAt": "2026-11-18T20:34:48.8855381Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:48.8138839Z",
+          "count": 43,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Kestrel contract value project Scaldis"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:34:46.4609118Z",
+          "completedAt": "2026-11-18T20:34:57.3353081Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:57.3351823Z",
+          "count": 0,
+          "elapsedMs": 10874,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find all projects named Kestrel associated with Scaldis Logistics, and return each project's contract value and the total contract value across all such projects.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (c:`Organization`)<-[:`deliveredFor`]-(p:`Project`)-[:`deliveredBy`]->(k:`Organization`) WHERE LOWER(c.name) = 'scaldis logistics' AND k.name = 'org:kestrel' RETURN DISTINCT p.name AS project_name",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38067,
+            "outputTokens": 1045,
+            "modelElapsedMs": 10493,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:34:57.3440435Z",
+          "completedAt": "2026-11-18T20:34:59.373252Z",
+          "inputTokens": 21458,
+          "outputTokens": 213,
+          "elapsedMs": 2029,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 7,
+          "startedAt": "2026-11-18T20:34:59.3734715Z",
+          "completedAt": "2026-11-18T20:35:01.6721718Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:34:59.8858385Z",
+          "count": 22,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Scaldis Ops Copilot proposal contract value EUR 150,000"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 8,
+          "startedAt": "2026-11-18T20:34:59.9702429Z",
+          "completedAt": "2026-11-18T20:35:01.6721733Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:35:00.4062633Z",
+          "count": 42,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Scaldis Logistics project commercials fixed price budget Kestrel"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 9,
+          "startedAt": "2026-11-18T20:35:00.4932459Z",
+          "completedAt": "2026-11-18T20:35:01.6721738Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:35:00.8774528Z",
+          "count": 43,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "site: Scaldis Logistics Kestrel contract price Ops Copilot"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 10,
+          "startedAt": "2026-11-18T20:35:00.9584029Z",
+          "completedAt": "2026-11-18T20:35:01.6721745Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:35:01.5871809Z",
+          "count": 37,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Scaldis Logistics continuation signed contract value Kestrel"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 6,
+          "startedAt": "2026-11-18T20:34:59.3734293Z",
+          "completedAt": "2026-11-18T20:35:02.2736238Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:35:02.2735096Z",
+          "count": 3,
+          "elapsedMs": 2899,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "List every project Kestrel Consulting has for customer Scaldis Logistics and return the contract value or budget stated for each project, including all phases and continuations if explicitly contracted.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Project`)-[r:`deliveredFor`]->(o:`Organization`) WHERE LOWER(o.name) = 'scaldis logistics' RETURN DISTINCT p.name AS project_name",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12271,
+            "outputTokens": 247,
+            "modelElapsedMs": 2689,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 11,
+          "startedAt": "2026-11-18T20:35:02.285731Z",
+          "completedAt": "2026-11-18T20:35:02.285731Z",
+          "reasoningTokens": 146393,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null,
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "EUR 185,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 150,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 95,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 430,000",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies all three project amounts and totals them to EUR 430,000, matching the expected answer."
+    }
+  },
+  {
+    "id": "C5",
+    "category": "counting",
+    "strategy": "gql_agent_g",
+    "question": "What is the total contract value of all Kestrel projects for Scaldis Logistics?",
+    "answer": "The total stated contract value/budget for Kestrel Consulting’s Scaldis Logistics projects is **EUR 430,000 excl. VAT**:\n\n- **Container Dwell-Time Forecasting:** EUR 185,000 fixed price  \n- **Ops Copilot:** EUR 150,000 time-and-materials estimate  \n- **Customs Document Extraction (Phase 1):** EUR 95,000 budget  \n\nNote: The Ops Copilot amount is an estimate, and its forecast later exceeded EUR 150,000.",
+    "retrieval_ms": 23359,
+    "total_ms": 25036,
+    "answer_input_tokens": 19605,
+    "answer_output_tokens": 107,
+    "retrieval_tokens": 58178,
+    "context_sources": [
+      "agent-evidence-summary",
+      "fortalis/2024-09-13_change-request_claims-triage-automation.md",
+      "graph",
+      "kestrel/2024-04-12_tech-talk_operational-event-data.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-10-13_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-10_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-01-19_evaluation-workshop-notes_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-02-20_steering-committee-minutes_ops-copilot.md",
+      "scaldis/2025-03-14_status-report_ops-copilot.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2025-10-17_hypercare-closure-note_ops-copilot.md",
+      "scaldis/2025-11-28_status-report_customs-document-extraction.md",
+      "scaldis/2026-01-23_status-report_customs-document-extraction.md",
+      "scaldis/2026-03-13_email-thread_customs-document-extraction.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md"
+    ],
+    "debug": {
+      "steps": 7,
+      "gql": [
+        "MATCH (j:Project)-[e]->(o:Organization) WHERE e.predicate = 'deliveredFor' AND o.name CONTAINS 'Scaldis' RETURN DISTINCT j.name AS project"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "EUR 185,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 150,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 95,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 430,000",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly totals the three Kestrel project amounts to EUR 430,000 and identifies each component. The clarification that EUR 150,000 was an estimate is consistent with the expected answer."
+    }
+  },
+  {
+    "id": "N1",
+    "category": "negative",
+    "strategy": "entity_g",
+    "question": "Has Kestrel ever used Databricks on a project for Mediva Care Group?",
+    "answer": "No. The available records show no Databricks use on any Kestrel project for Mediva Care Group.",
+    "retrieval_ms": 8857,
+    "total_ms": 11282,
+    "answer_input_tokens": 35767,
+    "answer_output_tokens": 78,
+    "retrieval_tokens": 22845,
+    "context_sources": [
+      "graphSearch",
+      "kestrel/2023-05-26_newsletter_may-2023.md",
+      "kestrel/2023-09-15_all-hands-notes_september-2023.md",
+      "kestrel/2025-03-28_pipeline-review_q1-2025.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "kestrel/2026-01-30_newsletter_january-2026.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "kestrel/2026-10-23_lunch-and-learn_evaluating-knowledge-assistants.md",
+      "knowledge-base-response",
+      "mediva/2023-05-08_kickoff-notes_bed-capacity-dashboard.md",
+      "mediva/2023-06-09_data-mapping_bed-capacity-dashboard.md",
+      "mediva/2023-06-23_status-report_bed-capacity-dashboard.md",
+      "mediva/2023-07-14_design-note_bed-capacity-dashboard.md",
+      "mediva/2023-07-26_email-thread_bed-capacity-dashboard.md",
+      "mediva/2023-09-08_go-live-checklist_bed-capacity-dashboard.md",
+      "mediva/2023-10-06_user-feedback_bed-capacity-dashboard.md",
+      "mediva/2023-11-10_runbook_bed-capacity-dashboard.md",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md",
+      "mediva/2024-03-18_kickoff-notes_discharge-letter-summarisation.md",
+      "mediva/2024-03-22_adr-01_discharge-letter-summarisation.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "mediva/2026-01-12_kickoff-notes_clinical-knowledge-assistant.md",
+      "mediva/2026-04-17_security-test-report_clinical-knowledge-assistant.md",
+      "verhaeghe/2024-10-25_data-mapping-notes_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:35:35.2317402Z",
+          "completedAt": "2026-11-18T20:35:36.9618843Z",
+          "inputTokens": 1221,
+          "outputTokens": 168,
+          "elapsedMs": 1729,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:35:36.9620432Z",
+          "completedAt": "2026-11-18T20:35:38.3959296Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:35:37.4266255Z",
+          "count": 48,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Kestrel Databricks Mediva Care Group"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:35:37.497413Z",
+          "completedAt": "2026-11-18T20:35:38.3959308Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:35:37.9052419Z",
+          "count": 50,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Kestrel Mediva Care Group project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:35:37.974788Z",
+          "completedAt": "2026-11-18T20:35:38.3959311Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:35:38.3231325Z",
+          "count": 49,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Databricks Mediva Care Group"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:35:36.9619868Z",
+          "completedAt": "2026-11-18T20:35:41.8872318Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:35:41.8871098Z",
+          "count": 3,
+          "elapsedMs": 4924,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find any projects involving Kestrel and Mediva Care Group, and determine whether Databricks was used or mentioned in those projects. Include project names, dates, and evidence of the relationship.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Project`)-[r1:`deliveredBy`]->(k:`Organization`), (p)-[r2:`deliveredFor`]->(m:`Organization`)\nWHERE LOWER(k.name) = LOWER('Kestrel Consulting') AND LOWER(m.name) = LOWER('Mediva Care Group') AND EXISTS { (p)-[r3:`usesTechnology`]->(t:`Technology` WHERE t.name = 'tech:databricks') }\nRETURN DISTINCT p.name AS project_name, 'Databricks used or mentioned' AS databricks_status, type(r1) AS delivery_relationship, type(r2) AS customer_relationship, 'usesTechnology' AS technology_evidence\nUNION ALL\nMATCH (p:`Project`)-[r1:`deliveredBy`]->(k:`Organization`), (p)-[r2:`deliveredFor`]->(m:`Organization`)\nWHERE LOWER(k.name) = LOWER('Kestrel Consulting') AND LOWER(m.name) = LOWER('Mediva Care Group') AND NOT EXISTS { (p)-[r3:`usesTechnology`]->(t:`Technology` WHERE t.name = 'tech:databricks') }\nRETURN DISTINCT p.name AS project_name, 'Databricks not found' AS databricks_status, type(r1) AS delivery_relationship, type(r2) AS customer_relationship, 'No usesTechnology relationship found' AS technology_evidence",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12330,
+            "outputTokens": 656,
+            "modelElapsedMs": 4613,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:35:41.8970461Z",
+          "completedAt": "2026-11-18T20:35:42.814645Z",
+          "inputTokens": 21425,
+          "outputTokens": 31,
+          "elapsedMs": 917,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 6,
+          "startedAt": "2026-11-18T20:35:42.818031Z",
+          "completedAt": "2026-11-18T20:35:42.818031Z",
+          "reasoningTokens": 62970,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected conclusion that Kestrel has not used Databricks on a Mediva Care Group project."
+    }
+  },
+  {
+    "id": "N1",
+    "category": "negative",
+    "strategy": "gql_agent_g",
+    "question": "Has Kestrel ever used Databricks on a project for Mediva Care Group?",
+    "answer": "No. The available records show no Databricks use on any Mediva Care Group project:\n\n- Clinical Knowledge Assistant\n- Bed Capacity Dashboard\n- Discharge Letter Summarisation\n\nDatabricks is associated instead with Container Dwell-Time Forecasting for Scaldis Logistics, where DataForge supplied the Databricks expertise.",
+    "retrieval_ms": 15586,
+    "total_ms": 17122,
+    "answer_input_tokens": 3331,
+    "answer_output_tokens": 68,
+    "retrieval_tokens": 14775,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph",
+      "kestrel/2023-09-15_all-hands-notes_september-2023.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "mediva/2023-09-08_go-live-checklist_bed-capacity-dashboard.md",
+      "mediva/2023-11-10_runbook_bed-capacity-dashboard.md",
+      "mediva/2024-04-12_status-report_discharge-letter-summarisation.md"
+    ],
+    "debug": {
+      "steps": 4,
+      "gql": [
+        "MATCH (j:Project)-[d]->(o:Organization), (j:Project)-[t]->(tech:Technology) WHERE d.predicate = 'deliveredFor' AND o.name CONTAINS 'Mediva' AND t.predicate = 'usesTechnology' AND tech.name CONTAINS 'Databricks' RETURN DISTINCT j.name AS project, o.name AS customer, tech.name AS technology",
+        "MATCH (j:Project)-[d]->(o:Organization) WHERE d.predicate = 'deliveredFor' AND o.name CONTAINS 'Mediva' RETURN DISTINCT j.name AS project, o.name AS customer",
+        "MATCH (j:Project)-[t]->(tech:Technology) WHERE j.name IN ['Clinical Knowledge Assistant','Bed Capacity Dashboard','Discharge Letter Summarisation'] AND t.predicate = 'usesTechnology' RETURN DISTINCT j.name AS project, tech.name AS technology"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected conclusion that Kestrel has not used Databricks on a Mediva Care Group project. It provides supporting project context without introducing a contradiction."
+    }
+  },
+  {
+    "id": "N2",
+    "category": "negative",
+    "strategy": "entity_g",
+    "question": "Did Bram Visser work on any project for Fortalis or Mediva?",
+    "answer": "No. The context shows Bram Visser worked on:\n\n- **Leak Detection Analytics** for AquaNova\n- **Line Sensor Data Platform** for Verhaeghe Foods\n- **Container Dwell-Time Forecasting** for Scaldis Logistics\n\nIt does not show him working on a project for Fortalis or Mediva.",
+    "retrieval_ms": 22802,
+    "total_ms": 24797,
+    "answer_input_tokens": 37315,
+    "answer_output_tokens": 109,
+    "retrieval_tokens": 23005,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2024-09-02_kickoff-notes_leak-detection-analytics.md",
+      "aquanova/2024-09-20_workshop-notes_leak-detection-analytics.md",
+      "aquanova/2024-10-18_data-mapping-notes_leak-detection-analytics.md",
+      "aquanova/2024-10-30_email-thread_leak-detection-analytics.md",
+      "aquanova/2024-12-18_email-thread_leak-detection-analytics.md",
+      "aquanova/2025-02-07_steering-minutes_leak-detection-analytics.md",
+      "aquanova/2025-05-09_test-report_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "fortalis/2025-04-18_research-plan_broker-portal-modernisation.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "fortalis/2025-06-06_steering-committee-minutes_broker-portal-modernisation.md",
+      "graphSearch",
+      "kestrel/2023-09-15_all-hands-notes_september-2023.md",
+      "kestrel/2024-06-28_newsletter_june-2024.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-01-31_newsletter_january-2025.md",
+      "kestrel/2025-03-28_pipeline-review_q1-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2026-01-30_newsletter_january-2026.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "knowledge-base-response",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "mediva/2024-03-22_adr-01_discharge-letter-summarisation.md",
+      "mediva/2024-09-09_go-live-checklist_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "mediva/2026-02-06_adr-01_clinical-knowledge-assistant.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-09-04_kickoff-notes_container-dwell-time-forecasting.md",
+      "scaldis/2023-10-20_design-note_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-27_retrospective_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2024-06-03_kickoff-notes_line-sensor-data-platform.md",
+      "verhaeghe/2024-06-14_workshop-notes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-24_retrospective_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:36:06.9681789Z",
+          "completedAt": "2026-11-18T20:36:08.6725468Z",
+          "inputTokens": 1218,
+          "outputTokens": 149,
+          "elapsedMs": 1704,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:36:08.6727175Z",
+          "completedAt": "2026-11-18T20:36:10.405544Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:09.2241983Z",
+          "count": 44,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Bram Visser Fortalis project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:36:09.3344015Z",
+          "completedAt": "2026-11-18T20:36:10.4055455Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:09.8409096Z",
+          "count": 49,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Bram Visser Mediva project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:36:09.9183359Z",
+          "completedAt": "2026-11-18T20:36:10.4055461Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:10.3295628Z",
+          "count": 32,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Bram Visser projects client"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:36:08.6726714Z",
+          "completedAt": "2026-11-18T20:36:14.0278229Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:14.0277017Z",
+          "count": 3,
+          "elapsedMs": 5354,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find all projects in which Bram Visser worked, and identify whether any of those projects were for Fortalis or Mediva. Return the person, project, client, and relationship evidence.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`workedOn`]->(proj:`Project`)-[s:`deliveredFor`]->(client:`Organization`) WHERE LOWER(p.name) = 'bram visser' RETURN DISTINCT p.name AS person, proj.name AS project, client.name AS client, type(r) AS work_relationship, type(s) AS client_relationship",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12325,
+            "outputTokens": 609,
+            "modelElapsedMs": 5040,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:36:14.0399273Z",
+          "completedAt": "2026-11-18T20:36:15.9010184Z",
+          "inputTokens": 21450,
+          "outputTokens": 188,
+          "elapsedMs": 1860,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 7,
+          "startedAt": "2026-11-18T20:36:15.9011672Z",
+          "completedAt": "2026-11-18T20:36:17.5688624Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:16.4698982Z",
+          "count": 43,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Bram Visser\" \"Fortalis\""
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 8,
+          "startedAt": "2026-11-18T20:36:16.5394301Z",
+          "completedAt": "2026-11-18T20:36:17.5688638Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:16.9850092Z",
+          "count": 37,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Bram Visser\" \"Mediva\""
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 9,
+          "startedAt": "2026-11-18T20:36:17.0552562Z",
+          "completedAt": "2026-11-18T20:36:17.5688646Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:17.4924552Z",
+          "count": 42,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Bram Visser Fortalis Mediva team project"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 6,
+          "startedAt": "2026-11-18T20:36:15.9011299Z",
+          "completedAt": "2026-11-18T20:36:28.4780876Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:28.477965Z",
+          "count": 0,
+          "elapsedMs": 12576,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Does Bram Visser have a workedOn relationship to any project deliveredFor Fortalis, Fortalis Verzekeringen, Mediva, or Mediva Care Group? Return matching rows only, including project and client.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)-[:`workedOn`]->(project:`Project`)-[:`deliveredFor`]->(client:`Organization`) WHERE p.name = 'Bram Visser' AND client.name IN ['org:fortalis', 'org:mediva'] RETURN DISTINCT project.name AS project, client.name AS client",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38205,
+            "outputTokens": 1318,
+            "modelElapsedMs": 12225,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 10,
+          "startedAt": "2026-11-18T20:36:28.4905013Z",
+          "completedAt": "2026-11-18T20:36:28.4905013Z",
+          "reasoningTokens": 125341,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null,
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        },
+        {
+          "fact": "Scaldis",
+          "present": true
+        },
+        {
+          "fact": "Verhaeghe",
+          "present": true
+        },
+        {
+          "fact": "AquaNova",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that Bram Visser did not work on projects for Fortalis or Mediva and identifies projects for AquaNova, Verhaeghe, and Scaldis."
+    }
+  },
+  {
+    "id": "N2",
+    "category": "negative",
+    "strategy": "gql_agent_g",
+    "question": "Did Bram Visser work on any project for Fortalis or Mediva?",
+    "answer": "No. Bram Visser did not work on any recorded project for Fortalis Verzekeringen or Mediva Care Group. His recorded projects were for AquaNova, Verhaeghe Foods, and Scaldis Logistics.",
+    "retrieval_ms": 10049,
+    "total_ms": 11706,
+    "answer_input_tokens": 530,
+    "answer_output_tokens": 46,
+    "retrieval_tokens": 6864,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph"
+    ],
+    "debug": {
+      "steps": 2,
+      "gql": [
+        "MATCH (p:Person)-[w]->(j:Project)-[d]->(o:Organization) WHERE w.predicate = 'workedOn' AND (p.name CONTAINS 'Bram Visser' OR p.name = 'Bram') AND d.predicate = 'deliveredFor' AND (o.name CONTAINS 'Fortalis' OR o.name CONTAINS 'Mediva') RETURN DISTINCT p.name AS person, j.name AS project, o.name AS customer",
+        "MATCH (p:Person)-[w]->(j:Project)-[d]->(o:Organization) WHERE w.predicate = 'workedOn' AND (p.name CONTAINS 'Bram' OR p.name CONTAINS 'Visser') AND d.predicate = 'deliveredFor' RETURN DISTINCT p.name AS person, j.name AS project, o.name AS customer"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        },
+        {
+          "fact": "Scaldis",
+          "present": true
+        },
+        {
+          "fact": "Verhaeghe",
+          "present": true
+        },
+        {
+          "fact": "AquaNova",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected answer and includes all required facts without introducing incorrect information."
+    }
+  },
+  {
+    "id": "N3",
+    "category": "negative",
+    "strategy": "entity_g",
+    "question": "Has Elien Jacobs worked on any project for Verhaeghe Foods?",
+    "answer": "The context does not identify **Elien Jacobs** as having worked on any project for **Verhaeghe Foods**.",
+    "retrieval_ms": 32142,
+    "total_ms": 34861,
+    "answer_input_tokens": 39454,
+    "answer_output_tokens": 201,
+    "retrieval_tokens": 22977,
+    "context_sources": [
+      "fortalis/2025-04-14_kickoff-notes_broker-portal-modernisation.md",
+      "fortalis/2025-05-13_workshop-notes_broker-portal-modernisation.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "fortalis/2025-06-27_close-out-note_broker-portal-modernisation.md",
+      "kestrel/2023-03-31_newsletter_march-2023.md",
+      "kestrel/2024-06-28_newsletter_june-2024.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2024-12-20_onboarding-guide.md",
+      "kestrel/2025-01-31_newsletter_january-2025.md",
+      "kestrel/2025-03-28_pipeline-review_q1-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2025-08-29_newsletter_august-2025.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "knowledge-base-response",
+      "mediva/2023-05-24_workshop-notes_bed-capacity-dashboard.md",
+      "mediva/2023-07-26_email-thread_bed-capacity-dashboard.md",
+      "scaldis/2025-03-21_email-thread_ops-copilot.md",
+      "scaldis/2025-07-11_training-material-outline_ops-copilot.md",
+      "scaldis/2025-09-26_go-live-note_ops-copilot.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2024-06-03_kickoff-notes_line-sensor-data-platform.md",
+      "verhaeghe/2024-06-14_workshop-notes_line-sensor-data-platform.md",
+      "verhaeghe/2024-07-03_email-thread_line-sensor-data-platform.md",
+      "verhaeghe/2024-09-13_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2024-10-25_data-mapping-notes_line-sensor-data-platform.md",
+      "verhaeghe/2024-11-08_steering-minutes_line-sensor-data-platform.md",
+      "verhaeghe/2024-12-13_test-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-17_handover-notes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-24_retrospective_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-18_line-walk-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-03-28_workshop-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-04-07_status-report_quality-inspection-vision.md",
+      "verhaeghe/2025-09-08_cutover-checklist_quality-inspection-vision.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:36:47.4751801Z",
+          "completedAt": "2026-11-18T20:36:49.1968751Z",
+          "inputTokens": 1218,
+          "outputTokens": 164,
+          "elapsedMs": 1721,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:36:49.1970285Z",
+          "completedAt": "2026-11-18T20:36:51.0829358Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:49.785053Z",
+          "count": 46,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Elien Jacobs Verhaeghe Foods"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:36:49.8598259Z",
+          "completedAt": "2026-11-18T20:36:51.082937Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:50.2683624Z",
+          "count": 40,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "projects for Verhaeghe Foods involving Elien Jacobs"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:36:50.3487229Z",
+          "completedAt": "2026-11-18T20:36:51.0829375Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:36:51.014595Z",
+          "count": 37,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Elien Jacobs project Verhaeghe"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:36:49.1969832Z",
+          "completedAt": "2026-11-18T20:37:02.9718254Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:37:02.9717066Z",
+          "count": 0,
+          "elapsedMs": 13774,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find whether the person Elien Jacobs is associated with, assigned to, or worked on any project for the company Verhaeghe Foods. Return the relevant project, person, company, and relationship details.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`contactFor`|`managedProject`|`productOwnerOf`|`sponsors`|`workedOn`]->(proj:`Project`)-[d:`deliveredFor`]->(c:`Organization`) WHERE LOWER(p.name) = 'elien jacobs' AND LOWER(c.name) = 'verhaeghe foods' RETURN DISTINCT proj.name AS project, p.name AS person, c.name AS company, type(r) AS person_project_relationship, type(d) AS company_project_relationship",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38444,
+            "outputTokens": 1653,
+            "modelElapsedMs": 13246,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:37:02.9807486Z",
+          "completedAt": "2026-11-18T20:37:05.1903393Z",
+          "inputTokens": 21376,
+          "outputTokens": 219,
+          "elapsedMs": 2209,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 7,
+          "startedAt": "2026-11-18T20:37:05.1905978Z",
+          "completedAt": "2026-11-18T20:37:06.9670959Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:37:05.7263281Z",
+          "count": 35,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Elien Jacobs\" \"Verhaeghe Foods\" project assignment"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 8,
+          "startedAt": "2026-11-18T20:37:05.7974044Z",
+          "completedAt": "2026-11-18T20:37:06.9670977Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:37:06.3832269Z",
+          "count": 32,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Elien\" \"Quality Inspection Vision\""
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 9,
+          "startedAt": "2026-11-18T20:37:06.4631063Z",
+          "completedAt": "2026-11-18T20:37:06.9670981Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:37:06.8725691Z",
+          "count": 41,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Elien\" \"Line Sensor Data Platform\" Verhaeghe"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 6,
+          "startedAt": "2026-11-18T20:37:05.190445Z",
+          "completedAt": "2026-11-18T20:37:18.1373043Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:37:18.1371473Z",
+          "count": 0,
+          "elapsedMs": 12946,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "For the entity Elien Jacobs, list every project relationship with customer Verhaeghe Foods, including project name, role, dates, and whether the relationship is an assignment, authorship, or merely an internal reference.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (c:`Organization`)<-[:`deliveredFor`]-(pr:`Project`)<-[r:`contactFor`|`managedProject`|`productOwnerOf`|`sponsors`|`workedOn`]-(p:`Person`) WHERE LOWER(p.name) = 'elien jacobs' AND LOWER(c.name) = 'verhaeghe foods' RETURN DISTINCT pr.name AS project_name, type(r) AS role",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38035,
+            "outputTokens": 1414,
+            "modelElapsedMs": 12562,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 10,
+          "startedAt": "2026-11-18T20:37:18.1493085Z",
+          "completedAt": "2026-11-18T20:37:18.1493085Z",
+          "reasoningTokens": 125787,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null,
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that Elien Jacobs is not identified as having worked on any project for Verhaeghe Foods."
+    }
+  },
+  {
+    "id": "N3",
+    "category": "negative",
+    "strategy": "gql_agent_g",
+    "question": "Has Elien Jacobs worked on any project for Verhaeghe Foods?",
+    "answer": "No. The graph shows no project where Elien Jacobs worked for Verhaeghe Foods.",
+    "retrieval_ms": 8386,
+    "total_ms": 9535,
+    "answer_input_tokens": 424,
+    "answer_output_tokens": 22,
+    "retrieval_tokens": 6644,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph"
+    ],
+    "debug": {
+      "steps": 2,
+      "gql": [
+        "MATCH (p:Person)-[w]->(j:Project)-[d]->(o:Organization) WHERE p.name CONTAINS 'Elien Jacobs' AND w.predicate = 'workedOn' AND d.predicate = 'deliveredFor' AND o.name CONTAINS 'Verhaeghe' RETURN DISTINCT j.name AS project, o.name AS customer",
+        "MATCH (p:Person)-[w]->(j:Project)-[d]->(o:Organization) WHERE p.name CONTAINS 'Elien' AND w.predicate = 'workedOn' AND d.predicate = 'deliveredFor' RETURN DISTINCT p.name AS person, j.name AS project, o.name AS customer"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that Elien Jacobs has not worked on any project for Verhaeghe Foods."
+    }
+  },
+  {
+    "id": "M1",
+    "category": "multi_hop",
+    "strategy": "entity_g",
+    "question": "Which Kestrel consultant has worked with Kevin Hermans at two different employers?",
+    "answer": "Jonas Peeters has worked with Kevin Hermans at two different employers:\n\n- **AquaNova** — on the **Asset Management Agent** project\n- **Fortalis Verzekeringen** — on the **Fortalis Landing Zone** project",
+    "retrieval_ms": 12367,
+    "total_ms": 13610,
+    "answer_input_tokens": 1375,
+    "answer_output_tokens": 52,
+    "retrieval_tokens": 3247,
+    "context_sources": [
+      "graphSearch",
+      "knowledge-base-response"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:37:33.9491015Z",
+          "completedAt": "2026-11-18T20:37:35.4721067Z",
+          "inputTokens": 1219,
+          "outputTokens": 91,
+          "elapsedMs": 1522,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:37:35.4721851Z",
+          "completedAt": "2026-11-18T20:37:44.928469Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:37:44.928361Z",
+          "count": 2,
+          "elapsedMs": 9456,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find the Kestrel consultant who has worked with Kevin Hermans at two different employers. Return the consultant's name, the two employers, and the supporting relationship records.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (consultant:`Person`)-[employment:`worksFor`]->(kestrel:`Organization`), (consultant)-[worked1:`workedOn`]->(project1:`Project`), (kevin:`Person`)-[contact1:`contactFor`]->(project1), (project1)-[employerRel1:`deliveredFor`]->(employer1:`Organization`), (consultant)-[worked2:`workedOn`]->(project2:`Project`), (kevin)-[contact2:`contactFor`]->(project2), (project2)-[employerRel2:`deliveredFor`]->(employer2:`Organization`) WHERE LOWER(kestrel.name) = 'kestrel consulting' AND LOWER(kevin.name) = 'kevin hermans' AND employer1.id <> employer2.id RETURN DISTINCT consultant.name AS consultant_name, employer1.name AS employer1, employer2.name AS employer2, project1.name AS project1, project2.name AS project2, type(employment) AS consultant_employment_predicate, employment.confidence AS consultant_employment_confidence, type(worked1) AS consultant_project1_predicate, worked1.confidence AS consultant_project1_confidence, type(contact1) AS kevin_project1_predicate, contact1.confidence AS kevin_project1_confidence, type(employerRel1) AS project1_employer_predicate, employerRel1.confidence AS project1_employer_confidence, type(worked2) AS consultant_project2_predicate, worked2.confidence AS consultant_project2_confidence, type(contact2) AS kevin_project2_predicate, contact2.confidence AS kevin_project2_confidence, type(employerRel2) AS project2_employer_predicate, employerRel2.confidence AS project2_employer_confidence",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12270,
+            "outputTokens": 1309,
+            "modelElapsedMs": 9048,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 2,
+          "startedAt": "2026-11-18T20:37:44.9292197Z",
+          "completedAt": "2026-11-18T20:37:45.8784493Z",
+          "inputTokens": 1906,
+          "outputTokens": 31,
+          "elapsedMs": 949,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 3,
+          "startedAt": "2026-11-18T20:37:45.8786584Z",
+          "completedAt": "2026-11-18T20:37:45.8786584Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Jonas Peeters",
+          "present": true
+        },
+        {
+          "fact": "Fortalis Landing Zone",
+          "present": true
+        },
+        {
+          "fact": "Asset Management Agent",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer identifies Jonas Peeters and correctly names the Fortalis Landing Zone and AquaNova Asset Management Agent projects."
+    }
+  },
+  {
+    "id": "M1",
+    "category": "multi_hop",
+    "strategy": "gql_agent_g",
+    "question": "Which Kestrel consultant has worked with Kevin Hermans at two different employers?",
+    "answer": "Jonas Peeters worked with Kevin Hermans at two employers:\n\n- **Fortalis Verzekeringen** — *Fortalis Landing Zone*\n- **AquaNova** — *Asset Management Agent*",
+    "retrieval_ms": 16927,
+    "total_ms": 18639,
+    "answer_input_tokens": 7826,
+    "answer_output_tokens": 64,
+    "retrieval_tokens": 16320,
+    "context_sources": [
+      "agent-evidence-summary",
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-02-02_kickoff-notes_asset-management-agent.md",
+      "aquanova/2026-02-27_adr_asset-management-agent.md",
+      "aquanova/2026-10-09_status-report_asset-management-agent.md",
+      "aquanova/2026-10-23_steering-minutes_asset-management-agent.md",
+      "fortalis/2023-10-02_kickoff-notes_landing-zone.md",
+      "fortalis/2023-11-17_status-report_landing-zone.md",
+      "graph",
+      "kestrel/2026-01-30_newsletter_january-2026.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md"
+    ],
+    "debug": {
+      "steps": 8,
+      "gql": [
+        "MATCH (p:Person)-[e]->(o:Organization) WHERE e.predicate = 'worksFor' AND p.name CONTAINS 'Kevin' RETURN DISTINCT p.name AS person, o.name AS employer",
+        "MATCH (k:Person)-[ek]->(j:Project) WHERE k.name CONTAINS 'Kevin' AND ek.predicate IN ['sponsors','productOwnerOf','contactFor'] MATCH (c:Person)-[ec]->(j) WHERE ec.predicate = 'workedOn' RETURN DISTINCT k.name AS kevin, j.name AS project, c.name AS consultant",
+        "MATCH (c:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND c.name CONTAINS 'Jonas' RETURN DISTINCT j.name AS project",
+        "MATCH (c:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND c.name CONTAINS 'Lotte' RETURN DISTINCT j.name AS project",
+        "MATCH (c:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND c.name CONTAINS 'Pieter' RETURN DISTINCT j.name AS project",
+        "MATCH (c:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND c.name CONTAINS 'Ruben' RETURN DISTINCT j.name AS project"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Jonas Peeters",
+          "present": true
+        },
+        {
+          "fact": "Fortalis Landing Zone",
+          "present": true
+        },
+        {
+          "fact": "Asset Management Agent",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected answer and includes all required facts."
+    }
+  },
+  {
+    "id": "M2",
+    "category": "multi_hop",
+    "strategy": "entity_g",
+    "question": "On which projects did Sofie Claes and Amira El Idrissi work together?",
+    "answer": "Sofie Claes and Amira El Idrissi worked together on:\n\n- **Leak Detection Analytics**\n- **Container Dwell-Time Forecasting**",
+    "retrieval_ms": 8800,
+    "total_ms": 10828,
+    "answer_input_tokens": 36034,
+    "answer_output_tokens": 94,
+    "retrieval_tokens": 22940,
+    "context_sources": [
+      "aquanova/2024-09-02_kickoff-notes_leak-detection-analytics.md",
+      "aquanova/2024-09-20_workshop-notes_leak-detection-analytics.md",
+      "aquanova/2024-12-18_email-thread_leak-detection-analytics.md",
+      "aquanova/2025-02-07_steering-minutes_leak-detection-analytics.md",
+      "aquanova/2025-03-14_design-note_leak-detection-analytics.md",
+      "aquanova/2025-03-28_workshop-notes_leak-detection-analytics.md",
+      "aquanova/2025-04-18_status-report_leak-detection-analytics.md",
+      "aquanova/2025-05-09_test-report_leak-detection-analytics.md",
+      "aquanova/2025-05-27_handover-notes_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "graphSearch",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2025-11-21_org-update.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "knowledge-base-response",
+      "mediva/2023-05-24_workshop-notes_bed-capacity-dashboard.md",
+      "mediva/2026-03-06_email-thread_clinical-knowledge-assistant.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-09-21_workshop-notes_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-10_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-17_email-thread_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-01-05_sprint-review-notes_container-dwell-time-forecasting.md",
+      "scaldis/2025-10-16_workshop-notes_customs-document-extraction.md",
+      "scaldis/2026-01-23_status-report_customs-document-extraction.md",
+      "scaldis/2026-03-13_email-thread_customs-document-extraction.md",
+      "verhaeghe/2024-06-03_kickoff-notes_line-sensor-data-platform.md",
+      "verhaeghe/2024-06-14_workshop-notes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-17_handover-notes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-24_retrospective_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-07-16_email-thread_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:38:10.7533212Z",
+          "completedAt": "2026-11-18T20:38:12.4713911Z",
+          "inputTokens": 1220,
+          "outputTokens": 152,
+          "elapsedMs": 1717,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:38:12.4715273Z",
+          "completedAt": "2026-11-18T20:38:14.0648159Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:13.0292355Z",
+          "count": 50,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Sofie Claes Amira El Idrissi projects"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:38:13.1385078Z",
+          "completedAt": "2026-11-18T20:38:14.0648173Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:13.5232443Z",
+          "count": 42,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Sofie Claes project assignments"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:38:13.5864709Z",
+          "completedAt": "2026-11-18T20:38:14.0648179Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:13.9750387Z",
+          "count": 48,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Amira El Idrissi project assignments"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:38:12.4714739Z",
+          "completedAt": "2026-11-18T20:38:16.4236296Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:16.4235189Z",
+          "count": 2,
+          "elapsedMs": 3951,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find all projects on which both Sofie Claes and Amira El Idrissi worked together. Return the project names and the evidence linking each person to each project.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (sofie:`Person`)-[r1:`workedOn`]->(project:`Project`), (amira:`Person`)-[r2:`workedOn`]->(project)\nWHERE LOWER(sofie.name) = LOWER('Sofie Claes') AND LOWER(amira.name) = LOWER('Amira El Idrissi')\nRETURN DISTINCT project.name AS project_name, sofie.name AS sofie_name, r1.confidence AS sofie_link_confidence, amira.name AS amira_name, r2.confidence AS amira_link_confidence",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12269,
+            "outputTokens": 371,
+            "modelElapsedMs": 3712,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:38:16.4352737Z",
+          "completedAt": "2026-11-18T20:38:18.3021052Z",
+          "inputTokens": 21457,
+          "outputTokens": 111,
+          "elapsedMs": 1866,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 6,
+          "startedAt": "2026-11-18T20:38:18.3057801Z",
+          "completedAt": "2026-11-18T20:38:18.3057801Z",
+          "reasoningTokens": 56632,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer identifies both required projects, matching the expected answer."
+    }
+  },
+  {
+    "id": "M2",
+    "category": "multi_hop",
+    "strategy": "gql_agent_g",
+    "question": "On which projects did Sofie Claes and Amira El Idrissi work together?",
+    "answer": "Sofie Claes and Amira El Idrissi worked together on:\n\n- Leak Detection Analytics\n- Container Dwell-Time Forecasting",
+    "retrieval_ms": 12320,
+    "total_ms": 13482,
+    "answer_input_tokens": 656,
+    "answer_output_tokens": 29,
+    "retrieval_tokens": 9438,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph"
+    ],
+    "debug": {
+      "steps": 3,
+      "gql": [
+        "MATCH (p:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND p.name CONTAINS 'Sofie' RETURN DISTINCT p.name AS person, j.name AS project",
+        "MATCH (p:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND p.name CONTAINS 'Amira' RETURN DISTINCT p.name AS person, j.name AS project",
+        "MATCH (s:Person)-[es]->(j:Project)<-[ea]-(a:Person) WHERE es.predicate = 'workedOn' AND ea.predicate = 'workedOn' AND s.name CONTAINS 'Sofie' AND a.name CONTAINS 'Amira' RETURN DISTINCT s.name AS sofie, a.name AS amira, j.name AS project"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer lists both required projects and matches the expected answer."
+    }
+  },
+  {
+    "id": "M3",
+    "category": "multi_hop",
+    "strategy": "entity_g",
+    "question": "What did the predecessor of Mediva's Clinical Knowledge Assistant deliver, and who was involved in both projects from Kestrel?",
+    "answer": "The predecessor was **Discharge Letter Summarisation**. It delivered:\n\n- Draft discharge-letter generation for **internal medicine and geriatrics**, using specialty-specific templates.\n- A pseudonymisation pipeline before every Azure OpenAI call, with re-identification inside Mediva’s environment.\n- A review screen showing the draft alongside its source sections.\n- Monitoring of usage, generation time and edit distance.\n- A run book and operational handover to Mediva IT.\n- Clinically, physicians saved **about nine minutes per discharge letter**; the project was delivered within budget and accepted by the sponsor.\n\nThe Kestrel staff involved in **both** projects were:\n\n- **Pieter De Smet** — lead architect / lead AI architect.\n- **Amira El Idrissi** — ML/lead AI engineer.\n\nThe Clinical Knowledge Assistant also involved **Ruben Wouters**, while the predecessor’s documented Kestrel team additionally included **Thomas Maes**; the context does not establish that Ruben or Thomas worked on both projects.",
+    "retrieval_ms": 24370,
+    "total_ms": 28693,
+    "answer_input_tokens": 39625,
+    "answer_output_tokens": 463,
+    "retrieval_tokens": 23060,
+    "context_sources": [
+      "fortalis/2024-03-22_hypercare-report_landing-zone.md",
+      "fortalis/2025-02-28_closing-report_claims-triage-automation.md",
+      "graphSearch",
+      "kestrel/2024-04-26_policy-note_gdpr-customer-data.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "kestrel/2026-01-30_newsletter_january-2026.md",
+      "knowledge-base-response",
+      "mediva/2023-06-23_status-report_bed-capacity-dashboard.md",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "mediva/2024-03-18_kickoff-notes_discharge-letter-summarisation.md",
+      "mediva/2024-03-22_adr-01_discharge-letter-summarisation.md",
+      "mediva/2024-04-05_test-report_discharge-letter-summarisation.md",
+      "mediva/2024-04-12_status-report_discharge-letter-summarisation.md",
+      "mediva/2024-04-26_workshop-notes_discharge-letter-summarisation.md",
+      "mediva/2024-05-10_design-note_discharge-letter-summarisation.md",
+      "mediva/2024-05-15_steering-committee-minutes_discharge-letter-summarisation.md",
+      "mediva/2024-06-14_evaluation-protocol_discharge-letter-summarisation.md",
+      "mediva/2024-07-05_status-report_discharge-letter-summarisation.md",
+      "mediva/2024-08-30_evaluation-report_discharge-letter-summarisation.md",
+      "mediva/2024-09-27_email-thread_discharge-letter-summarisation.md",
+      "mediva/2024-10-11_handover-notes_discharge-letter-summarisation.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "mediva/2026-01-12_kickoff-notes_clinical-knowledge-assistant.md",
+      "mediva/2026-02-06_adr-01_clinical-knowledge-assistant.md",
+      "mediva/2026-02-13_status-report_clinical-knowledge-assistant.md",
+      "mediva/2026-02-27_sprint-review_clinical-knowledge-assistant.md",
+      "mediva/2026-03-06_email-thread_clinical-knowledge-assistant.md",
+      "mediva/2026-03-20_evaluation-design_clinical-knowledge-assistant.md",
+      "mediva/2026-04-17_security-test-report_clinical-knowledge-assistant.md",
+      "mediva/2026-07-10_status-report_clinical-knowledge-assistant.md",
+      "mediva/2026-09-18_status-report_clinical-knowledge-assistant.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-15_handover-notes_container-dwell-time-forecasting.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:38:37.7517831Z",
+          "completedAt": "2026-11-18T20:38:39.3653228Z",
+          "inputTokens": 1228,
+          "outputTokens": 156,
+          "elapsedMs": 1613,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:38:39.365485Z",
+          "completedAt": "2026-11-18T20:38:41.0725051Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:40.0363081Z",
+          "count": 49,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Mediva Clinical Knowledge Assistant predecessor deliverables Kestrel"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:38:40.1050286Z",
+          "completedAt": "2026-11-18T20:38:41.0725066Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:40.4663852Z",
+          "count": 50,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Mediva Clinical Knowledge Assistant project Kestrel"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:38:40.5341644Z",
+          "completedAt": "2026-11-18T20:38:41.0725069Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:40.9933914Z",
+          "count": 48,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Mediva predecessor project clinical knowledge assistant"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:38:39.365429Z",
+          "completedAt": "2026-11-18T20:38:54.8670973Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:54.8669304Z",
+          "count": 0,
+          "elapsedMs": 15501,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find the Mediva Clinical Knowledge Assistant project, identify its predecessor project, what the predecessor delivered, and the Kestrel people involved in both projects.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (current:`Project`)-[f:`followsUp`]->(predecessor:`Project`), (current)<-[w1:`workedOn`]-(person:`Person`)-[w2:`workedOn`]->(predecessor), (predecessor)-[a:`achieved`]->(outcome:`Outcome`), (person)-[wf:`worksFor`]->(kestrel:`Organization`) WHERE LOWER(current.name) = LOWER('Mediva Clinical Knowledge Assistant') AND kestrel.name = 'org:kestrel' RETURN DISTINCT current.name AS project_name, predecessor.name AS predecessor_name, outcome.name AS predecessor_outcome, person.name AS kestrel_person",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38306,
+            "outputTokens": 1792,
+            "modelElapsedMs": 14894,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:38:54.8761467Z",
+          "completedAt": "2026-11-18T20:38:57.1934921Z",
+          "inputTokens": 21466,
+          "outputTokens": 210,
+          "elapsedMs": 2317,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 6,
+          "startedAt": "2026-11-18T20:38:57.193614Z",
+          "completedAt": "2026-11-18T20:38:59.1266125Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:57.7850861Z",
+          "count": 49,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Discharge Letter Summarisation closing report deliverables Mediva Kestrel"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 8,
+          "startedAt": "2026-11-18T20:38:57.8696828Z",
+          "completedAt": "2026-11-18T20:38:59.126614Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:58.5155731Z",
+          "count": 47,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Discharge Letter Summarisation handover deliverables Kestrel people"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 9,
+          "startedAt": "2026-11-18T20:38:58.5820346Z",
+          "completedAt": "2026-11-18T20:38:59.1266147Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:38:59.0568591Z",
+          "count": 48,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Mediva Discharge Letter Summarisation final report what delivered"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 7,
+          "startedAt": "2026-11-18T20:38:57.1936357Z",
+          "completedAt": "2026-11-18T20:39:01.347853Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:01.3477364Z",
+          "count": 126,
+          "elapsedMs": 4153,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "For Mediva's Discharge Letter Summarisation predecessor project, list the concrete delivered outputs and identify the Kestrel Consulting staff who participated in it. Compare with Clinical Knowledge Assistant staff and return the intersection.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Project`)-[:`followsUp`]->(successor:`Project`), (p)-[:`deliveredFor`]->(customer:`Organization`), (p)-[:`achieved`]->(output:`Outcome`), (staff:`Person`)-[:`workedOn`]->(p), (staff)-[:`workedOn`]->(comparison_project:`Project`) WHERE LOWER(successor.name) = LOWER('Discharge Letter Summarisation') AND LOWER(customer.name) = LOWER('Mediva Care Group') AND LOWER(comparison_project.name) = LOWER('Clinical Knowledge Assistant') RETURN DISTINCT output.name AS delivered_output, staff.name AS staff_member",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12278,
+            "outputTokens": 495,
+            "modelElapsedMs": 3905,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 10,
+          "startedAt": "2026-11-18T20:39:01.3607493Z",
+          "completedAt": "2026-11-18T20:39:01.3607493Z",
+          "reasoningTokens": 125849,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null,
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "9 minutes",
+          "present": true
+        },
+        {
+          "fact": "Pieter De Smet",
+          "present": true
+        },
+        {
+          "fact": "Amira El Idrissi",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected deliverable, time saved, and both Kestrel contributors. It does not mention that the project was evaluated with 12 physicians, but it contains no conflicting claims."
+    }
+  },
+  {
+    "id": "M3",
+    "category": "multi_hop",
+    "strategy": "gql_agent_g",
+    "question": "What did the predecessor of Mediva's Clinical Knowledge Assistant deliver, and who was involved in both projects from Kestrel?",
+    "answer": "The predecessor, **Discharge Letter Summarisation**, delivered:\n\n- Draft discharge letters from patient records for **internal medicine and geriatrics**, using specialty-specific templates.\n- **Pseudonymisation** before every Azure OpenAI call, with re-identification retained inside Mediva’s environment.\n- A physician review screen showing the draft alongside its source sections.\n- Monitoring of usage, generation time, and edits between drafts and signed letters.\n- A run book and operational handover to Mediva’s IT team.\n- In evaluation, physicians saved **about 9 minutes per letter across 410 letters**, with **no increase in corrections requested by general practitioners**.\n\nThe Kestrel people involved in **both projects** were:\n\n- **Amira El Idrissi**\n- **Pieter De Smet**",
+    "retrieval_ms": 15329,
+    "total_ms": 17335,
+    "answer_input_tokens": 3506,
+    "answer_output_tokens": 164,
+    "retrieval_tokens": 15786,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "mediva/2024-04-12_status-report_discharge-letter-summarisation.md",
+      "mediva/2024-08-30_evaluation-report_discharge-letter-summarisation.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md"
+    ],
+    "debug": {
+      "steps": 5,
+      "gql": [
+        "MATCH (j:Project)-[e:followsUp]->(p:Project) WHERE e.predicate = 'followsUp' AND (j.name CONTAINS 'Clinical Knowledge Assistant' OR j.name CONTAINS 'clinical knowledge assistant') RETURN DISTINCT j.name AS successor, p.name AS predecessor",
+        "MATCH (j:Project)-[e]->(o:Outcome) WHERE e.predicate = 'achieved' AND j.name CONTAINS 'Discharge Letter Summarisation' RETURN DISTINCT o.name AS outcome",
+        "MATCH (p:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND (j.name CONTAINS 'Discharge Letter Summarisation' OR j.name CONTAINS 'Clinical Knowledge Assistant' OR j.name CONTAINS 'clinical knowledge assistant') RETURN DISTINCT p.name AS person, j.name AS project",
+        "MATCH (p:Person)-[e1]->(j1:Project), (p)-[e2]->(j2:Project) WHERE e1.predicate = 'workedOn' AND e2.predicate = 'workedOn' AND j1.name CONTAINS 'Clinical Knowledge Assistant' AND (j2.name CONTAINS 'Discharge Letter Summarisation') RETURN DISTINCT p.name AS Kestrel_person_in_both"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "9 minutes",
+          "present": true
+        },
+        {
+          "fact": "Pieter De Smet",
+          "present": true
+        },
+        {
+          "fact": "Amira El Idrissi",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies the predecessor, the approximate time saved, and both Kestrel contributors. It omits the detail that the evaluation involved 12 physicians, but includes no conflicting information."
+    }
+  },
+  {
+    "id": "M4",
+    "category": "multi_hop",
+    "strategy": "entity_g",
+    "question": "Which of the projects managed by Thomas Maes were delayed, went over budget or were cancelled?",
+    "answer": "The projects managed by Thomas Maes that match are:\n\n- **Discharge Letter Summarisation** — delayed six weeks, from 5 February to 18 March 2024, because the DPIA took longer than expected.\n- **Container Dwell-Time Forecasting** — the “feature pipelines ready” milestone slipped by two weeks, from 10 to 24 November 2023. The final project completion date remained on plan.\n- **Claims Triage Automation** — went over the original EUR 240,000 budget, finishing at **EUR 276,000** due to change request CR-07 for water-damage claim types.\n- **Broker Portal Modernisation** — cancelled after the discovery phase; its budget was reallocated to Fortalis’ DORA compliance programme.",
+    "retrieval_ms": 14449,
+    "total_ms": 18881,
+    "answer_input_tokens": 37979,
+    "answer_output_tokens": 499,
+    "retrieval_tokens": 23151,
+    "context_sources": [
+      "fortalis/2024-03-18_proposal_claims-triage-automation.md",
+      "fortalis/2024-04-08_kickoff-notes_claims-triage-automation.md",
+      "fortalis/2024-05-17_status-report_claims-triage-automation.md",
+      "fortalis/2024-08-28_email-thread_claims-triage-automation.md",
+      "fortalis/2024-10-17_steering-committee-minutes_claims-triage-automation.md",
+      "fortalis/2025-01-24_status-report_claims-triage-automation.md",
+      "fortalis/2025-02-21_retrospective_claims-triage-automation.md",
+      "fortalis/2025-02-28_closing-report_claims-triage-automation.md",
+      "fortalis/2025-05-09_status-report_broker-portal-modernisation.md",
+      "fortalis/2025-06-20_memo_broker-portal-cancelled.md",
+      "fortalis/2025-06-27_close-out-note_broker-portal-modernisation.md",
+      "graphSearch",
+      "kestrel/2025-03-28_pipeline-review_q1-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2025-11-21_org-update.md",
+      "knowledge-base-response",
+      "mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md",
+      "mediva/2024-03-18_kickoff-notes_discharge-letter-summarisation.md",
+      "mediva/2024-04-09_email-thread_discharge-letter-summarisation.md",
+      "mediva/2024-04-12_status-report_discharge-letter-summarisation.md",
+      "mediva/2024-05-15_steering-committee-minutes_discharge-letter-summarisation.md",
+      "mediva/2024-08-30_evaluation-report_discharge-letter-summarisation.md",
+      "mediva/2024-10-18_retrospective_discharge-letter-summarisation.md",
+      "scaldis/2023-11-10_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-23_steering-committee-minutes_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md",
+      "scaldis/2025-06-20_status-report_ops-copilot.md",
+      "scaldis/2025-09-11_email-thread_ops-copilot.md",
+      "scaldis/2025-09-26_go-live-note_ops-copilot.md",
+      "scaldis/2025-10-17_hypercare-closure-note_ops-copilot.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:39:32.5754226Z",
+          "completedAt": "2026-11-18T20:39:34.8278768Z",
+          "inputTokens": 1222,
+          "outputTokens": 177,
+          "elapsedMs": 2252,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:39:34.8280623Z",
+          "completedAt": "2026-11-18T20:39:37.1610392Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:35.3203932Z",
+          "count": 47,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes managed projects delayed"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:39:35.4189186Z",
+          "completedAt": "2026-11-18T20:39:37.1610407Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:35.9090502Z",
+          "count": 46,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes projects over budget"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:39:35.9732089Z",
+          "completedAt": "2026-11-18T20:39:37.1610413Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:36.451933Z",
+          "count": 49,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes cancelled project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 5,
+          "startedAt": "2026-11-18T20:39:36.5306257Z",
+          "completedAt": "2026-11-18T20:39:37.1610417Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:37.0882816Z",
+          "count": 46,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "projects managed by Thomas Maes status delay budget cancellation"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:39:34.8280135Z",
+          "completedAt": "2026-11-18T20:39:38.0806325Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:38.0805146Z",
+          "count": 5,
+          "elapsedMs": 3252,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find all projects managed by Thomas Maes, and for each project identify whether it was delayed, went over budget, or was cancelled. Return project names, manager relationship, status, schedule variance, budget variance, cancellation, and supporting source references.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`managedProject`]->(pr:`Project`) WHERE LOWER(p.name) = 'thomas maes' RETURN DISTINCT pr.name AS project_name, type(r) AS manager_relationship, r.confidence AS manager_confidence, r.chunk_id AS supporting_chunk_id, r.parent_id AS supporting_parent_id",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12285,
+            "outputTokens": 258,
+            "modelElapsedMs": 3003,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 6,
+          "startedAt": "2026-11-18T20:39:38.0909143Z",
+          "completedAt": "2026-11-18T20:39:40.3896209Z",
+          "inputTokens": 21502,
+          "outputTokens": 250,
+          "elapsedMs": 2298,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 7,
+          "startedAt": "2026-11-18T20:39:40.3897258Z",
+          "completedAt": "2026-11-18T20:39:43.4006203Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:40.9349786Z",
+          "count": 47,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes project manager Discharge Letter Summarisation delayed six weeks"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 9,
+          "startedAt": "2026-11-18T20:39:41.016549Z",
+          "completedAt": "2026-11-18T20:39:43.400623Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:41.5286393Z",
+          "count": 46,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes project manager Scaldis Ops Copilot delayed over budget"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 10,
+          "startedAt": "2026-11-18T20:39:41.6051108Z",
+          "completedAt": "2026-11-18T20:39:43.4006238Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:42.1051365Z",
+          "count": 40,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes project manager Fortalis Landing Zone delayed budget cancelled"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 11,
+          "startedAt": "2026-11-18T20:39:42.1743433Z",
+          "completedAt": "2026-11-18T20:39:43.4006244Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:42.8191463Z",
+          "count": 42,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes project manager Broker Portal Modernisation cancelled"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 12,
+          "startedAt": "2026-11-18T20:39:42.8904335Z",
+          "completedAt": "2026-11-18T20:39:43.4006249Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:43.3300406Z",
+          "count": 41,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Thomas Maes managed project list status reports"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 8,
+          "startedAt": "2026-11-18T20:39:40.3897364Z",
+          "completedAt": "2026-11-18T20:39:45.6856264Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:39:45.6854954Z",
+          "count": 0,
+          "elapsedMs": 5295,
+          "error": {
+            "code": "GraphSearchFailed",
+            "message": "The graph query generated for this request could not be executed. Same semantic preflight error repeated on consecutive attempts: Semantic preflight rejected the query:\n- predicate `managedProject` goes FROM `Person` TO `Project`, but your pattern uses `Project` -> `Person`; flip the arrow or use the correct labels"
+          },
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "For Thomas Maes's managed projects, find adverse outcomes: projects with delayed schedule, budget overrun, or cancellation. Include Discharge Letter Summarisation, Scaldis Ops Copilot, Broker Portal Modernisation, Claims Triage Automation, Container Dwell-Time Forecasting, and Fortalis Landing Zone if present. Return exact evidence and references.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)<-[:`managedProject`]-(project:`Project`)-[:`achieved`]->(outcome:`Outcome`) WHERE LOWER(p.name) = LOWER('Thomas Maes') AND LOWER(project.name) IN ['discharge letter summarisation', 'scaldis ops copilot', 'broker portal modernisation', 'claims triage automation', 'container dwell-time forecasting', 'fortalis landing zone'] AND (LOWER(outcome.name) CONTAINS 'delayed schedule' OR LOWER(outcome.name) CONTAINS 'budget overrun' OR LOWER(outcome.name) CONTAINS 'cancellation') RETURN DISTINCT project.name AS project_name, project.id AS project_reference, outcome.name AS exact_evidence, outcome.id AS outcome_reference",
+            "outcome": "EngineError",
+            "attempts": 2,
+            "inputTokens": 25225,
+            "outputTokens": 609,
+            "modelElapsedMs": 5199,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 13,
+          "startedAt": "2026-11-18T20:39:45.7010366Z",
+          "completedAt": "2026-11-18T20:39:45.7010366Z",
+          "reasoningTokens": 173127,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null,
+        null
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.75,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": false
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Broker Portal Modernisation",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer correctly identifies three required projects and also acceptably mentions Container Dwell-Time Forecasting, but it omits Scaldis Ops Copilot, which was delayed."
+    }
+  },
+  {
+    "id": "M4",
+    "category": "multi_hop",
+    "strategy": "gql_agent_g",
+    "question": "Which of the projects managed by Thomas Maes were delayed, went over budget or were cancelled?",
+    "answer": "Projects managed by **Thomas Maes** that were delayed, over budget, or cancelled:\n\n- **Broker Portal Modernisation** — cancelled after discovery because Fortalis reallocated its budget to the DORA compliance programme.\n- **Discharge Letter Summarisation** — start delayed by six weeks due to the extended DPIA.\n- **Container Dwell-Time Forecasting** — feature-pipeline milestone delayed by two weeks; final delivery remained on schedule.\n- **Claims Triage Automation** — exceeded the original EUR 240,000 fixed price; revised baseline was EUR 276,000.\n\n**Scaldis Ops Copilot** is listed as managed by **“Thomas”**, not “Thomas Maes,” in the graph results, so it is not included.",
+    "retrieval_ms": 17786,
+    "total_ms": 21165,
+    "answer_input_tokens": 15589,
+    "answer_output_tokens": 323,
+    "retrieval_tokens": 25293,
+    "context_sources": [
+      "agent-evidence-summary",
+      "fortalis/2023-10-02_kickoff-notes_landing-zone.md",
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "fortalis/2024-04-08_kickoff-notes_claims-triage-automation.md",
+      "fortalis/2024-10-17_steering-committee-minutes_claims-triage-automation.md",
+      "fortalis/2025-01-24_status-report_claims-triage-automation.md",
+      "fortalis/2025-06-20_memo_broker-portal-cancelled.md",
+      "fortalis/2025-06-27_close-out-note_broker-portal-modernisation.md",
+      "graph",
+      "kestrel/2023-09-15_all-hands-notes_september-2023.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md",
+      "mediva/2024-03-18_kickoff-notes_discharge-letter-summarisation.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "scaldis/2023-10-13_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-11-10_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-03-12_change-request_ops-copilot.md",
+      "scaldis/2025-05-12_email-thread_ops-copilot.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md",
+      "scaldis/2025-06-20_status-report_ops-copilot.md"
+    ],
+    "debug": {
+      "steps": 6,
+      "gql": [
+        "MATCH (p:Person)-[e]->(j:Project) WHERE e.predicate = 'managedProject' AND (p.name CONTAINS 'Thomas Maes' OR p.name = 'Thomas') RETURN DISTINCT p.name AS manager, j.name AS project"
+      ]
+    },
+    "correct": false,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Broker Portal Modernisation",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer correctly identifies the other projects and describes their issues, but incorrectly excludes Scaldis Ops Copilot. It should be included as delayed."
+    }
+  },
+  {
+    "id": "E1",
+    "category": "entity_resolution",
+    "strategy": "entity_g",
+    "question": "Which projects involved someone called Koen, and who are they?",
+    "answer": "Projects involving someone called Koen:\n\n- **Container Dwell-Time Forecasting** — **Koen Verstraete**, CIO and sponsor at Scaldis Logistics.\n- **Scaldis Ops Copilot** — **Koen Verstraete**, CIO and sponsor at Scaldis Logistics.\n- **Customs Document Extraction** — **Koen Verstraete**, CIO and sponsor at Scaldis Logistics.\n- **Leak Detection Analytics** — **Koen Martens**, OT Engineer at AquaNova, responsible for SCADA tags, historian access and the data export.\n\nThese are the projects in the context involving Koen Verstraete or Koen Martens.",
+    "retrieval_ms": 18021,
+    "total_ms": 21071,
+    "answer_input_tokens": 39528,
+    "answer_output_tokens": 306,
+    "retrieval_tokens": 22919,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2024-09-02_kickoff-notes_leak-detection-analytics.md",
+      "aquanova/2024-09-20_workshop-notes_leak-detection-analytics.md",
+      "aquanova/2024-09-27_status-report_leak-detection-analytics.md",
+      "aquanova/2024-10-18_data-mapping-notes_leak-detection-analytics.md",
+      "aquanova/2024-10-30_email-thread_leak-detection-analytics.md",
+      "aquanova/2024-11-22_status-report_leak-detection-analytics.md",
+      "aquanova/2024-12-18_email-thread_leak-detection-analytics.md",
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "aquanova/2025-02-07_steering-minutes_leak-detection-analytics.md",
+      "aquanova/2025-05-27_handover-notes_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-02-02_kickoff-notes_asset-management-agent.md",
+      "fortalis/2024-09-20_status-report_claims-triage-automation.md",
+      "fortalis/2025-02-21_retrospective_claims-triage-automation.md",
+      "kestrel/2023-12-08_lunch-and-learn_large-screen-dashboards.md",
+      "kestrel/2025-01-31_newsletter_january-2025.md",
+      "kestrel/2025-03-28_pipeline-review_q1-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2026-03-06_tech-radar-2026.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "knowledge-base-response",
+      "mediva/2024-04-05_test-report_discharge-letter-summarisation.md",
+      "mediva/2024-10-18_retrospective_discharge-letter-summarisation.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-09-04_kickoff-notes_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-02-20_steering-committee-minutes_ops-copilot.md",
+      "scaldis/2025-03-12_change-request_ops-copilot.md",
+      "scaldis/2025-06-20_status-report_ops-copilot.md",
+      "scaldis/2025-09-11_email-thread_ops-copilot.md",
+      "scaldis/2025-09-26_go-live-note_ops-copilot.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2026-03-13_email-thread_customs-document-extraction.md",
+      "scaldis/2026-09-24_workshop-notes_customs-document-extraction.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:40:19.035502Z",
+          "completedAt": "2026-11-18T20:40:20.9911466Z",
+          "inputTokens": 1216,
+          "outputTokens": 141,
+          "elapsedMs": 1955,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 1,
+          "startedAt": "2026-11-18T20:40:20.9912569Z",
+          "completedAt": "2026-11-18T20:40:23.2516515Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:40:21.7458482Z",
+          "count": 44,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Koen projects"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:40:21.830539Z",
+          "completedAt": "2026-11-18T20:40:23.2516528Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:40:22.1844183Z",
+          "count": 29,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "person named Koen project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:40:22.2478225Z",
+          "completedAt": "2026-11-18T20:40:23.2516532Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:40:22.7751236Z",
+          "count": 46,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Koen involved in project"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 5,
+          "startedAt": "2026-11-18T20:40:22.8414176Z",
+          "completedAt": "2026-11-18T20:40:23.2516537Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:40:23.1775058Z",
+          "count": 40,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Koen"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 2,
+          "startedAt": "2026-11-18T20:40:20.9912719Z",
+          "completedAt": "2026-11-18T20:40:34.2708247Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:40:34.2707008Z",
+          "count": 0,
+          "elapsedMs": 13279,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find all projects connected to a person whose name is Koen, including the person's full name, role, and the nature of their involvement.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`contactFor`|`managedProject`|`productOwnerOf`|`sponsors`|`workedOn`]->(project:`Project`) WHERE LOWER(p.name) = LOWER('person:koen_m') RETURN DISTINCT p.name AS full_name, project.name AS project_name, type(r) AS role, type(r) AS involvement_nature",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38320,
+            "outputTokens": 1477,
+            "modelElapsedMs": 12859,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 6,
+          "startedAt": "2026-11-18T20:40:34.2808728Z",
+          "completedAt": "2026-11-18T20:40:35.7972796Z",
+          "inputTokens": 21453,
+          "outputTokens": 109,
+          "elapsedMs": 1516,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 7,
+          "startedAt": "2026-11-18T20:40:35.8006741Z",
+          "completedAt": "2026-11-18T20:40:35.8006741Z",
+          "reasoningTokens": 80192,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Koen Verstraete",
+          "present": true
+        },
+        {
+          "fact": "Koen Martens",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        },
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies the two different people and assigns all four projects as expected."
+    }
+  },
+  {
+    "id": "E1",
+    "category": "entity_resolution",
+    "strategy": "gql_agent_g",
+    "question": "Which projects involved someone called Koen, and who are they?",
+    "answer": "The projects involving someone called **Koen** are:\n\n- **Leak Detection Analytics** — **Koen Martens** (AquaNova OT Engineer; contact, product owner, and involved in delivery)\n- **Container Dwell-Time Forecasting** — **Koen Verstraete** (Scaldis Logistics CIO; sponsor and contact)\n- **Scaldis Ops Copilot** (also indexed as **Ops Copilot**) — **Koen Verstraete** (Scaldis Logistics CIO; sponsor and contact)\n- **Customs Document Extraction** — **Koen Verstraete** (Scaldis Logistics CIO; sponsor and contact)",
+    "retrieval_ms": 18018,
+    "total_ms": 20175,
+    "answer_input_tokens": 5803,
+    "answer_output_tokens": 219,
+    "retrieval_tokens": 21283,
+    "context_sources": [
+      "agent-evidence-summary",
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2024-09-20_workshop-notes_leak-detection-analytics.md",
+      "aquanova/2025-01-17_adr_leak-detection-analytics.md",
+      "aquanova/2025-02-07_steering-minutes_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "graph",
+      "scaldis/2023-09-04_kickoff-notes_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-02-20_steering-committee-minutes_ops-copilot.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2026-03-13_email-thread_customs-document-extraction.md"
+    ],
+    "debug": {
+      "steps": 5,
+      "gql": [
+        "MATCH (p:Person)-[e]->(j:Project) WHERE p.name CONTAINS 'Koen' AND e.predicate IN ['workedOn','managedProject','sponsors','productOwnerOf','contactFor'] RETURN DISTINCT p.name AS person, e.predicate AS relationship, j.name AS project",
+        "MATCH (p:Person)-[e]->(j:Project) WHERE p.name = 'KV' AND e.predicate IN ['workedOn','managedProject','sponsors','productOwnerOf','contactFor'] RETURN DISTINCT p.name AS person, e.predicate AS relationship, j.name AS project",
+        "MATCH (p:Person)-[e]->(j:Project) WHERE p.name IN ['Koen','Kevin','KV'] AND e.predicate IN ['workedOn','managedProject','sponsors','productOwnerOf','contactFor'] RETURN DISTINCT p.name AS person, e.predicate AS relationship, j.name AS project"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Koen Verstraete",
+          "present": true
+        },
+        {
+          "fact": "Koen Martens",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        },
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies both people and associates them with the projects specified in the expected answer."
+    }
+  },
+  {
+    "id": "E2",
+    "category": "entity_resolution",
+    "strategy": "entity_g",
+    "question": "What has Tine Desmet worked on?",
+    "answer": "Tine Desmet worked on:\n\n- **Line Sensor Data Platform** — Verhaeghe Foods  \n  - Coordinated network access, firewall changes, Azure accounts, and the tenant.\n  - Owned platform operations and access management after handover.\n\n- **Quality Inspection Vision** — Verhaeghe Foods  \n  - Coordinated the edge-device network request and firewall implementation.\n  - Owned edge devices and network operations.",
+    "retrieval_ms": 16663,
+    "total_ms": 19235,
+    "answer_input_tokens": 34534,
+    "answer_output_tokens": 168,
+    "retrieval_tokens": 22954,
+    "context_sources": [
+      "aquanova/2025-05-27_handover-notes_leak-detection-analytics.md",
+      "graphSearch",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2024-12-20_onboarding-guide.md",
+      "kestrel/2025-01-31_newsletter_january-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2025-08-29_newsletter_august-2025.md",
+      "kestrel/2025-12-12_all-hands-notes_december-2025.md",
+      "knowledge-base-response",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2026-03-13_email-thread_customs-document-extraction.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2024-06-03_kickoff-notes_line-sensor-data-platform.md",
+      "verhaeghe/2024-07-03_email-thread_line-sensor-data-platform.md",
+      "verhaeghe/2024-07-19_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2024-11-08_steering-minutes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-10_runbook_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-17_handover-notes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-24_retrospective_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-04-07_status-report_quality-inspection-vision.md",
+      "verhaeghe/2025-11-06_handover-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:41:04.9403929Z",
+          "completedAt": "2026-11-18T20:41:06.5792278Z",
+          "inputTokens": 1212,
+          "outputTokens": 152,
+          "elapsedMs": 1638,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 2,
+          "startedAt": "2026-11-18T20:41:06.579376Z",
+          "completedAt": "2026-11-18T20:41:08.2349079Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:07.0974012Z",
+          "count": 32,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Tine Desmet projects work responsibilities"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:41:07.192941Z",
+          "completedAt": "2026-11-18T20:41:08.2349094Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:07.6267209Z",
+          "count": 32,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Tine Desmet\""
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:41:07.6986733Z",
+          "completedAt": "2026-11-18T20:41:08.2349099Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:08.1573465Z",
+          "count": 22,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Tine Desmet deliverables client project"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T20:41:06.5793263Z",
+          "completedAt": "2026-11-18T20:41:14.235627Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:14.2355176Z",
+          "count": 5,
+          "elapsedMs": 7656,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find the person/entity Tine Desmet and list all projects, clients, workstreams, deliverables, and roles connected to her in the consultancy documents, including dates and relationships.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`contactFor`|`managedProject`|`productOwnerOf`|`sponsors`|`workedOn`]->(pr:`Project`)\nWHERE LOWER(p.name) = 'tine desmet'\nRETURN DISTINCT p.name AS person_name, pr.name AS project_name, pr.name AS connected_name, type(r) AS relationship, null AS client_name\nUNION ALL\nMATCH (p:`Person`)-[r:`worksFor`]->(o:`Organization`)\nWHERE LOWER(p.name) = 'tine desmet'\nRETURN DISTINCT p.name AS person_name, null AS project_name, o.name AS connected_name, type(r) AS relationship, null AS client_name\nUNION ALL\nMATCH (p:`Person`)-[r:`contactFor`|`managedProject`|`productOwnerOf`|`sponsors`|`workedOn`]->(pr:`Project`)-[d:`deliveredFor`]->(c:`Organization`)\nWHERE LOWER(p.name) = 'tine desmet'\nRETURN DISTINCT p.name AS person_name, pr.name AS project_name, c.name AS connected_name, type(d) AS relationship, c.name AS client_name",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12272,
+            "outputTokens": 908,
+            "modelElapsedMs": 7240,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:41:14.2436668Z",
+          "completedAt": "2026-11-18T20:41:15.7921653Z",
+          "inputTokens": 21487,
+          "outputTokens": 103,
+          "elapsedMs": 1548,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 6,
+          "startedAt": "2026-11-18T20:41:15.7922633Z",
+          "completedAt": "2026-11-18T20:41:20.3209203Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:20.3208067Z",
+          "count": 11,
+          "elapsedMs": 4528,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find every project and work item connected to Tine Desmet, including her role, responsibilities, actions, approvals, handovers, and any other engagements beyond Verhaeghe Foods. Return dates and evidence.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`contactFor`|`managedProject`|`productOwnerOf`|`sponsors`|`workedOn`]->(x:`Project`) WHERE LOWER(p.name) = LOWER('Tine Desmet') RETURN DISTINCT 'Project' AS connected_type, type(r) AS relationship, x.name AS connected_name, r.confidence AS evidence_confidence UNION ALL MATCH (p:`Person`)-[r:`raisedIssue`|`resolvedIssue`]->(x:`Issue`) WHERE LOWER(p.name) = LOWER('Tine Desmet') RETURN DISTINCT 'Work item' AS connected_type, type(r) AS relationship, x.name AS connected_name, r.confidence AS evidence_confidence UNION ALL MATCH (p:`Person`)-[r:`worksFor`]->(x:`Organization`) WHERE LOWER(p.name) = LOWER('Tine Desmet') RETURN DISTINCT 'Organization' AS connected_type, type(r) AS relationship, x.name AS connected_name, r.confidence AS evidence_confidence",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12278,
+            "outputTokens": 555,
+            "modelElapsedMs": 4282,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 7,
+          "startedAt": "2026-11-18T20:41:20.3273107Z",
+          "completedAt": "2026-11-18T20:41:20.3273107Z",
+          "reasoningTokens": 62201,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null,
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Verhaeghe Foods",
+          "present": true
+        },
+        {
+          "fact": "Line Sensor Data Platform",
+          "present": true
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies both projects Tine Desmet worked on at Verhaeghe Foods and adds consistent responsibilities."
+    }
+  },
+  {
+    "id": "E2",
+    "category": "entity_resolution",
+    "strategy": "gql_agent_g",
+    "question": "What has Tine Desmet worked on?",
+    "answer": "There is no explicit `workedOn` relationship for Tine Desmet.\n\nShe was the IT contact/contactFor on:\n\n- **Line Sensor Data Platform**\n- **Quality Inspection Vision**",
+    "retrieval_ms": 13228,
+    "total_ms": 15107,
+    "answer_input_tokens": 8005,
+    "answer_output_tokens": 90,
+    "retrieval_tokens": 12985,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2024-06-03_kickoff-notes_line-sensor-data-platform.md",
+      "verhaeghe/2024-07-19_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2024-11-08_steering-minutes_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-03-18_line-walk-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-04-07_status-report_quality-inspection-vision.md",
+      "verhaeghe/2025-04-11_design-note_quality-inspection-vision.md",
+      "verhaeghe/2025-09-29_incident-note_quality-inspection-vision.md",
+      "verhaeghe/2025-11-06_handover-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "steps": 4,
+      "gql": [
+        "MATCH (p:Person)-[e]->(j:Project) WHERE e.predicate = 'workedOn' AND (p.name CONTAINS 'Tine Desmet' OR p.name = 'Tine') RETURN DISTINCT p.name AS person, j.name AS project",
+        "MATCH (p:Person)-[e]->(j:Project) WHERE e.predicate IN ['workedOn','managedProject','contactFor','productOwnerOf','sponsors'] AND p.name CONTAINS 'Tine' RETURN DISTINCT p.name AS person, e.predicate AS relationship, j.name AS project"
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.667,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Verhaeghe Foods",
+          "present": false
+        },
+        {
+          "fact": "Line Sensor Data Platform",
+          "present": true
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer correctly identifies the two platforms but omits that Tine Desmet is IT Coordinator at Verhaeghe Foods."
+    }
+  },
+  {
+    "id": "E3",
+    "category": "entity_resolution",
+    "strategy": "entity_g",
+    "question": "Who is Jan Wouters?",
+    "answer": "Jan Wouters is the **Customs Coordinator at Scaldis Logistics** and the **product owner for Kestrel Consulting’s Customs Document Extraction project**.\n\nHe:\n- Sets priorities among document types.\n- Validates extraction results with the customs team.\n- Accepts project deliverables.\n- Acts as the business contact and approves model versions.\n- Raised the issue that agents might rely on the pipeline and validate less carefully.\n- Resolved the issue of skewed scans from the scanning station.",
+    "retrieval_ms": 11962,
+    "total_ms": 13937,
+    "answer_input_tokens": 34910,
+    "answer_output_tokens": 102,
+    "retrieval_tokens": 22732,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "fortalis/2023-11-17_status-report_landing-zone.md",
+      "graphSearch",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "knowledge-base-response",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2025-10-16_workshop-notes_customs-document-extraction.md",
+      "scaldis/2025-10-30_acceptance-criteria-note_customs-document-extraction.md",
+      "scaldis/2025-11-28_status-report_customs-document-extraction.md",
+      "scaldis/2025-12-12_privacy-note_customs-document-extraction.md",
+      "scaldis/2026-01-23_status-report_customs-document-extraction.md",
+      "scaldis/2026-01-30_go-live-checklist_customs-document-extraction.md",
+      "scaldis/2026-03-13_email-thread_customs-document-extraction.md",
+      "scaldis/2026-04-16_steering-committee-minutes_customs-document-extraction.md",
+      "scaldis/2026-05-08_runbook_customs-document-extraction.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md",
+      "scaldis/2026-07-10_experiment-report_customs-document-extraction.md",
+      "scaldis/2026-08-28_summer-peak-review_customs-document-extraction.md",
+      "scaldis/2026-09-24_workshop-notes_customs-document-extraction.md",
+      "scaldis/2026-10-30_status-report_customs-document-extraction.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T20:41:43.9111055Z",
+          "completedAt": "2026-11-18T20:41:45.4088217Z",
+          "inputTokens": 1210,
+          "outputTokens": 139,
+          "elapsedMs": 1497,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 1,
+          "startedAt": "2026-11-18T20:41:45.408936Z",
+          "completedAt": "2026-11-18T20:41:47.1031125Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:45.9159222Z",
+          "count": 14,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Jan Wouters identity role organization biography"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 3,
+          "startedAt": "2026-11-18T20:41:45.9823741Z",
+          "completedAt": "2026-11-18T20:41:47.103114Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:46.4904764Z",
+          "count": 28,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "Jan Wouters project documents"
+          }
+        },
+        {
+          "type": "azureBlob",
+          "id": 4,
+          "startedAt": "2026-11-18T20:41:46.5619466Z",
+          "completedAt": "2026-11-18T20:41:47.1031144Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:47.026383Z",
+          "count": 26,
+          "elapsedMs": 0,
+          "azureBlobArguments": {
+            "search": "\"Jan Wouters\""
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 2,
+          "startedAt": "2026-11-18T20:41:45.408942Z",
+          "completedAt": "2026-11-18T20:41:53.3640333Z",
+          "knowledgeSourceName": "entity-managed-584653aa7c8656e0",
+          "queryTime": "2026-11-18T20:41:53.3639147Z",
+          "count": 6,
+          "elapsedMs": 7954,
+          "warning": "The graph_search result was dropped because it did not fit within the configured retrieval output limits.",
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Who is Jan Wouters? Find the entity's properties, roles, organizations, and relationships in the project-document corpus.",
+            "graphIndexName": "entity-managed-584653aa7c8656e0-graph-index",
+            "gql": "MATCH (p:`Person`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, NULL AS relationship, NULL AS related_entity, NULL AS related_type\nUNION ALL\nMATCH (p:`Person`)-[r:`contactFor`]->(x:`Project`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, type(r) AS relationship, x.name AS related_entity, x.type AS related_type\nUNION ALL\nMATCH (p:`Person`)-[r:`managedProject`]->(x:`Project`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, type(r) AS relationship, x.name AS related_entity, x.type AS related_type\nUNION ALL\nMATCH (p:`Person`)-[r:`productOwnerOf`]->(x:`Project`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, type(r) AS relationship, x.name AS related_entity, x.type AS related_type\nUNION ALL\nMATCH (p:`Person`)-[r:`raisedIssue`]->(x:`Issue`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, type(r) AS relationship, x.name AS related_entity, x.type AS related_type\nUNION ALL\nMATCH (p:`Person`)-[r:`resolvedIssue`]->(x:`Issue`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, type(r) AS relationship, x.name AS related_entity, x.type AS related_type\nUNION ALL\nMATCH (p:`Person`)-[r:`sponsors`]->(x:`Project`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, type(r) AS relationship, x.name AS related_entity, x.type AS related_type\nUNION ALL\nMATCH (p:`Person`)-[r:`workedOn`]->(x:`Project`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, type(r) AS relationship, x.name AS related_entity, x.type AS related_type\nUNION ALL\nMATCH (p:`Person`)-[r:`worksFor`]->(x:`Organization`)\nWHERE LOWER(p.name) = LOWER('Jan Wouters')\nRETURN p.name AS person_name, p.id AS person_id, p.type AS person_type, type(r) AS relationship, x.name AS related_entity, x.type AS related_type",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12261,
+            "outputTokens": 1146,
+            "modelElapsedMs": 7505,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "modelQueryPlanning",
+          "id": 5,
+          "startedAt": "2026-11-18T20:41:53.3714824Z",
+          "completedAt": "2026-11-18T20:41:54.6164094Z",
+          "inputTokens": 21355,
+          "outputTokens": 28,
+          "elapsedMs": 1244,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 6,
+          "startedAt": "2026-11-18T20:41:54.6195924Z",
+          "completedAt": "2026-11-18T20:41:54.6195924Z",
+          "reasoningTokens": 57243,
+          "retrievalReasoningEffort": {
+            "kind": "medium"
+          },
+          "logicalReasoningEffort": {
+            "kind": "medium"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis",
+          "present": true
+        },
+        {
+          "fact": "Customs Coordinator",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies Jan Wouters as the Customs Coordinator at Scaldis Logistics and product owner of Customs Document Extraction. It does not explicitly mention that he is unrelated to Ruben Wouters of Kestrel, but it contains no contradictory claim."
+    }
+  },
+  {
+    "id": "E3",
+    "category": "entity_resolution",
+    "strategy": "gql_agent_g",
+    "question": "Who is Jan Wouters?",
+    "answer": "Jan Wouters is a Customs Coordinator at Scaldis Logistics and the customer-side product owner and project contact for Kestrel Consulting’s Customs Document Extraction project. He:\n\n- Prioritises document types with his customs team\n- Validates extraction results\n- Accepts project deliverables\n- Accepted Phase 1 with Koen Verstraete\n- Helped expand the solution to 14 supported document types\n- Raised concerns about agents relying too heavily on automation\n- Resolved an issue involving skewed scans from the scanning station",
+    "retrieval_ms": 8172,
+    "total_ms": 9768,
+    "answer_input_tokens": 2879,
+    "answer_output_tokens": 110,
+    "retrieval_tokens": 7139,
+    "context_sources": [
+      "agent-evidence-summary",
+      "graph",
+      "kestrel/2026-07-10_pipeline-review_q2-2026.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2026-03-13_email-thread_customs-document-extraction.md",
+      "scaldis/2026-04-16_steering-committee-minutes_customs-document-extraction.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md"
+    ],
+    "debug": {
+      "steps": 2,
+      "gql": [
+        "MATCH (p:Person)-[e]->(x) WHERE p.name CONTAINS 'Jan Wouters' OR p.name = 'Jan' RETURN DISTINCT type(e) AS relationship, x.name AS entity"
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis",
+          "present": true
+        },
+        {
+          "fact": "Customs Coordinator",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies Jan Wouters as a Customs Coordinator at Scaldis Logistics and product owner/project contact for Customs Document Extraction."
+    }
+  }
+]

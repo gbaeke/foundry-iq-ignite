@@ -1,0 +1,36 @@
+C1  entity_g  12151 ms  correct=False recall=0.857
+C1  gql_agent_g   9332 ms  correct=False recall=1.0
+C2  entity_g  26982 ms  correct=True recall=1.0
+C2  gql_agent_g   5807 ms  correct=False recall=0.667
+C3  entity_g  12520 ms  correct=False recall=0.8
+C3  gql_agent_g   7397 ms  correct=False recall=0.0
+C4  entity_g  14635 ms  correct=True recall=1.0
+C4  gql_agent_g   5771 ms  correct=True recall=1.0
+C5  entity_g  18502 ms  correct=True recall=1.0
+C5  gql_agent_g  23359 ms  correct=True recall=1.0
+N1  entity_g   8857 ms  correct=True recall=1.0
+N1  gql_agent_g  15586 ms  correct=True recall=1.0
+N2  entity_g  22802 ms  correct=True recall=1.0
+N2  gql_agent_g  10049 ms  correct=True recall=1.0
+N3  entity_g  32142 ms  correct=True recall=1.0
+N3  gql_agent_g   8386 ms  correct=True recall=1.0
+M1  entity_g  12367 ms  correct=True recall=1.0
+M1  gql_agent_g  16927 ms  correct=True recall=1.0
+M2  entity_g   8800 ms  correct=True recall=1.0
+M2  gql_agent_g  12320 ms  correct=True recall=1.0
+M3  entity_g  24370 ms  correct=True recall=1.0
+M3  gql_agent_g  15329 ms  correct=True recall=1.0
+M4  entity_g  14449 ms  correct=False recall=0.75
+M4  gql_agent_g  17786 ms  correct=False recall=1.0
+E1  entity_g  18021 ms  correct=True recall=1.0
+E1  gql_agent_g  18018 ms  correct=True recall=1.0
+E2  entity_g  16663 ms  correct=True recall=1.0
+E2  gql_agent_g  13228 ms  correct=False recall=0.667
+E3  entity_g  11962 ms  correct=True recall=1.0
+E3  gql_agent_g   8172 ms  correct=True recall=1.0
+
+wrote results/run-20261118T204212Z.json
+
+strategy   correct  recall   in tok  retr ms  errors
+entity_g       80%     96%    56013    17015       0
+gql_agent_g      67%     89%    18741    12498       0

@@ -1,0 +1,715 @@
+[
+  {
+    "id": "C1",
+    "category": "counting",
+    "strategy": "rag",
+    "question": "How many projects has Amira El Idrissi worked on, and which ones?",
+    "answer": "Amira El Idrissi worked on **4 projects**:\n\n1. **Container Dwell-Time Forecasting** — Scaldis Logistics  \n2. **Customs Document Extraction** — Scaldis Logistics  \n3. **Quality Inspection Vision** — Verhaeghe Foods  \n4. **Leak Detection Analytics** — AquaNova",
+    "retrieval_ms": 1909,
+    "total_ms": 4790,
+    "answer_input_tokens": 2562,
+    "answer_output_tokens": 137,
+    "retrieval_tokens": 0,
+    "context_sources": [
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "kestrel/2025-11-21_org-update.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {},
+    "correct": false,
+    "fact_recall": 0.571,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": false
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": false
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": false
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer lists 4 projects, but the expected answer is 7. It omits Discharge Letter Summarisation, Clinical Knowledge Assistant, and Claims Triage Automation."
+    }
+  },
+  {
+    "id": "C1",
+    "category": "counting",
+    "strategy": "entity",
+    "question": "How many projects has Amira El Idrissi worked on, and which ones?",
+    "answer": "Amira El Idrissi has worked on **7 projects**:\n\n1. Claims Triage Automation  \n2. Leak Detection Analytics  \n3. Discharge Letter Summarisation  \n4. Container Dwell-Time Forecasting  \n5. Clinical Knowledge Assistant  \n6. Quality Inspection Vision  \n7. Customs Document Extraction",
+    "retrieval_ms": 6853,
+    "total_ms": 8448,
+    "answer_input_tokens": 420,
+    "answer_output_tokens": 64,
+    "retrieval_tokens": 1317,
+    "context_sources": [
+      "graphSearch",
+      "knowledge-base-response"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T17:55:34.4278358Z",
+          "completedAt": "2026-11-18T17:55:35.5932225Z",
+          "inputTokens": 1245,
+          "outputTokens": 72,
+          "elapsedMs": 1165,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T17:55:35.593432Z",
+          "completedAt": "2026-11-18T17:55:40.6927442Z",
+          "knowledgeSourceName": "kestrel-entities-ks",
+          "queryTime": "2026-11-18T17:55:40.6925929Z",
+          "count": 1,
+          "elapsedMs": 5098,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find the distinct Kestrel Consulting projects that consultant Amira El Idrissi worked on. Return the count and the project names, including the relationship evidence.",
+            "graphIndexName": "kestrel-entities-ks-graph-index",
+            "gql": "MATCH (a:`Person`)-[r:`workedOn`]->(p:`Project`)-[s:`deliveredBy`]->(o:`Organization`) WHERE LOWER(a.name) = LOWER('Amira El Idrissi') AND LOWER(o.name) = LOWER('Kestrel Consulting') RETURN count(DISTINCT p) AS project_count, COLLECT_LIST(DISTINCT p.name) AS project_names, COLLECT_LIST(DISTINCT type(r)) AS consultant_relationship_evidence, COLLECT_LIST(DISTINCT type(s)) AS delivery_relationship_evidence",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12325,
+            "outputTokens": 647,
+            "modelElapsedMs": 4848,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 2,
+          "startedAt": "2026-11-18T17:55:40.6930346Z",
+          "completedAt": "2026-11-18T17:55:40.6930346Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "low"
+          },
+          "logicalReasoningEffort": {
+            "kind": "low"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": true
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that Amira El Idrissi has worked on seven projects and lists all seven required projects."
+    }
+  },
+  {
+    "id": "C2",
+    "category": "counting",
+    "strategy": "rag",
+    "question": "Which projects used Databricks?",
+    "answer": "Projects that used Databricks:\n\n- **Scaldis Logistics — Container Dwell-Time Forecasting:** Databricks feature pipelines for vessel rotation, carrier, commodity, customs status, weekday, and holiday features.\n- **Verhaeghe — Line Sensor Data Platform:** Databricks for transformations, including resampling high-frequency signals and linking batches to sensor windows.\n- **AquaNova — Leak Detection Analytics:** Databricks pipelines for time-series cleaning and night-flow features.",
+    "retrieval_ms": 668,
+    "total_ms": 2354,
+    "answer_input_tokens": 2576,
+    "answer_output_tokens": 151,
+    "retrieval_tokens": 0,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md"
+    ],
+    "debug": {},
+    "correct": false,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Line Sensor Data Platform",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer correctly identifies all three projects but omits that all three had Bram Visser of DataForge as subcontractor."
+    }
+  },
+  {
+    "id": "C2",
+    "category": "counting",
+    "strategy": "entity",
+    "question": "Which projects used Databricks?",
+    "answer": "The projects that used Databricks were:\n\n- **Leak Detection Analytics**\n- **Container Dwell-Time Forecasting**\n- **Line Sensor Data Platform**",
+    "retrieval_ms": 5405,
+    "total_ms": 7084,
+    "answer_input_tokens": 12286,
+    "answer_output_tokens": 34,
+    "retrieval_tokens": 1324,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "graphSearch",
+      "knowledge-base-response",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T17:55:49.0360634Z",
+          "completedAt": "2026-11-18T17:55:50.2152434Z",
+          "inputTokens": 1236,
+          "outputTokens": 88,
+          "elapsedMs": 1179,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T17:55:50.2153241Z",
+          "completedAt": "2026-11-18T17:55:54.0905111Z",
+          "knowledgeSourceName": "kestrel-entities-ks",
+          "queryTime": "2026-11-18T17:55:54.0903991Z",
+          "count": 3,
+          "elapsedMs": 3874,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find all distinct Kestrel Consulting projects that used Databricks, including relationships or project technology mentions indicating Databricks was used. Return project names and supporting details.",
+            "graphIndexName": "kestrel-entities-ks-graph-index",
+            "gql": "MATCH (p:`Project`)-[r:`usesTechnology`]->(t:`Technology`) WHERE LOWER(t.name) = LOWER('Databricks') RETURN DISTINCT p.name AS project_name, t.name AS technology_name, type(r) AS relationship",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12324,
+            "outputTokens": 408,
+            "modelElapsedMs": 3655,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 2,
+          "startedAt": "2026-11-18T17:55:54.0929292Z",
+          "completedAt": "2026-11-18T17:55:54.0929292Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "low"
+          },
+          "logicalReasoningEffort": {
+            "kind": "low"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Line Sensor Data Platform",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly lists all three projects that used Databricks."
+    }
+  },
+  {
+    "id": "C3",
+    "category": "counting",
+    "strategy": "rag",
+    "question": "How many projects did Thomas Maes manage as project manager?",
+    "answer": "Thomas Maes managed **2 projects** as project manager:\n\n1. **Scaldis Ops Copilot**\n2. **Fortalis Broker Portal Modernisation**",
+    "retrieval_ms": 642,
+    "total_ms": 3173,
+    "answer_input_tokens": 2526,
+    "answer_output_tokens": 131,
+    "retrieval_tokens": 0,
+    "context_sources": [
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2025-11-21_org-update.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md"
+    ],
+    "debug": {},
+    "correct": false,
+    "fact_recall": 0.4,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": false
+        },
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": false
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": false
+        },
+        {
+          "fact": "Broker Portal Modernisation",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer incorrectly states that Thomas Maes managed 2 projects; the expected answer is 5. It omits Container Dwell-Time Forecasting, Discharge Letter Summarisation, and Claims Triage Automation."
+    }
+  },
+  {
+    "id": "C3",
+    "category": "counting",
+    "strategy": "entity",
+    "question": "How many projects did Thomas Maes manage as project manager?",
+    "answer": "Thomas Maes managed **5 projects** as project manager.",
+    "retrieval_ms": 3509,
+    "total_ms": 4586,
+    "answer_input_tokens": 247,
+    "answer_output_tokens": 15,
+    "retrieval_tokens": 1318,
+    "context_sources": [
+      "graphSearch",
+      "knowledge-base-response"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T17:56:04.1023436Z",
+          "completedAt": "2026-11-18T17:56:05.4128979Z",
+          "inputTokens": 1241,
+          "outputTokens": 77,
+          "elapsedMs": 1310,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T17:56:05.4141608Z",
+          "completedAt": "2026-11-18T17:56:06.9370752Z",
+          "knowledgeSourceName": "kestrel-entities-ks",
+          "queryTime": "2026-11-18T17:56:06.936625Z",
+          "count": 1,
+          "elapsedMs": 1520,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "How many distinct Kestrel Consulting projects did Thomas Maes manage as project manager? Identify projects connected to Thomas Maes by managedProject, and count them.",
+            "graphIndexName": "kestrel-entities-ks-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`managedProject`]->(project:`Project`) WHERE p.name = 'Thomas Maes' RETURN count(project) AS project_count",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12322,
+            "outputTokens": 98,
+            "modelElapsedMs": 1262,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 2,
+          "startedAt": "2026-11-18T17:56:06.9377015Z",
+          "completedAt": "2026-11-18T17:56:06.9377015Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "low"
+          },
+          "logicalReasoningEffort": {
+            "kind": "low"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": true,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": false
+        },
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": false
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": false
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": false
+        },
+        {
+          "fact": "Broker Portal Modernisation",
+          "present": false
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that Thomas Maes managed five projects, though it does not list the project names."
+    }
+  },
+  {
+    "id": "N2",
+    "category": "negative",
+    "strategy": "rag",
+    "question": "Did Bram Visser work on any project for Fortalis or Mediva?",
+    "answer": "The provided context does not mention Bram Visser working on any project for Fortalis or Mediva. It identifies his work for:\n\n- AquaNova — Leak Detection Analytics\n- Scaldis Logistics — Container Dwell-Time Forecasting\n- Verhaeghe Foods — Line Sensor Data Platform",
+    "retrieval_ms": 672,
+    "total_ms": 2279,
+    "answer_input_tokens": 2495,
+    "answer_output_tokens": 99,
+    "retrieval_tokens": 0,
+    "context_sources": [
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md"
+    ],
+    "debug": {},
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        },
+        {
+          "fact": "Scaldis",
+          "present": true
+        },
+        {
+          "fact": "Verhaeghe",
+          "present": true
+        },
+        {
+          "fact": "AquaNova",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that there is no mentioned work for Fortalis or Mediva and identifies projects for AquaNova, Scaldis, and Verhaeghe."
+    }
+  },
+  {
+    "id": "N2",
+    "category": "negative",
+    "strategy": "entity",
+    "question": "Did Bram Visser work on any project for Fortalis or Mediva?",
+    "answer": "The provided context does not contain enough information to determine whether Bram Visser worked on any project for Fortalis or Mediva.",
+    "retrieval_ms": 9424,
+    "total_ms": 11315,
+    "answer_input_tokens": 83,
+    "answer_output_tokens": 45,
+    "retrieval_tokens": 1331,
+    "context_sources": [
+      "knowledge-base-response"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T17:56:15.4551028Z",
+          "completedAt": "2026-11-18T17:56:16.4453075Z",
+          "inputTokens": 1244,
+          "outputTokens": 87,
+          "elapsedMs": 990,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T17:56:16.4455674Z",
+          "completedAt": "2026-11-18T17:56:24.5302839Z",
+          "knowledgeSourceName": "kestrel-entities-ks",
+          "queryTime": "2026-11-18T17:56:24.5301299Z",
+          "count": 0,
+          "elapsedMs": 8084,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find whether consultant Bram Visser worked on any project delivered for the customer Fortalis Verzekeringen or Mediva Care Group. Return the matching projects, customer, and relationship evidence.",
+            "graphIndexName": "kestrel-entities-ks-graph-index",
+            "gql": "MATCH (p:`Person`)-[r:`workedOn`]->(proj:`Project`)-[d:`deliveredFor`]->(cust:`Organization`) WHERE LOWER(p.name) = LOWER('Bram Visser') AND (LOWER(cust.name) = 'fortalis verzekeringen' OR LOWER(cust.name) = 'mediva care group') RETURN DISTINCT proj.name AS project_name, cust.name AS customer_name, type(r) AS work_relationship, r.confidence AS work_confidence, type(d) AS delivery_relationship, d.confidence AS delivery_confidence",
+            "outcome": "EmptyResults",
+            "attempts": 3,
+            "inputTokens": 38279,
+            "outputTokens": 973,
+            "modelElapsedMs": 7916,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 2,
+          "startedAt": "2026-11-18T17:56:24.5305435Z",
+          "completedAt": "2026-11-18T17:56:24.5305435Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "low"
+          },
+          "logicalReasoningEffort": {
+            "kind": "low"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": false
+        },
+        {
+          "fact": "Scaldis",
+          "present": false
+        },
+        {
+          "fact": "Verhaeghe",
+          "present": false
+        },
+        {
+          "fact": "AquaNova",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer does not provide the expected negative answer and does not mention Scaldis, Verhaeghe, or AquaNova."
+    }
+  },
+  {
+    "id": "M1",
+    "category": "multi_hop",
+    "strategy": "rag",
+    "question": "Which Kestrel consultant has worked with Kevin Hermans at two different employers?",
+    "answer": "Jonas Peeters. He worked with Kevin Hermans at Fortalis Verzekeringen on the Landing Zone project and later at AquaNova on the Asset Management Agent project.",
+    "retrieval_ms": 628,
+    "total_ms": 2694,
+    "answer_input_tokens": 2085,
+    "answer_output_tokens": 123,
+    "retrieval_tokens": 0,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-10-09_status-report_asset-management-agent.md",
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "fortalis/2025-06-20_memo_broker-portal-cancelled.md"
+    ],
+    "debug": {},
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Jonas Peeters",
+          "present": true
+        },
+        {
+          "fact": "Fortalis Landing Zone",
+          "present": true
+        },
+        {
+          "fact": "Asset Management Agent",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer identifies Jonas Peeters and correctly names the Fortalis Landing Zone and AquaNova Asset Management Agent projects."
+    }
+  },
+  {
+    "id": "M1",
+    "category": "multi_hop",
+    "strategy": "entity",
+    "question": "Which Kestrel consultant has worked with Kevin Hermans at two different employers?",
+    "answer": "Jonas Peeters. He worked with Kevin Hermans at two organizations: **Fortalis Verzekeringen** and **AquaNova**.",
+    "retrieval_ms": 9332,
+    "total_ms": 10934,
+    "answer_input_tokens": 320,
+    "answer_output_tokens": 95,
+    "retrieval_tokens": 1340,
+    "context_sources": [
+      "graphSearch",
+      "knowledge-base-response"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T17:56:32.2685802Z",
+          "completedAt": "2026-11-18T17:56:33.3767563Z",
+          "inputTokens": 1245,
+          "outputTokens": 95,
+          "elapsedMs": 1107,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T17:56:33.3768661Z",
+          "completedAt": "2026-11-18T17:56:41.2572818Z",
+          "knowledgeSourceName": "kestrel-entities-ks",
+          "queryTime": "2026-11-18T17:56:41.2571639Z",
+          "count": 1,
+          "elapsedMs": 7880,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find the Kestrel consultant(s) who worked with Kevin Hermans on projects delivered for two different customer employers/organizations. Identify Kevin Hermans's customer organizations and the consultant, counting distinct organizations.",
+            "graphIndexName": "kestrel-entities-ks-graph-index",
+            "gql": "MATCH (k:`Person`)-[kr:`contactFor`|`productOwnerOf`|`sponsors`]->(p:`Project`)-[d:`deliveredFor`]->(o:`Organization`), (k)-[kw:`worksFor`]->(o), (c:`Person`)-[w:`workedOn`]->(p), (c)-[cw:`worksFor`]->(ko:`Organization`)\nWHERE LOWER(k.name) = LOWER('Kevin Hermans') AND LOWER(ko.name) = LOWER('Kestrel Consulting')\nRETURN c.name AS consultant, COLLECT_LIST(DISTINCT o.name) AS customer_organizations, count(DISTINCT o) AS organization_count\nGROUP BY consultant\nNEXT RETURN consultant, customer_organizations, organization_count WHERE organization_count >= 2 ORDER BY organization_count DESC, consultant ASC",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12310,
+            "outputTokens": 1144,
+            "modelElapsedMs": 7651,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 2,
+          "startedAt": "2026-11-18T17:56:41.2577277Z",
+          "completedAt": "2026-11-18T17:56:41.2577277Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "low"
+          },
+          "logicalReasoningEffort": {
+            "kind": "low"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.333,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Jonas Peeters",
+          "present": true
+        },
+        {
+          "fact": "Fortalis Landing Zone",
+          "present": false
+        },
+        {
+          "fact": "Asset Management Agent",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer correctly identifies Jonas Peeters but omits the specific engagements: the Fortalis Landing Zone and the AquaNova Asset Management Agent."
+    }
+  }
+]

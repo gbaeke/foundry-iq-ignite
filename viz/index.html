@@ -1,0 +1,269 @@
+<title>Kestrel Entity Graph</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a full-height workbench — filter bar on top, graph canvas left, inspector right (stacks on phones). */
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --fg: #1c2430; --muted: #5d6878; --line: #dde2e9; --accent: #2f5bd3;
+  --chip: #eef1f6;
+  --t-person: #2f7d6d; --t-project: #2f5bd3; --t-organization: #a2552c; --t-technology: #7a4fb5;
+  --t-place: #6b7a35; --t-issue: #c0394b; --t-outcome: #c08a1c;
+  --edge: #9aa5b5; --edge-hi: #1c2430;
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161c; --panel: #1a2029; --fg: #e4e8ee; --muted: #9aa5b5; --line: #2b333f; --accent: #7d9cf0; --chip: #232b36;
+  --t-person: #5fbfa9; --t-project: #7d9cf0; --t-organization: #e08f63; --t-technology: #b493e6;
+  --t-place: #a9b86a; --t-issue: #ec7385; --t-outcome: #e6b85a; --edge: #4f5a69; --edge-hi: #e4e8ee; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161c; --panel: #1a2029; --fg: #e4e8ee; --muted: #9aa5b5; --line: #2b333f; --accent: #7d9cf0; --chip: #232b36;
+  --t-person: #5fbfa9; --t-project: #7d9cf0; --t-organization: #e08f63; --t-technology: #b493e6;
+  --t-place: #a9b86a; --t-issue: #ec7385; --t-outcome: #e6b85a; --edge: #4f5a69; --edge-hi: #e4e8ee; color-scheme: dark }
+
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-ui); font-size: 14px; margin: 0;
+  display: flex; flex-direction: column; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); box-sizing: border-box; }
+header { padding-block: 14px 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; }
+h1 { font-size: 18px; font-weight: 600; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.stats { color: var(--muted); font-family: var(--font-mono); font-size: 12px; font-variant-numeric: tabular-nums; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-bottom: 10px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--chip); color: var(--fg);
+  border-radius: 999px; padding: 4px 10px; font: inherit; font-size: 12px; cursor: pointer; }
+.chip[aria-pressed="false"] { opacity: .45; }
+.chip .dot { width: 9px; height: 9px; border-radius: 50%; }
+.chip .n { color: var(--muted); font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.chip:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+input[type="search"], select { font: inherit; font-size: 13px; color: var(--fg); background: var(--panel); border: 1px solid var(--line);
+  border-radius: 6px; padding: 5px 8px; }
+input[type="search"] { width: 200px; max-width: 100%; }
+.main { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 12px; padding-bottom: 14px; }
+#cy { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; min-height: 420px; position: relative; }
+.hint { position: absolute; left: 12px; bottom: 10px; color: var(--muted); font-size: 12px; pointer-events: none; }
+aside { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: auto; min-width: 0; display: flex; flex-direction: column; }
+.tabs { display: flex; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--panel); z-index: 1; }
+.tabs button { flex: 1; font: inherit; font-size: 13px; background: none; border: 0; padding: 10px; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--accent); }
+.pane { padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+.pane h2 { font-size: 16px; margin: 0; text-wrap: balance; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; font-size: 13px; }
+.kv dt { color: var(--muted); } .kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0; }
+.rel { border-top: 1px solid var(--line); padding-top: 8px; display: flex; flex-direction: column; gap: 4px; }
+.rel .line { font-size: 13px; }
+.rel .pred { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+.rel a { color: var(--fg); text-decoration: underline; text-decoration-color: var(--line); cursor: pointer; }
+details { font-size: 12px; color: var(--muted); }
+details summary { cursor: pointer; }
+details blockquote { margin: 6px 0 0; padding: 8px; background: var(--chip); border-radius: 6px; color: var(--fg); white-space: pre-wrap; font-size: 12px; max-height: 220px; overflow: auto; }
+.src { font-family: var(--font-mono); font-size: 11px; }
+.dup { border-top: 1px solid var(--line); padding-top: 8px; font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: baseline; }
+.dup button { font: inherit; font-size: 13px; background: none; border: 0; padding: 0; color: var(--fg); text-decoration: underline; text-decoration-color: var(--line); cursor: pointer; }
+.typ { font-size: 11px; color: var(--muted); }
+.empty { color: var(--muted); font-size: 13px; line-height: 1.5; }
+@media (max-width: 760px) { .main { grid-template-columns: minmax(0, 1fr); } #cy { min-height: 60vh; } aside { max-height: 70vh; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header>
+  <h1>Kestrel Entity Graph</h1>
+  <span class="stats" id="stats">Loading triples…</span>
+</header>
+<div class="bar" id="types" role="group" aria-label="Entity types"></div>
+<div class="bar">
+  <input type="search" id="q" placeholder="Find an entity…" aria-label="Find an entity">
+  <select id="pred" aria-label="Relationship"><option value="">All relationships</option></select>
+  <button class="chip" id="fit" type="button">Fit view</button>
+  <button class="chip" id="relayout" type="button">Re-run layout</button>
+</div>
+<div class="main">
+  <div id="cy"><span class="hint">Scroll to zoom · drag to pan · click a node to inspect it</span></div>
+  <aside>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-node" aria-selected="true" type="button">Entity</button>
+      <button role="tab" id="tab-dup" aria-selected="false" type="button">Likely duplicates</button>
+    </div>
+    <div class="pane" id="pane-node"><p class="empty">Click a node to see its name variants, every relationship it has, and the source passage each relationship was extracted from.</p></div>
+    <div class="pane" id="pane-dup" hidden></div>
+  </aside>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.2/cytoscape.min.js"></script>
+<script>
+const TYPES = ["Person","Project","Organization","Technology","Place","Issue","Outcome"];
+const DEFAULT_ON = new Set(["Person","Project","Organization","Technology","Place"]);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const tokenFor = t => "--t-" + t.toLowerCase();
+let data, cy, nodeById = new Map(), active = new Set(DEFAULT_ON);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+fetch("graph-data.json").then(r => r.json()).then(init).catch(() => {
+  document.getElementById("stats").textContent = "Couldn't load graph-data.json next to this page.";
+});
+
+function init(d) {
+  data = d;
+  d.nodes.forEach(n => nodeById.set(n.id, n));
+  // Aggregate repeated triples (same subject, predicate, object) into one visual edge.
+  const agg = new Map(), degree = new Map();
+  d.edges.forEach(e => {
+    const k = e.s + "|" + e.p + "|" + e.o;
+    if (!agg.has(k)) agg.set(k, { s: e.s, p: e.p, o: e.o, chunks: [] });
+    agg.get(k).chunks.push(e.c);
+  });
+  data.agg = [...agg.values()];
+  data.agg.forEach(e => { degree.set(e.s, (degree.get(e.s) || 0) + 1); degree.set(e.o, (degree.get(e.o) || 0) + 1); });
+  d.nodes.forEach(n => n.deg = degree.get(n.id) || 0);
+
+  const counts = {}; d.nodes.forEach(n => counts[n.type] = (counts[n.type] || 0) + 1);
+  document.getElementById("stats").textContent =
+    `${d.nodes.length.toLocaleString()} entities · ${d.edges.length.toLocaleString()} triples · ${data.agg.length.toLocaleString()} distinct relationships`;
+  const types = document.getElementById("types");
+  TYPES.forEach(t => {
+    const b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.setAttribute("aria-pressed", active.has(t));
+    b.innerHTML = `<span class="dot" style="background:var(${tokenFor(t)})"></span>${t}<span class="n">${counts[t] || 0}</span>`;
+    b.onclick = () => { active.has(t) ? active.delete(t) : active.add(t); b.setAttribute("aria-pressed", active.has(t)); render(); };
+    types.appendChild(b);
+  });
+  const preds = [...new Set(d.edges.map(e => e.p))].sort();
+  const sel = document.getElementById("pred");
+  preds.forEach(p => sel.insertAdjacentHTML("beforeend", `<option value="${esc(p)}">${esc(p)}</option>`));
+  sel.onchange = render;
+  document.getElementById("q").oninput = highlightSearch;
+  document.getElementById("fit").onclick = () => cy && cy.fit(undefined, 30);
+  document.getElementById("relayout").onclick = () => runLayout();
+  document.getElementById("tab-node").onclick = () => tab("node");
+  document.getElementById("tab-dup").onclick = () => tab("dup");
+  renderDuplicates();
+  render();
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", restyle);
+  new MutationObserver(restyle).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+}
+
+function style() {
+  const s = [
+    { selector: "node", style: {
+      "background-color": "data(color)", "width": "data(size)", "height": "data(size)",
+      "label": "data(label)", "font-family": "IBM Plex Sans, system-ui, sans-serif", "font-size": 10,
+      "color": css("--fg"), "text-valign": "bottom", "text-margin-y": 3, "text-max-width": 110, "text-wrap": "ellipsis",
+      "min-zoomed-font-size": 7, "border-width": 0 } },
+    { selector: "edge", style: {
+      "width": "mapData(n, 1, 12, 0.8, 3.5)", "line-color": css("--edge"), "curve-style": "haystack", "opacity": 0.55 } },
+    { selector: ".faded", style: { "opacity": 0.12 } },
+    { selector: "edge.hi", style: { "line-color": css("--edge-hi"), "opacity": 0.95, "curve-style": "bezier",
+      "target-arrow-shape": "triangle", "target-arrow-color": css("--edge-hi"), "arrow-scale": 0.7,
+      "label": "data(p)", "font-size": 8, "color": css("--muted"), "text-rotation": "autorotate",
+      "font-family": "IBM Plex Mono, monospace", "text-background-color": css("--panel"), "text-background-opacity": 0.85, "text-background-padding": 1 } },
+    { selector: "node.sel", style: { "border-width": 3, "border-color": css("--edge-hi") } },
+    { selector: "node.match", style: { "border-width": 3, "border-color": css("--accent") } },
+  ];
+  return s;
+}
+
+function render() {
+  const p = document.getElementById("pred").value;
+  const edges = data.agg.filter(e => (!p || e.p === p) && active.has(nodeById.get(e.s).type) && active.has(nodeById.get(e.o).type));
+  const used = new Set(); edges.forEach(e => { used.add(e.s); used.add(e.o); });
+  const nodes = data.nodes.filter(n => used.has(n.id));
+  const els = [
+    ...nodes.map(n => ({ data: { id: n.id, label: n.label, color: css(tokenFor(n.type)), size: Math.min(14 + Math.sqrt(n.deg) * 5, 60) } })),
+    ...edges.map((e, i) => ({ data: { id: "e" + i, source: e.s, target: e.o, p: e.p, n: e.chunks.length } })),
+  ];
+  if (cy) cy.destroy();
+  cy = cytoscape({ container: document.getElementById("cy"), elements: els, style: style(), wheelSensitivity: 0.25,
+    minZoom: 0.05, maxZoom: 3 });
+  cy.on("tap", "node", ev => select(ev.target.id()));
+  cy.on("tap", ev => { if (ev.target === cy) clearSel(); });
+  runLayout();
+  highlightSearch();
+}
+
+function runLayout() {
+  if (!cy) return;
+  const big = cy.nodes().length > 400;
+  cy.layout({ name: "cose", animate: false, randomize: true, nodeRepulsion: () => big ? 9000 : 14000,
+    idealEdgeLength: () => big ? 45 : 70, gravity: big ? 0.6 : 0.35, numIter: big ? 600 : 1500, padding: 30 }).run();
+}
+
+function restyle() { if (!cy) return; cy.nodes().forEach(n => n.data("color", css(tokenFor(nodeById.get(n.id()).type)))); cy.style(style()); }
+
+function highlightSearch() {
+  if (!cy) return;
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  cy.nodes().removeClass("match");
+  if (q.length < 2) return;
+  const hits = cy.nodes().filter(n => nodeById.get(n.id()).names.some(x => x.toLowerCase().includes(q)));
+  hits.addClass("match");
+  if (hits.length) cy.animate({ fit: { eles: hits.closedNeighborhood(), padding: 60 } }, { duration: 300 });
+}
+
+function clearSel() { cy.elements().removeClass("faded hi sel"); }
+
+function select(id) {
+  if (!cy.getElementById(id).length) { // entity hidden by filters: show it anyway
+    const t = nodeById.get(id).type; if (!active.has(t)) { active.add(t); document.querySelectorAll("#types .chip").forEach(b => { if (b.textContent.startsWith(t)) b.setAttribute("aria-pressed", "true"); }); }
+    document.getElementById("pred").value = ""; render();
+  }
+  const n = cy.getElementById(id);
+  clearSel();
+  cy.elements().addClass("faded");
+  n.closedNeighborhood().removeClass("faded");
+  n.connectedEdges().addClass("hi");
+  n.addClass("sel");
+  cy.animate({ fit: { eles: n.closedNeighborhood(), padding: 60 } }, { duration: 300 });
+  showNode(id);
+  tab("node");
+}
+
+function showNode(id) {
+  const n = nodeById.get(id);
+  const rels = data.agg.filter(e => e.s === id || e.o === id)
+    .sort((a, b) => a.p.localeCompare(b.p) || b.chunks.length - a.chunks.length);
+  const pane = document.getElementById("pane-node");
+  pane.innerHTML = `
+    <h2>${esc(n.label)}</h2>
+    <dl class="kv">
+      <dt>Type</dt><dd><span class="dot" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(${tokenFor(n.type)})"></span> ${esc(n.type)}</dd>
+      <dt>Name variants</dt><dd>${n.names.map(esc).join(" · ")}</dd>
+      <dt>Relationships</dt><dd>${rels.length}</dd>
+      <dt>Entity id</dt><dd class="src">${esc(n.id)}</dd>
+    </dl>
+    <p class="label">Relationships and their sources</p>
+    ${rels.map(e => {
+      const out = e.s === id, other = nodeById.get(out ? e.o : e.s);
+      const srcs = [...new Set(e.chunks)].map(c => data.chunks[c]).filter(Boolean);
+      return `<div class="rel">
+        <div class="line">${out ? "" : `<a data-id="${esc(other.id)}">${esc(other.label)}</a> `}<span class="pred">${out ? "" : "→ "}${esc(e.p)}${out ? " →" : ""}</span>${out ? ` <a data-id="${esc(other.id)}">${esc(other.label)}</a>` : ""} <span class="typ">${esc(other.type)}</span></div>
+        ${srcs.map(s => `<details><summary><span class="src">${esc(s.f)}</span></summary><blockquote>${esc(s.t)}</blockquote></details>`).join("")}
+      </div>`; }).join("")}`;
+  pane.querySelectorAll("a[data-id]").forEach(a => a.onclick = () => select(a.dataset.id));
+}
+
+function renderDuplicates() {
+  // Heuristic: same type, and one name contains the other as a whole word sequence (e.g. "Amira" ⊂ "Amira El Idrissi").
+  const norm = s => " " + s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() + " ";
+  const groups = [];
+  ["Person","Project","Organization","Technology","Place"].forEach(t => {
+    const ns = data.nodes.filter(n => n.type === t).sort((a, b) => b.label.length - a.label.length);
+    const used = new Set();
+    ns.forEach(a => {
+      if (used.has(a.id)) return;
+      const g = ns.filter(b => b !== a && !used.has(b.id) && norm(b.label).trim().length >= 3 && norm(a.label).includes(norm(b.label)));
+      if (g.length) { groups.push({ t, items: [a, ...g] }); [a, ...g].forEach(x => used.add(x.id)); }
+    });
+  });
+  const pane = document.getElementById("pane-dup");
+  pane.innerHTML = `<p class="empty">Entities of the same type whose name is contained in another one. Extraction stored them as separate nodes (their ids start with <span class="src">ungrounded:</span>), so a graph query that matches only one name misses the others. ${groups.length} groups found.</p>` +
+    groups.map(g => `<div class="dup"><span class="typ">${esc(g.t)}</span>${g.items.map(x => `<button type="button" data-id="${esc(x.id)}">${esc(x.label)}</button><span class="typ">(${x.deg})</span>`).join("")}</div>`).join("");
+  pane.querySelectorAll("button[data-id]").forEach(b => b.onclick = () => select(b.dataset.id));
+}
+
+function tab(which) {
+  document.getElementById("tab-node").setAttribute("aria-selected", which === "node");
+  document.getElementById("tab-dup").setAttribute("aria-selected", which === "dup");
+  document.getElementById("pane-node").hidden = which !== "node";
+  document.getElementById("pane-dup").hidden = which !== "dup";
+}
+</script>

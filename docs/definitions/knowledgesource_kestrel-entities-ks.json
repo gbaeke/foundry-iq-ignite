@@ -1,0 +1,55 @@
+{
+  "@odata.etag": "\"0x8DF45A5A00DD698\"",
+  "name": "kestrel-entities-ks",
+  "kind": "azureBlob",
+  "description": "Kestrel Consulting project documents: proposals, SOWs, status reports, meeting notes, closing reports and internal memos for customer projects 2023-2026.",
+  "resultsProcessing": "none",
+  "encryptionKey": null,
+  "azureBlobParameters": {
+    "connectionString": "<redacted>",
+    "containerName": "kestrel-corpus",
+    "ingestionParameters": {
+      "disableImageVerbalization": true,
+      "ingestionPermissionOptions": [],
+      "contentExtractionMode": "minimal",
+      "networkAccessMode": "public",
+      "embeddingModel": {
+        "kind": "azureOpenAI",
+        "azureOpenAIParameters": {
+          "resourceUri": "https://aif-kestrel-kg.openai.azure.com",
+          "deploymentId": "text-embedding-3-small",
+          "apiKey": null,
+          "modelName": "text-embedding-3-small",
+          "authIdentity": null
+        }
+      },
+      "chatCompletionModel": {
+        "kind": "azureOpenAI",
+        "azureOpenAIParameters": {
+          "resourceUri": "https://aif-kestrel-kg.openai.azure.com",
+          "deploymentId": "gpt-5.6-luna",
+          "apiKey": null,
+          "modelName": "gpt-5.6-luna",
+          "authIdentity": null
+        }
+      }
+    },
+    "graphExtraction": {
+      "graphName": "kestrel",
+      "pageDegreeOfParallelism": 2,
+      "ontology": {
+        "kind": "inline",
+        "name": "kestrel-v2",
+        "value": "{\"@context\":{\"owl\":\"http://www.w3.org/2002/07/owl#\",\"rdfs\":\"http://www.w3.org/2000/01/rdf-schema#\",\"ex\":\"https://schema.search.azure.com/entities#\"},\"@graph\":[{\"@id\":\"ex:Organization\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A company or organization: the consultancy Kestrel Consulting, one of its customers, or a subcontracting partner such as DataForge. Use the full legal or common name, e.g. 'Scaldis Logistics', not 'Scaldis'.\"},{\"@id\":\"ex:Person\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A named individual: a consultant, a customer contact or a partner employee. Resolve first names, initials and titles to the full name, e.g. 'KV' or 'Koen' to 'Koen Verstraete' only when the context makes it unambiguous.\"},{\"@id\":\"ex:Project\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A named engagement that the consultancy Kestrel Consulting delivered or is delivering for one customer, e.g. 'Claims Triage Automation'. Use the full project name without customer prefixes. Not a phase, sprint, product or workstream; 'Teams' or 'SharePoint' are technologies, not projects.\"},{\"@id\":\"ex:Technology\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A named product, cloud service or platform used to build a solution, e.g. 'Azure AI Search', 'Databricks', 'Microsoft Fabric'.\"},{\"@id\":\"ex:Issue\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A problem, blocker or risk that materially affected a project's schedule, cost or quality, e.g. a delayed security review, a data quality problem, an OT network access delay or a scope change. Summarise it in a short phrase.\"},{\"@id\":\"ex:Outcome\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A measurable result a project delivered, with its number, e.g. '38% of claims auto-triaged' or '23 leaks detected'.\"},{\"@id\":\"ex:Place\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A city or country.\"},{\"@id\":\"ex:worksFor\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Organization\"},\"rdfs:comment\":\"The person's employer. Kestrel consultants work for Kestrel Consulting; customer contacts work for the customer. A person can have different employers over time; extract each one.\"},{\"@id\":\"ex:locatedIn\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Organization\"},\"rdfs:range\":{\"@id\":\"ex:Place\"},\"rdfs:comment\":\"The city where the organization is based.\"},{\"@id\":\"ex:workedOn\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"A Kestrel Consulting consultant or a subcontractor employee who is or was on the delivery team of the project, in any role. Customer employees never have workedOn; they use sponsors, productOwnerOf or contactFor.\"},{\"@id\":\"ex:managedProject\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"The person who is or was the project manager of the project.\"},{\"@id\":\"ex:sponsors\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"The customer-side executive sponsor of the project.\"},{\"@id\":\"ex:productOwnerOf\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"The customer-side product owner of the project.\"},{\"@id\":\"ex:contactFor\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"A customer employee involved in the project in another role than sponsor or product owner, e.g. IT manager, enterprise architect, security officer, data protection officer or OT engineer.\"},{\"@id\":\"ex:deliveredFor\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Organization\"},\"rdfs:comment\":\"The CUSTOMER organization the project is delivered for (Scaldis Logistics, Mediva Care Group, Fortalis Verzekeringen, Verhaeghe Foods or AquaNova). Never Kestrel Consulting.\"},{\"@id\":\"ex:deliveredBy\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Organization\"},\"rdfs:comment\":\"The consultancy that delivers the project: always Kestrel Consulting for projects in these documents.\"},{\"@id\":\"ex:subcontractedTo\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Organization\"},\"rdfs:comment\":\"A partner organization that delivered part of the project as a subcontractor.\"},{\"@id\":\"ex:usesTechnology\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Technology\"},\"rdfs:comment\":\"A technology the project uses or used in its solution.\"},{\"@id\":\"ex:followsUp\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"The project is a follow-up or next phase of an earlier project.\"},{\"@id\":\"ex:hadIssue\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Issue\"},\"rdfs:comment\":\"A problem, blocker or risk that affected the project.\"},{\"@id\":\"ex:raisedIssue\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Issue\"},\"rdfs:comment\":\"The person who raised or imposed the issue, e.g. a security officer requiring a review.\"},{\"@id\":\"ex:resolvedIssue\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Issue\"},\"rdfs:comment\":\"The person who resolved or worked around the issue.\"},{\"@id\":\"ex:achieved\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Outcome\"},\"rdfs:comment\":\"A measurable result the project delivered.\"}]}"
+      },
+      "grounding": null
+    },
+    "createdResources": {
+      "datasource": "kestrel-entities-ks-datasource",
+      "indexer": "kestrel-entities-ks-indexer",
+      "skillset": "kestrel-entities-ks-skillset",
+      "index": "kestrel-entities-ks-index",
+      "graphIndex": "kestrel-entities-ks-graph-index"
+    }
+  }
+}

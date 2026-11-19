@@ -1,0 +1,430 @@
+[
+  {
+    "id": "C1",
+    "category": "counting",
+    "strategy": "rag",
+    "question": "How many projects has Amira El Idrissi worked on, and which ones?",
+    "answer": "Amira El Idrissi has worked on **4 projects**:\n\n1. **Container Dwell-Time Forecasting** — Scaldis Logistics  \n2. **Customs Document Extraction** — Scaldis Logistics  \n3. **Quality Inspection Vision** — Verhaeghe Foods  \n4. **Leak Detection Analytics** — AquaNova",
+    "retrieval_ms": 2108,
+    "total_ms": 5322,
+    "answer_input_tokens": 2562,
+    "answer_output_tokens": 140,
+    "retrieval_tokens": 0,
+    "context_sources": [
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "kestrel/2025-11-21_org-update.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {},
+    "correct": false,
+    "fact_recall": 0.571,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": false
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": false
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": false
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer incorrectly states four projects and omits Discharge Letter Summarisation, Clinical Knowledge Assistant, and Claims Triage Automation. The expected answer is seven projects."
+    }
+  },
+  {
+    "id": "C1",
+    "category": "counting",
+    "strategy": "entity",
+    "question": "How many projects has Amira El Idrissi worked on, and which ones?",
+    "answer": "Amira El Idrissi has worked on **0 projects**. No project names were found.",
+    "retrieval_ms": 6006,
+    "total_ms": 7400,
+    "answer_input_tokens": 273,
+    "answer_output_tokens": 22,
+    "retrieval_tokens": 1195,
+    "context_sources": [
+      "graphSearch",
+      "knowledge-base-response"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T17:47:08.5250139Z",
+          "completedAt": "2026-11-18T17:47:10.0302093Z",
+          "inputTokens": 1089,
+          "outputTokens": 106,
+          "elapsedMs": 1505,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T17:47:10.0305218Z",
+          "completedAt": "2026-11-18T17:47:13.9849633Z",
+          "knowledgeSourceName": "kestrel-entities-ks",
+          "queryTime": "2026-11-18T17:47:13.9848102Z",
+          "count": 1,
+          "elapsedMs": 3954,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find every Kestrel Consulting project that Amira El Idrissi worked on, including the total number of distinct projects and each project name. Check name variants such as Amira El Idrissi, Amira El-Idrissi, and Amira Idrissi.",
+            "graphIndexName": "kestrel-entities-ks-graph-index",
+            "gql": "MATCH (a:`Person`)-[:`workedOn`]->(p:`Project`)-[:`deliveredFor`]->(o:`Organization`) WHERE LOWER(a.name) IN ['amira el idrissi', 'amira el-idrissi', 'amira idrissi'] AND LOWER(o.name) = 'kestrel consulting' RETURN count(p) AS distinct_project_count, COLLECT_LIST(DISTINCT p.name) AS project_names",
+            "outcome": "Success",
+            "attempts": 1,
+            "inputTokens": 12256,
+            "outputTokens": 447,
+            "modelElapsedMs": 3622,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 2,
+          "startedAt": "2026-11-18T17:47:13.9855725Z",
+          "completedAt": "2026-11-18T17:47:13.9855725Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "low"
+          },
+          "logicalReasoningEffort": {
+            "kind": "low"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": false
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": false
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": false
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": false
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": false
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": false
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer incorrectly states that Amira El Idrissi worked on 0 projects and provides none of the seven required project names."
+    }
+  },
+  {
+    "id": "N2",
+    "category": "negative",
+    "strategy": "rag",
+    "question": "Did Bram Visser work on any project for Fortalis or Mediva?",
+    "answer": "No. The provided context does not show Bram Visser working on any project for Fortalis or Mediva. It identifies his work for AquaNova, Scaldis Logistics, and Verhaeghe Foods.",
+    "retrieval_ms": 615,
+    "total_ms": 2420,
+    "answer_input_tokens": 2495,
+    "answer_output_tokens": 82,
+    "retrieval_tokens": 0,
+    "context_sources": [
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md"
+    ],
+    "debug": {},
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        },
+        {
+          "fact": "Scaldis",
+          "present": true
+        },
+        {
+          "fact": "Verhaeghe",
+          "present": true
+        },
+        {
+          "fact": "AquaNova",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected response and includes all required projects."
+    }
+  },
+  {
+    "id": "N2",
+    "category": "negative",
+    "strategy": "entity",
+    "question": "Did Bram Visser work on any project for Fortalis or Mediva?",
+    "answer": "The provided context does not contain information about whether Bram Visser worked on any project for Fortalis or Mediva.",
+    "retrieval_ms": 6950,
+    "total_ms": 8866,
+    "answer_input_tokens": 83,
+    "answer_output_tokens": 52,
+    "retrieval_tokens": 1157,
+    "context_sources": [
+      "knowledge-base-response"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T17:47:22.5369353Z",
+          "completedAt": "2026-11-18T17:47:23.4964786Z",
+          "inputTokens": 1088,
+          "outputTokens": 69,
+          "elapsedMs": 959,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T17:47:23.4965864Z",
+          "completedAt": "2026-11-18T17:47:29.1572679Z",
+          "knowledgeSourceName": "kestrel-entities-ks",
+          "queryTime": "2026-11-18T17:47:29.1571126Z",
+          "count": 0,
+          "elapsedMs": 5660,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find whether Bram Visser worked on any project for Fortalis or Mediva. Identify all matching projects and the customer associated with each.",
+            "graphIndexName": "kestrel-entities-ks-graph-index",
+            "gql": "MATCH (p:`Person`)-[:`workedOn`]->(pr:`Project`)-[:`deliveredFor`]->(o:`Organization`) WHERE LOWER(p.name) = 'bram visser' AND (LOWER(o.name) = 'fortalis' OR LOWER(o.name) = 'mediva') RETURN DISTINCT pr.name AS project_name, o.name AS customer_name",
+            "outcome": "EmptyResults",
+            "attempts": 2,
+            "inputTokens": 24800,
+            "outputTokens": 597,
+            "modelElapsedMs": 5466,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 2,
+          "startedAt": "2026-11-18T17:47:29.1574721Z",
+          "completedAt": "2026-11-18T17:47:29.1574721Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "low"
+          },
+          "logicalReasoningEffort": {
+            "kind": "low"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": false
+        },
+        {
+          "fact": "Scaldis",
+          "present": false
+        },
+        {
+          "fact": "Verhaeghe",
+          "present": false
+        },
+        {
+          "fact": "AquaNova",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer expresses uncertainty and does not state that Bram Visser only worked on Scaldis, Verhaeghe, and AquaNova projects."
+    }
+  },
+  {
+    "id": "M1",
+    "category": "multi_hop",
+    "strategy": "rag",
+    "question": "Which Kestrel consultant has worked with Kevin Hermans at two different employers?",
+    "answer": "Jonas Peeters. He worked with Kevin Hermans at Fortalis Verzekeringen on the Landing Zone project and later at AquaNova on the Asset Management Agent, where he handled the private networking setup.",
+    "retrieval_ms": 577,
+    "total_ms": 2532,
+    "answer_input_tokens": 2085,
+    "answer_output_tokens": 114,
+    "retrieval_tokens": 0,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-10-09_status-report_asset-management-agent.md",
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "fortalis/2025-06-20_memo_broker-portal-cancelled.md"
+    ],
+    "debug": {},
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Jonas Peeters",
+          "present": true
+        },
+        {
+          "fact": "Fortalis Landing Zone",
+          "present": true
+        },
+        {
+          "fact": "Asset Management Agent",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer identifies Jonas Peeters and correctly names the Fortalis Landing Zone and AquaNova Asset Management Agent engagements."
+    }
+  },
+  {
+    "id": "M1",
+    "category": "multi_hop",
+    "strategy": "entity",
+    "question": "Which Kestrel consultant has worked with Kevin Hermans at two different employers?",
+    "answer": "The provided context does not contain enough information to determine which Kestrel consultant worked with Kevin Hermans at two different employers.",
+    "retrieval_ms": 11094,
+    "total_ms": 13176,
+    "answer_input_tokens": 84,
+    "answer_output_tokens": 44,
+    "retrieval_tokens": 1186,
+    "context_sources": [
+      "knowledge-base-response"
+    ],
+    "debug": {
+      "activity": [
+        {
+          "type": "modelQueryPlanning",
+          "id": 0,
+          "startedAt": "2026-11-18T17:47:37.6224833Z",
+          "completedAt": "2026-11-18T17:47:38.9394887Z",
+          "inputTokens": 1089,
+          "outputTokens": 97,
+          "elapsedMs": 1316,
+          "model": {
+            "modelName": "gpt-5.6-luna",
+            "deploymentId": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "graphSearch",
+          "id": 1,
+          "startedAt": "2026-11-18T17:47:38.9396003Z",
+          "completedAt": "2026-11-18T17:47:48.3750888Z",
+          "knowledgeSourceName": "kestrel-entities-ks",
+          "queryTime": "2026-11-18T17:47:48.3749329Z",
+          "count": 0,
+          "elapsedMs": 9435,
+          "graphSearchArguments": {
+            "naturalLanguageQuery": "Find Kevin Hermans, the organizations/employers he has worked for, and Kestrel consultants who also worked with him at two different employers. Identify the consultant and both employers, with evidence of the shared employment relationships.",
+            "graphIndexName": "kestrel-entities-ks-graph-index",
+            "gql": "MATCH (k:`Person`)-[r1:`worksFor`]->(e1:`Organization`), (k)-[r2:`worksFor`]->(e2:`Organization`), (c:`Person`)-[r3:`worksFor`]->(e1), (c)-[r4:`worksFor`]->(e2), (c)-[r5:`worksFor`]->(kestrel:`Organization`) WHERE LOWER(k.name) = 'kevin hermans' AND kestrel.name = 'Kestrel' AND c.id <> k.id AND e1.id <> e2.id RETURN DISTINCT k.name AS kevin, c.name AS consultant, e1.name AS employer1, e2.name AS employer2, type(r1) AS kevin_employer1_relationship, type(r2) AS kevin_employer2_relationship, type(r3) AS consultant_employer1_relationship, type(r4) AS consultant_employer2_relationship, kestrel.name AS consultant_employer",
+            "outcome": "EmptyResults",
+            "attempts": 2,
+            "inputTokens": 24939,
+            "outputTokens": 1254,
+            "modelElapsedMs": 9112,
+            "modelName": "gpt-5.6-luna"
+          }
+        },
+        {
+          "type": "agenticReasoning",
+          "id": 2,
+          "startedAt": "2026-11-18T17:47:48.3752742Z",
+          "completedAt": "2026-11-18T17:47:48.3752742Z",
+          "reasoningTokens": 0,
+          "retrievalReasoningEffort": {
+            "kind": "low"
+          },
+          "logicalReasoningEffort": {
+            "kind": "low"
+          }
+        }
+      ],
+      "gql": [
+        null
+      ]
+    },
+    "correct": false,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Jonas Peeters",
+          "present": false
+        },
+        {
+          "fact": "Fortalis Landing Zone",
+          "present": false
+        },
+        {
+          "fact": "Asset Management Agent",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer does not identify Jonas Peeters or mention either the Fortalis Landing Zone or the Asset Management Agent."
+    }
+  }
+]

@@ -1,0 +1,58 @@
+[project]
+name = "kestrel-kg"
+version = "0.1.0"
+description = "Kestrel Graph Lab: compare RAG, Retriever 1 and Foundry IQ knowledge graphs on a synthetic consultancy corpus"
+authors = [
+    { name = "Geert Baeke", email = "geert@baeke.info" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "azure-identity>=1.27.0",
+    "fastapi>=0.165.0",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.16.3",
+    "python-dotenv>=1.2.4",
+    "pyyaml>=6.0.3",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+kestrel-kg = "kestrel_kg:main"
+
+[build-system]
+requires = ["uv_build>=0.13.4,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.16.2",
+    "pyright>=1.1.414",
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+# pycodestyle, pyflakes, isort, bugbear, pyupgrade, simplify, comprehensions, return, pathlib, ruff, FastAPI,
+# security (bandit), unused arguments, print, commented-out code, and McCabe complexity: a function over 10
+# branches is a function to split
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "C4", "RET", "PTH", "RUF", "FAST", "S", "ARG", "T20", "ERA", "C90"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106", "ARG"]  # asserts, test secrets, fixtures used for their side effect
+"src/*/openapi.py" = ["T201"]  # prints the schema
+# command-line tools: they report to the terminal
+"src/kestrel_kg/{evaluate,setup,check_corpus}.py" = ["T201"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.pyright]
+include = ["src", "tests"]
+typeCheckingMode = "standard"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

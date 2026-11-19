@@ -1,0 +1,42 @@
+C1  entity_g3  11403 ms  correct=False recall=0.714
+C1  gql_agent_g3   9292 ms  correct=True recall=1.0
+C2  entity_g3  31606 ms  correct=True recall=1.0
+C2  gql_agent_g3   5814 ms  correct=False recall=1.0
+C3  entity_g3   6463 ms  correct=True recall=0.0
+C3  gql_agent_g3   5561 ms  correct=True recall=0.0
+C4  entity_g3  21707 ms  correct=True recall=1.0
+C4  gql_agent_g3   6477 ms  correct=True recall=1.0
+C5  entity_g3  18345 ms  correct=True recall=1.0
+C5  gql_agent_g3  16290 ms  correct=True recall=1.0
+N1  entity_g3  39010 ms  correct=True recall=1.0
+N1  gql_agent_g3  14846 ms  correct=True recall=1.0
+N2  entity_g3  10749 ms  correct=True recall=1.0
+N2  gql_agent_g3  14177 ms  correct=True recall=1.0
+N3  entity_g3  37683 ms  correct=True recall=1.0
+N3  gql_agent_g3   9676 ms  correct=True recall=1.0
+M1  entity_g3  28121 ms  correct=False recall=0.333
+M1  gql_agent_g3  11273 ms  correct=True recall=1.0
+M2  entity_g3   9025 ms  correct=True recall=1.0
+M2  gql_agent_g3   6828 ms  correct=True recall=1.0
+M3  entity_g3  27858 ms  correct=False recall=1.0
+M3  gql_agent_g3  15153 ms  correct=False recall=1.0
+M4  entity_g3  17616 ms  correct=False recall=1.0
+M4  gql_agent_g3  19676 ms  correct=False recall=1.0
+E1  entity_g3  34907 ms  correct=True recall=1.0
+E1  gql_agent_g3  12137 ms  correct=False recall=1.0
+E2  entity_g3  20722 ms  correct=True recall=1.0
+E2  gql_agent_g3  12565 ms  correct=False recall=0.667
+E3  entity_g3  10113 ms  correct=True recall=1.0
+E3  gql_agent_g3   8535 ms  correct=True recall=1.0
+S1  entity_g3  18561 ms  correct=False recall=0.667
+S1  gql_agent_g3  23771 ms  correct=False recall=0.5
+S2  entity_g3  13241 ms  correct=False recall=0.0
+S2  gql_agent_g3  18617 ms  correct=False recall=0.25
+S3  entity_g3  22725 ms  correct=False recall=0.5
+S3  gql_agent_g3  23017 ms  correct=False recall=0.5
+
+wrote results/run-20261118T211016Z.json
+
+strategy   correct  recall   in tok  retr ms  errors
+entity_g3      61%     79%    54504    21103       0
+gql_agent_g3      56%     83%    19287    12984       0

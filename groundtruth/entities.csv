@@ -1,0 +1,68 @@
+id,name,type,aliases
+person:lotte,Lotte Willems,Person,LW|Lotte
+person:pieter,Pieter De Smet,Person,PDS|Pieter
+person:sofie,Sofie Claes,Person,SC|Sofie
+person:jonas,Jonas Peeters,Person,JP|Jonas
+person:amira,Amira El Idrissi,Person,AEI|Amira
+person:thomas,Thomas Maes,Person,TM|Thomas
+person:elien,Elien Jacobs,Person,EJ|Elien
+person:ruben,Ruben Wouters,Person,RW|Ruben
+person:bram,Bram Visser,Person,BV|Bram
+person:koen_v,Koen Verstraete,Person,KV
+person:nathalie,Nathalie Dumont,Person,ND|Nathalie
+person:wim,Wim Goossens,Person,WG|Wim
+person:jan,Jan Wouters,Person,JW|Jan
+person:hilde,Hilde Van Damme,Person,Dr. Hilde Van Damme|HVD|Hilde
+person:jeroen,Jeroen Lambrecht,Person,JL|Jeroen
+person:sarah,Sarah Mertens,Person,SM|Sarah
+person:marc,Marc Dubois,Person,MD|Marc
+person:laura,Laura Vermeulen,Person,LV|Laura
+person:kevin,Kevin Hermans,Person,KH|Kevin
+person:ann,Ann Verhaeghe,Person,AV|Ann
+person:dries,Dries Callens,Person,DC|Dries
+person:tine,Tine Desmet,Person,TD|Tine
+person:filip,Filip Wuyts,Person,FW|Filip
+person:evelien,Evelien Claes,Person,EC|Evelien
+person:koen_m,Koen Martens,Person,KM
+org:scaldis,Scaldis Logistics,Organization,Scaldis
+org:mediva,Mediva Care Group,Organization,Mediva
+org:fortalis,Fortalis Verzekeringen,Organization,Fortalis
+org:verhaeghe,Verhaeghe Foods,Organization,Verhaeghe
+org:aquanova,AquaNova,Organization,
+org:kestrel,Kestrel Consulting,Organization,Kestrel
+org:dataforge,DataForge,Organization,
+project:P1,Container Dwell-Time Forecasting,Project,Scaldis Container Dwell-Time Forecasting
+project:P2,Scaldis Ops Copilot,Project,Ops Copilot
+project:P3,Customs Document Extraction,Project,Scaldis Customs Document Extraction
+project:P4,Discharge Letter Summarisation,Project,Mediva Discharge Letter Summarisation
+project:P5,Bed Capacity Dashboard,Project,Mediva Bed Capacity Dashboard
+project:P6,Clinical Knowledge Assistant,Project,Mediva Clinical Knowledge Assistant
+project:P7,Fortalis Landing Zone,Project,Landing Zone
+project:P8,Claims Triage Automation,Project,Fortalis Claims Triage Automation
+project:P9,Broker Portal Modernisation,Project,Fortalis Broker Portal Modernisation
+project:P10,Line Sensor Data Platform,Project,Verhaeghe Line Sensor Data Platform
+project:P11,Quality Inspection Vision,Project,Verhaeghe Quality Inspection Vision
+project:P12,Leak Detection Analytics,Project,AquaNova Leak Detection Analytics
+project:P13,Asset Management Agent,Project,AquaNova Asset Management Agent
+tech:azure-machine-learning,Azure Machine Learning,Technology,Azure ML
+tech:databricks,Databricks,Technology,
+tech:azure-data-lake-storage-gen2,Azure Data Lake Storage Gen2,Technology,ADLS Gen2
+tech:azure-openai,Azure OpenAI,Technology,
+tech:azure-ai-search,Azure AI Search,Technology,
+tech:sharepoint,SharePoint,Technology,
+tech:microsoft-teams,Microsoft Teams,Technology,Teams
+tech:azure-ai-document-intelligence,Azure AI Document Intelligence,Technology,Document Intelligence
+tech:power-bi,Power BI,Technology,
+tech:azure-synapse-analytics,Azure Synapse Analytics,Technology,Synapse
+tech:microsoft-foundry,Microsoft Foundry,Technology,
+tech:foundry-iq,Foundry IQ,Technology,
+tech:azure-logic-apps,Azure Logic Apps,Technology,Logic Apps
+tech:bicep,Bicep,Technology,
+tech:microsoft-entra-id,Microsoft Entra ID,Technology,Entra ID
+tech:azure-policy,Azure Policy,Technology,
+tech:microsoft-fabric,Microsoft Fabric,Technology,Fabric
+tech:azure-iot-hub,Azure IoT Hub,Technology,IoT Hub
+tech:azure-ai-vision,Azure AI Vision,Technology,Custom Vision
+tech:azure-iot-edge,Azure IoT Edge,Technology,
+tech:arcgis,ArcGIS,Technology,
+tech:foundry-agent-service,Foundry Agent Service,Technology,

@@ -1,0 +1,35 @@
+{
+  "@odata.etag": "\"0x8DF45A5A05551D5\"",
+  "name": "kestrel-entities-kb",
+  "description": "Kestrel project knowledge with an entity graph of people, projects, customers and technologies.",
+  "retrievalInstructions": "Use graph_search for questions about who worked on what, which projects used a technology, counting, comparisons across customers and relationships between people, projects and organizations. Use text search for specific numbers, dates, amounts and narrative detail, and also run text search whenever a graph query returns no rows. Graph schema facts: every Project in this graph is a Kestrel Consulting project, so never filter on 'Kestrel Consulting'. deliveredFor always points to the CUSTOMER organization (Scaldis Logistics, Mediva Care Group, Fortalis Verzekeringen, Verhaeghe Foods, AquaNova). Entity names can be partial or vary (first name only, short customer names such as 'Fortalis', project names without the customer prefix), so match names with CONTAINS on the most distinctive part (surname, or the core project words) instead of exact equality, and count DISTINCT entities. Customer contacts link to projects with sponsors, productOwnerOf or contactFor; consultants with workedOn or managedProject.",
+  "answerInstructions": null,
+  "outputMode": "extractiveData",
+  "knowledgeSources": [
+    {
+      "name": "kestrel-entities-ks",
+      "enableImageServing": null,
+      "enableFreshness": null
+    }
+  ],
+  "models": [
+    {
+      "kind": "azureOpenAI",
+      "azureOpenAIParameters": {
+        "resourceUri": "https://aif-kestrel-kg.openai.azure.com",
+        "deploymentId": "gpt-5.6-luna",
+        "apiKey": null,
+        "modelName": "gpt-5.6-luna",
+        "authIdentity": null
+      }
+    }
+  ],
+  "encryptionKey": null,
+  "tags": null,
+  "retrievalReasoningEffort": {
+    "kind": "low"
+  },
+  "corsOptions": null,
+  "retrieveDefaults": null,
+  "tools": []
+}

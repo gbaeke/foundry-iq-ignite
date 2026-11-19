@@ -1,0 +1,33 @@
+{
+  "@odata.etag": "\"0x8DF45A5A002BF74\"",
+  "name": "kestrel-entities-ks-indexer",
+  "description": "Indexer for knowledge source 'kestrel-entities-ks'",
+  "dataSourceName": "kestrel-entities-ks-datasource",
+  "skillsetName": "kestrel-entities-ks-skillset",
+  "targetIndexName": "kestrel-entities-ks-index",
+  "disabled": false,
+  "schedule": {
+    "interval": "P1D",
+    "startTime": "2026-11-18T18:56:11.871Z"
+  },
+  "parameters": {
+    "batchSize": null,
+    "maxFailedItems": -1,
+    "maxFailedItemsPerBatch": -1,
+    "configuration": {
+      "dataToExtract": "contentAndMetadata",
+      "parsingMode": "default",
+      "allowSkillsetToReadFileData": true
+    }
+  },
+  "fieldMappings": [
+    {
+      "sourceFieldName": "metadata_storage_path",
+      "targetFieldName": "blob_url",
+      "mappingFunction": null
+    }
+  ],
+  "outputFieldMappings": [],
+  "cache": null,
+  "encryptionKey": null
+}

@@ -1,0 +1,1160 @@
+[
+  {
+    "id": "L1",
+    "category": "lookup",
+    "strategy": "agentic",
+    "question": "What was the final cost of the Claims Triage Automation project for Fortalis?",
+    "answer": "The final cost was **EUR 276,000**, including the approved CR-07 change request for adding water damage claim types.",
+    "retrieval_ms": 2667,
+    "total_ms": 5318,
+    "answer_input_tokens": 4422,
+    "answer_output_tokens": 29,
+    "retrieval_tokens": 27662,
+    "context_sources": [
+      "fortalis/2024-03-18_proposal_claims-triage-automation.md",
+      "fortalis/2024-09-20_status-report_claims-triage-automation.md",
+      "fortalis/2025-02-28_closing-report_claims-triage-automation.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "EUR 276,000",
+          "present": true
+        },
+        {
+          "fact": "CR-07",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer states the correct final cost and identifies CR-07."
+    }
+  },
+  {
+    "id": "L2",
+    "category": "lookup",
+    "strategy": "agentic",
+    "question": "How many leaks did the AquaNova leak detection pilot find?",
+    "answer": "The AquaNova leak detection pilot found **23 leaks**, all confirmed by an AquaNova field crew.",
+    "retrieval_ms": 1295,
+    "total_ms": 2847,
+    "answer_input_tokens": 4997,
+    "answer_output_tokens": 23,
+    "retrieval_tokens": 30239,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-10-09_status-report_asset-management-agent.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "23 leaks",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected result of 23 leaks."
+    }
+  },
+  {
+    "id": "L3",
+    "category": "lookup",
+    "strategy": "agentic",
+    "question": "What defect recall did the Quality Inspection Vision project reach at Verhaeghe Foods?",
+    "answer": "The Quality Inspection Vision project reached **96% defect recall** on the final test set.",
+    "retrieval_ms": 704,
+    "total_ms": 2427,
+    "answer_input_tokens": 4194,
+    "answer_output_tokens": 21,
+    "retrieval_tokens": 28406,
+    "context_sources": [
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "96%",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected result and contains the required fact."
+    }
+  },
+  {
+    "id": "C1",
+    "category": "counting",
+    "strategy": "agentic",
+    "question": "How many projects has Amira El Idrissi worked on, and which ones?",
+    "answer": "Amira El Idrissi worked on **4 projects**:\n\n1. **Container Dwell Time Forecasting** — Scaldis Logistics  \n2. **Customs Document Extraction** — Scaldis Logistics  \n3. **Quality Inspection Vision** — Verhaeghe Foods  \n4. **Claims Triage Automation** — Fortalis  \n\nThe container dwell-time project appears in two documents, but counts as one project.",
+    "retrieval_ms": 1061,
+    "total_ms": 3422,
+    "answer_input_tokens": 4601,
+    "answer_output_tokens": 203,
+    "retrieval_tokens": 68149,
+    "context_sources": [
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "fortalis/2025-02-28_closing-report_claims-triage-automation.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-09-26_go-live-note_ops-copilot.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [
+        {
+          "search": "Amira El Idrissi projects list Amira El Idrissi work history projects completed",
+          "iteration": 1
+        }
+      ],
+      "terminationReason": "modelStopped"
+    },
+    "correct": false,
+    "fact_recall": 0.571,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": false
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": false
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer lists four projects, but the expected answer is seven and it omits Discharge Letter Summarisation, Clinical Knowledge Assistant, and Leak Detection Analytics."
+    }
+  },
+  {
+    "id": "C2",
+    "category": "counting",
+    "strategy": "agentic",
+    "question": "Which projects used Databricks?",
+    "answer": "The projects that used Databricks are:\n\n- **Container Dwell-Time Forecasting** — Scaldis Logistics\n- **Line Sensor Data Platform** — Verhaeghe Foods\n- **Leak Detection Analytics** — AquaNova",
+    "retrieval_ms": 1545,
+    "total_ms": 2953,
+    "answer_input_tokens": 4987,
+    "answer_output_tokens": 108,
+    "retrieval_tokens": 28923,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Line Sensor Data Platform",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies all three projects that used Databricks. It does not mention that all three had Bram Visser of DataForge as subcontractor."
+    }
+  },
+  {
+    "id": "C3",
+    "category": "counting",
+    "strategy": "agentic",
+    "question": "How many projects did Thomas Maes manage as project manager?",
+    "answer": "Thomas Maes managed **4 projects** as project manager:\n\n1. **Discharge Letter Summarisation** — Mediva Care Group  \n2. **Claims Triage Automation** — Fortalis Verzekeringen  \n3. **Container Dwell Time Forecasting** — Scaldis  \n4. **Broker Portal Modernisation** — Fortalis Verzekeringen",
+    "retrieval_ms": 1094,
+    "total_ms": 4210,
+    "answer_input_tokens": 4654,
+    "answer_output_tokens": 332,
+    "retrieval_tokens": 66594,
+    "context_sources": [
+      "fortalis/2024-03-18_proposal_claims-triage-automation.md",
+      "fortalis/2024-09-20_status-report_claims-triage-automation.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2025-11-21_org-update.md",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md"
+    ],
+    "debug": {
+      "subQueries": [
+        {
+          "search": "Thomas Maes project manager career Thomas Maes projects managed as PM history",
+          "iteration": 1
+        }
+      ],
+      "terminationReason": "modelStopped"
+    },
+    "correct": false,
+    "fact_recall": 0.8,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": false
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Broker Portal Modernisation",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer lists only four projects and omits Scaldis Ops Copilot; the expected total is five."
+    }
+  },
+  {
+    "id": "C4",
+    "category": "counting",
+    "strategy": "agentic",
+    "question": "Which projects used Azure OpenAI?",
+    "answer": "Projects that used Azure OpenAI:\n\n- **Discharge Letter Summarisation** — Mediva Care Group\n- **Clinical Knowledge Assistant (Phase 1)** — Mediva Care Group\n- **Scaldis Ops Copilot** — Scaldis Logistics",
+    "retrieval_ms": 1305,
+    "total_ms": 3602,
+    "answer_input_tokens": 4817,
+    "answer_output_tokens": 144,
+    "retrieval_tokens": 30766,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "fortalis/2024-03-18_proposal_claims-triage-automation.md",
+      "fortalis/2025-02-28_closing-report_claims-triage-automation.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "Clinical Knowledge Assistant",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer lists all three projects that used Azure OpenAI."
+    }
+  },
+  {
+    "id": "C5",
+    "category": "counting",
+    "strategy": "agentic",
+    "question": "What is the total contract value of all Kestrel projects for Scaldis Logistics?",
+    "answer": "The total contract value of Kestrel’s Scaldis Logistics projects is **EUR 430,000**:\n\n- Container Dwell-Time Forecasting: **EUR 185,000**\n- Operations Copilot: **EUR 150,000**\n- Customs Document Extraction, phase 1: **EUR 95,000**\n\n**Total: EUR 430,000 excl. VAT**",
+    "retrieval_ms": 1220,
+    "total_ms": 3174,
+    "answer_input_tokens": 4379,
+    "answer_output_tokens": 175,
+    "retrieval_tokens": 85830,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "fortalis/2024-09-20_status-report_claims-triage-automation.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [
+        {
+          "search": "Scaldis Logistics Kestrel projects list all Kestrel contracts Scaldis",
+          "iteration": 1
+        },
+        {
+          "search": "Kestrel project \"Container Dwell-Time\" \"Customs Document Extraction\" \"Ops Copilot\" Scaldis fixed price total",
+          "iteration": 2
+        }
+      ],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "EUR 185,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 150,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 95,000",
+          "present": true
+        },
+        {
+          "fact": "EUR 430,000",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected total and includes all required project values."
+    }
+  },
+  {
+    "id": "N1",
+    "category": "negative",
+    "strategy": "agentic",
+    "question": "Has Kestrel ever used Databricks on a project for Mediva Care Group?",
+    "answer": "No. The provided Mediva Care Group projects do not use Databricks. Mediva projects use Azure Synapse, Power BI, Azure OpenAI, and Microsoft Foundry. Databricks appears in projects for Scaldis and AquaNova.",
+    "retrieval_ms": 708,
+    "total_ms": 3239,
+    "answer_input_tokens": 4852,
+    "answer_output_tokens": 239,
+    "retrieval_tokens": 29609,
+    "context_sources": [
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that Kestrel has not used Databricks on a Mediva Care Group project."
+    }
+  },
+  {
+    "id": "N2",
+    "category": "negative",
+    "strategy": "agentic",
+    "question": "Did Bram Visser work on any project for Fortalis or Mediva?",
+    "answer": "The context does not indicate that Bram Visser worked on any project for Fortalis or Mediva.",
+    "retrieval_ms": 1407,
+    "total_ms": 2999,
+    "answer_input_tokens": 4583,
+    "answer_output_tokens": 107,
+    "retrieval_tokens": 27506,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 0.25,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": true
+        },
+        {
+          "fact": "Scaldis",
+          "present": false
+        },
+        {
+          "fact": "Verhaeghe",
+          "present": false
+        },
+        {
+          "fact": "AquaNova",
+          "present": false
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the main conclusion that there is no indication Bram Visser worked on a Fortalis or Mediva project, but it omits the projects Scaldis, Verhaeghe, and AquaNova."
+    }
+  },
+  {
+    "id": "N3",
+    "category": "negative",
+    "strategy": "agentic",
+    "question": "Has Elien Jacobs worked on any project for Verhaeghe Foods?",
+    "answer": "The context does not state that Elien Jacobs worked on any project for Verhaeghe Foods.",
+    "retrieval_ms": 1259,
+    "total_ms": 2963,
+    "answer_input_tokens": 4436,
+    "answer_output_tokens": 101,
+    "retrieval_tokens": 29289,
+    "context_sources": [
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": false,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "No",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer only says the context does not state that she worked on a Verhaeghe Foods project; it does not directly answer that she did not."
+    }
+  },
+  {
+    "id": "M1",
+    "category": "multi_hop",
+    "strategy": "agentic",
+    "question": "Which Kestrel consultant has worked with Kevin Hermans at two different employers?",
+    "answer": "Lotte Willems.",
+    "retrieval_ms": 815,
+    "total_ms": 2359,
+    "answer_input_tokens": 3841,
+    "answer_output_tokens": 74,
+    "retrieval_tokens": 29028,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-10-09_status-report_asset-management-agent.md",
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "fortalis/2025-06-20_memo_broker-portal-cancelled.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": false,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Jonas Peeters",
+          "present": false
+        },
+        {
+          "fact": "Fortalis Landing Zone",
+          "present": false
+        },
+        {
+          "fact": "Asset Management Agent",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer incorrectly names Lotte Willems; the expected consultant is Jonas Peeters, who worked with Kevin Hermans on the Fortalis Landing Zone and the Asset Management Agent."
+    }
+  },
+  {
+    "id": "M2",
+    "category": "multi_hop",
+    "strategy": "agentic",
+    "question": "On which projects did Sofie Claes and Amira El Idrissi work together?",
+    "answer": "Sofie Claes and Amira El Idrissi worked together on:\n\n- **Container Dwell-Time Forecasting** — Scaldis Logistics\n- **Leak Detection Analytics** — AquaNova",
+    "retrieval_ms": 795,
+    "total_ms": 2314,
+    "answer_input_tokens": 4928,
+    "answer_output_tokens": 119,
+    "retrieval_tokens": 29523,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "aquanova/2025-05-30_closing-report_leak-detection-analytics.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Container Dwell-Time Forecasting",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected projects and includes both required facts."
+    }
+  },
+  {
+    "id": "M3",
+    "category": "multi_hop",
+    "strategy": "agentic",
+    "question": "What did the predecessor of Mediva's Clinical Knowledge Assistant deliver, and who was involved in both projects from Kestrel?",
+    "answer": "Mediva’s predecessor project, **Discharge Letter Summarisation**, delivered:\n\n- Draft discharge-letter generation from the patient record for internal medicine and geriatrics, using specialty-specific templates.\n- A pseudonymisation pipeline before Azure OpenAI processing, with re-identification inside Mediva.\n- A physician review screen showing the draft alongside its source sections.\n- Monitoring of usage, generation time and edits between draft and signed letter.\n- A run book and operational handover to Mediva IT.\n\nPhysicians saved about **9 minutes per letter** in evaluation.\n\nThe Kestrel people explicitly involved in both projects were:\n\n- **Amira El Idrissi** — ML Engineer / Lead AI Engineer\n- **Pieter De Smet** — Lead AI Architect",
+    "retrieval_ms": 752,
+    "total_ms": 4737,
+    "answer_input_tokens": 4858,
+    "answer_output_tokens": 407,
+    "retrieval_tokens": 29918,
+    "context_sources": [
+      "kestrel/2026-03-06_tech-radar-2026.md",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "mediva/2026-09-18_status-report_clinical-knowledge-assistant.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": true
+        },
+        {
+          "fact": "9 minutes",
+          "present": true
+        },
+        {
+          "fact": "Pieter De Smet",
+          "present": true
+        },
+        {
+          "fact": "Amira El Idrissi",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer matches the expected project, time saved, and Kestrel contributors. It does not specify that the evaluation involved 12 physicians."
+    }
+  },
+  {
+    "id": "M4",
+    "category": "multi_hop",
+    "strategy": "agentic",
+    "question": "Which of the projects managed by Thomas Maes were delayed, went over budget or were cancelled?",
+    "answer": "- **Scaldis Ops Copilot** — **Delayed**: go-live moved from 2025-07-01 to 2025-09-15. Its T&M forecast was also above the EUR 150,000 estimate, though a final overrun is not confirmed.\n- **Claims Triage Automation** — **Went over budget**: final cost was EUR 276,000 versus the original EUR 240,000 fixed price, due to approved change request CR-07.\n- **Broker Portal Modernisation** — **Cancelled** after discovery. Thomas Maes was assigned the final timesheet and invoice, but the context does not explicitly identify him as project manager.",
+    "retrieval_ms": 1310,
+    "total_ms": 4911,
+    "answer_input_tokens": 4611,
+    "answer_output_tokens": 387,
+    "retrieval_tokens": 28623,
+    "context_sources": [
+      "fortalis/2024-09-20_status-report_claims-triage-automation.md",
+      "fortalis/2025-02-28_closing-report_claims-triage-automation.md",
+      "fortalis/2025-06-20_memo_broker-portal-cancelled.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": false,
+    "fact_recall": 0.75,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        },
+        {
+          "fact": "Discharge Letter Summarisation",
+          "present": false
+        },
+        {
+          "fact": "Claims Triage Automation",
+          "present": true
+        },
+        {
+          "fact": "Broker Portal Modernisation",
+          "present": true
+        }
+      ],
+      "correct": false,
+      "note": "The answer correctly identifies three projects but omits Discharge Letter Summarisation, which had a six-week delayed start."
+    }
+  },
+  {
+    "id": "E1",
+    "category": "entity_resolution",
+    "strategy": "agentic",
+    "question": "Which projects involved someone called Koen, and who are they?",
+    "answer": "- **Container Dwell-Time Forecasting** — **Koen Verstraete**, CIO and sponsor, Scaldis Logistics.\n- **Scaldis Ops Copilot** — **Koen Verstraete**, CIO and sponsor, Scaldis Logistics.\n- **Customs Document Extraction** — **Koen Verstraete**, CIO and sponsor, Scaldis Logistics.\n- **Leak Detection Analytics** — **Koen Martens**, OT Engineer and operational-data contact, AquaNova.",
+    "retrieval_ms": 1328,
+    "total_ms": 3585,
+    "answer_input_tokens": 5026,
+    "answer_output_tokens": 205,
+    "retrieval_tokens": 30553,
+    "context_sources": [
+      "aquanova/2024-08-19_proposal_leak-detection-analytics.md",
+      "aquanova/2025-01-24_status-report_leak-detection-analytics.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Koen Verstraete",
+          "present": true
+        },
+        {
+          "fact": "Koen Martens",
+          "present": true
+        },
+        {
+          "fact": "Leak Detection Analytics",
+          "present": true
+        },
+        {
+          "fact": "Scaldis Ops Copilot",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies the two different people and all four projects, including their roles and organizations."
+    }
+  },
+  {
+    "id": "E2",
+    "category": "entity_resolution",
+    "strategy": "agentic",
+    "question": "What has Tine Desmet worked on?",
+    "answer": "Tine Desmet worked on:\n\n- Arranging the firewall change that enabled sensor gateways to connect to Azure IoT Hub, including a dedicated outbound rule for the gateway subnet and logging.\n- Coordinating Verhaeghe’s network access, accounts, Azure tenant, and OT/IT connectivity.\n- Checking the VLAN and firewall layout for lines 3, 5, and 6 and coordinating gateway installations.\n- Owning platform operations and access management after handover.\n- Requesting the network path for the quality-inspection edge devices before hardware installation.\n- Submitting the firewall and network request for edge devices on lines 3, 5, and 6.\n- Managing the edge-device network during the Quality Inspection Vision project.\n- Participating in the quality-inspection kickoff and handover activities.",
+    "retrieval_ms": 715,
+    "total_ms": 2899,
+    "answer_input_tokens": 4414,
+    "answer_output_tokens": 213,
+    "retrieval_tokens": 27951,
+    "context_sources": [
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Verhaeghe Foods",
+          "present": true
+        },
+        {
+          "fact": "Line Sensor Data Platform",
+          "present": true
+        },
+        {
+          "fact": "Quality Inspection Vision",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer accurately describes Tine Desmet’s work on Verhaeghe Foods’ sensor-data platform and Quality Inspection Vision project, without introducing incorrect information."
+    }
+  },
+  {
+    "id": "E3",
+    "category": "entity_resolution",
+    "strategy": "agentic",
+    "question": "Who is Jan Wouters?",
+    "answer": "Jan Wouters is Scaldis Logistics’ **Customs Coordinator** and the **product owner** for the Customs Document Extraction project. He:\n\n- Decides priorities among document types\n- Validates extraction results with his team\n- Accepts deliverables\n- Prioritised two additional document types with his team: phytosanitary certificates and a carrier-specific delivery order format",
+    "retrieval_ms": 1392,
+    "total_ms": 3034,
+    "answer_input_tokens": 4974,
+    "answer_output_tokens": 78,
+    "retrieval_tokens": 30592,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "mediva/2026-09-18_status-report_clinical-knowledge-assistant.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Scaldis",
+          "present": true
+        },
+        {
+          "fact": "Customs Coordinator",
+          "present": true
+        },
+        {
+          "fact": "Customs Document Extraction",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly identifies Jan Wouters as Scaldis Logistics’ Customs Coordinator and product owner of Customs Document Extraction. The additional responsibilities are consistent and do not introduce contradictions."
+    }
+  },
+  {
+    "id": "T1",
+    "category": "temporal",
+    "strategy": "agentic",
+    "question": "When did the Scaldis Ops Copilot go live compared to the original plan?",
+    "answer": "The Scaldis Ops Copilot went live on **2025-09-22**, compared with the original planned date of **2025-07-01**.\n\nIt therefore went live **83 days late**, or nearly **12 weeks later**. The date had first been re-planned to **2025-09-15**, but the final security re-test required one additional week.",
+    "retrieval_ms": 747,
+    "total_ms": 2492,
+    "answer_input_tokens": 4786,
+    "answer_output_tokens": 81,
+    "retrieval_tokens": 29866,
+    "context_sources": [
+      "kestrel/2024-12-16_staffing-plan-2025.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "scaldis/2025-05-16_status-report_ops-copilot.md",
+      "scaldis/2025-09-26_go-live-note_ops-copilot.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "2025-07-01",
+          "present": true
+        },
+        {
+          "fact": "2025-09-15",
+          "present": true
+        },
+        {
+          "fact": "2025-09-22",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer includes the original planned date, the re-planned date after the security review, and the final go-live date. The additional timing explanation is consistent."
+    }
+  },
+  {
+    "id": "T2",
+    "category": "temporal",
+    "strategy": "agentic",
+    "question": "Where does Kevin Hermans work today?",
+    "answer": "Kevin Hermans currently works at **AquaNova** as an **IT Architect**. He joined AquaNova on **2025-09-01**, after previously working at Fortalis Verzekeringen.",
+    "retrieval_ms": 742,
+    "total_ms": 2238,
+    "answer_input_tokens": 4064,
+    "answer_output_tokens": 44,
+    "retrieval_tokens": 28549,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-10-09_status-report_asset-management-agent.md",
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "fortalis/2025-06-20_memo_broker-portal-cancelled.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "AquaNova",
+          "present": true
+        },
+        {
+          "fact": "Fortalis",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that Kevin Hermans currently works at AquaNova as an IT Architect, joined on 2025-09-01, and previously worked at Fortalis."
+    }
+  },
+  {
+    "id": "T3",
+    "category": "temporal",
+    "strategy": "agentic",
+    "question": "Who handles project management at Kestrel in 2026?",
+    "answer": "Lotte Willems handles project management at Kestrel in 2026. Thomas Maes leaves Kestrel on 2025-12-31, and Lotte takes over project management of the remaining work from 2026-01-01.",
+    "retrieval_ms": 746,
+    "total_ms": 2344,
+    "answer_input_tokens": 4791,
+    "answer_output_tokens": 55,
+    "retrieval_tokens": 29314,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "aquanova/2026-10-09_status-report_asset-management-agent.md",
+      "kestrel/2025-11-21_org-update.md",
+      "kestrel/2026-03-06_tech-radar-2026.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "mediva/2025-12-10_sow_clinical-knowledge-assistant.md",
+      "mediva/2026-09-18_status-report_clinical-knowledge-assistant.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md"
+    ],
+    "debug": {
+      "subQueries": [],
+      "terminationReason": "modelStopped"
+    },
+    "correct": true,
+    "fact_recall": 1.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Lotte Willems",
+          "present": true
+        },
+        {
+          "fact": "Thomas Maes",
+          "present": true
+        }
+      ],
+      "correct": true,
+      "note": "The answer correctly states that Lotte Willems handles project management in 2026 and that Thomas Maes leaves on 2025-12-31, with Lotte taking over from 2026-01-01."
+    }
+  },
+  {
+    "id": "S1",
+    "category": "synthesis",
+    "strategy": "agentic",
+    "question": "What recurring problems caused delays or extra cost across Kestrel's projects?",
+    "answer": "Recurring causes of delay or extra cost included:\n\n- **Late security, network and access approvals:** Verhaeghe’s OT firewall delayed connectivity by five weeks; Fortalis’s hub IP approval took time; lessons learned recommend making access a day-zero precondition.\n- **Incomplete or poor-quality data and documentation:** Verhaeghe lacked PLC documentation; Scaldis had duplicate/missing TOS events and a schema change, adding about two weeks and 4% effort; Mediva’s bed master-data agreement also took longer than development.\n- **Late involvement of external vendors or owners:** Scaldis lacked a direct TOS-vendor contact, while Verhaeghe depended on an external firewall maintainer.\n- **Scope ambiguity and unmanaged change:** Fortalis’s water-damage categories (CR-07) incurred uncosted work; Mediva’s large-screen view and Scaldis’s customs data were insufficiently scoped.\n- **Operational timing and seasonality:** Harvest and terminal freeze periods constrained work, while Fortalis’s storm season caused model drift and retraining effort.",
+    "retrieval_ms": 1135,
+    "total_ms": 5428,
+    "answer_input_tokens": 4747,
+    "answer_output_tokens": 461,
+    "retrieval_tokens": 66782,
+    "context_sources": [
+      "fortalis/2024-02-23_closing-report_landing-zone.md",
+      "fortalis/2025-02-28_closing-report_claims-triage-automation.md",
+      "fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md",
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-01-20_kickoff-notes_ops-copilot.md",
+      "verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [
+        {
+          "search": "recurring problems delays extra cost Kestrel projects OT access scope creep seasonality",
+          "iteration": 1
+        }
+      ],
+      "terminationReason": "modelStopped"
+    },
+    "correct": false,
+    "fact_recall": 0.167,
+    "judge": {
+      "facts": [
+        {
+          "fact": "Security review at Scaldis (Ops Copilot) delayed go-live",
+          "present": false
+        },
+        {
+          "fact": "DPIA at Mediva delayed the start by 6 weeks",
+          "present": false
+        },
+        {
+          "fact": "OT firewall at Verhaeghe delayed connectivity by 5 weeks",
+          "present": true
+        },
+        {
+          "fact": "OT DMZ / SCADA access at AquaNova took 7 weeks",
+          "present": false
+        },
+        {
+          "fact": "Scope change at Fortalis (water damage claims) caused a 15% overrun",
+          "present": false
+        },
+        {
+          "fact": "Data quality issues (TOS gate events, CMR handwriting, duplicate asset IDs)",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer captures the broad themes of network/access delays, data quality, and scope changes, and correctly mentions Verhaeghe's five-week OT firewall delay. However, it omits the specific Scaldis security review, Mediva DPIA and six-week delay, AquaNova's seven-week OT DMZ/SCADA access delay, Fortalis's 15% overrun, and the specified CMR handwriting and duplicate asset ID data issues."
+    }
+  },
+  {
+    "id": "S2",
+    "category": "synthesis",
+    "strategy": "agentic",
+    "question": "What has Kestrel learned about delivering projects for industrial and utility customers?",
+    "answer": "Kestrel’s lessons for industrial customers include:\n\n- Arrange OT-to-cloud network access before kickoff, with clear owners, approvals and change windows (Verhaeghe Line Sensor Data Platform).\n- Involve customer-side OT/IT owners and vendor technical contacts during presales/discovery.\n- Request PLC tag lists and assess documentation/data quality early; budget time for older equipment.\n- Plan site work around operational constraints such as harvest seasons and holiday freezes.\n- Prefer edge inference for resilient industrial operation during network outages (Quality Inspection Vision).\n- Standardize gateway, enclosure and deployment patterns so rollouts across lines are repeatable.\n- Make customers co-own labelling, evaluation and acceptance; provide practical tools and training.\n- Plan ongoing retraining and monitoring as products, packaging and conditions change.\n- Treat new defect classes, data types and other scope additions as costed change requests.\n- Include operations runbooks, handover sessions and clear ownership in delivery.\n\nThe provided context contains no specific lessons about utility customers.",
+    "retrieval_ms": 1623,
+    "total_ms": 5091,
+    "answer_input_tokens": 4400,
+    "answer_output_tokens": 317,
+    "retrieval_tokens": 86079,
+    "context_sources": [
+      "kestrel/2025-06-27_lessons-learned-session.md",
+      "kestrel/2026-03-06_tech-radar-2026.md",
+      "mediva/2024-10-25_closing-report_discharge-letter-summarisation.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md",
+      "verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md",
+      "verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md",
+      "verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md"
+    ],
+    "debug": {
+      "subQueries": [
+        {
+          "search": "Kestrel learned about delivering projects industrial utility customers lessons learned industrial utility",
+          "iteration": 1
+        },
+        {
+          "search": "Kestrel consulting lessons learned industrial utility projects OT access fixed price seasonality",
+          "iteration": 2
+        }
+      ],
+      "terminationReason": "modelStopped"
+    },
+    "correct": false,
+    "fact_recall": 0.0,
+    "judge": {
+      "facts": [
+        {
+          "fact": "OT access delayed Line Sensor Data Platform by 5 weeks",
+          "present": false
+        },
+        {
+          "fact": "SCADA access through the OT DMZ took 7 weeks at AquaNova",
+          "present": false
+        },
+        {
+          "fact": "data diode export set up by Koen Martens",
+          "present": false
+        },
+        {
+          "fact": "lighting on line 3 solved with an enclosure",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer mentions arranging OT-to-cloud access before kickoff and general data-quality considerations, but omits all four required specific lessons and incorrectly states that there are no utility-customer lessons."
+    }
+  },
+  {
+    "id": "S3",
+    "category": "synthesis",
+    "strategy": "agentic",
+    "question": "How has the type of AI work Kestrel does evolved between 2023 and 2026?",
+    "answer": "Kestrel’s AI work evolved from traditional analytics and predictive modelling into governed, generative-AI solutions:\n\n- **2023:** Primarily data engineering, BI and operational prediction—**Bed Capacity Dashboard** (Synapse/Power BI) and **Container Dwell-Time Forecasting** (Databricks/Azure ML).\n- **2024:** Began applying generative AI to clinical workflows with **Discharge Letter Summarisation**, using Azure OpenAI to draft physician-reviewed letters.\n- **2025–2026:** Shifted toward production AI automation and agentic systems: **Customs Document Extraction** uses Document Intelligence and Logic Apps with human validation; **Clinical Knowledge Assistant** uses grounded retrieval over clinical guidelines; and **Asset Management Agent** combines Foundry IQ retrieval with Foundry Agent Service and read-only business tools.\n- **By 2026:** Microsoft Foundry, Foundry IQ, evaluations, tracing, source governance and permissions had become the preferred foundation.\n\nOverall, Kestrel moved from reporting and forecasting to human-supervised generative AI, retrieval-augmented assistants, and workflow-integrated agents.",
+    "retrieval_ms": 1660,
+    "total_ms": 5052,
+    "answer_input_tokens": 4816,
+    "answer_output_tokens": 349,
+    "retrieval_tokens": 68102,
+    "context_sources": [
+      "aquanova/2026-01-23_sow_asset-management-agent.md",
+      "kestrel/2026-03-06_tech-radar-2026.md",
+      "mediva/2023-11-30_closing-report_bed-capacity-dashboard.md",
+      "mediva/2024-01-15_proposal_discharge-letter-summarisation.md",
+      "mediva/2026-09-18_status-report_clinical-knowledge-assistant.md",
+      "scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md",
+      "scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md",
+      "scaldis/2025-09-30_sow_customs-document-extraction.md",
+      "scaldis/2026-06-12_status-report_customs-document-extraction.md"
+    ],
+    "debug": {
+      "subQueries": [
+        {
+          "search": "Kestrel AI work type 2023 2023 generative AI document extraction 2024 2025 agent 2026",
+          "iteration": 1
+        }
+      ],
+      "terminationReason": "modelStopped"
+    },
+    "correct": false,
+    "fact_recall": 0.5,
+    "judge": {
+      "facts": [
+        {
+          "fact": "2023 forecasting with Azure ML and dashboards with Power BI",
+          "present": true
+        },
+        {
+          "fact": "2024-2025 generative AI with Azure OpenAI (discharge letters, Ops Copilot)",
+          "present": false
+        },
+        {
+          "fact": "2026 Microsoft Foundry and Foundry IQ (Clinical Knowledge Assistant, Asset Management Agent)",
+          "present": true
+        },
+        {
+          "fact": "tech radar 2026 adopts Foundry IQ and trials knowledge graphs",
+          "present": false
+        }
+      ],
+      "correct": false,
+      "note": "The answer captures the broad evolution and correctly mentions 2023 forecasting/BI and 2026 Foundry-based assistants, but it omits Ops Copilot and the 2026 tech-radar adoption of Foundry IQ and trials of knowledge graphs."
+    }
+  }
+]

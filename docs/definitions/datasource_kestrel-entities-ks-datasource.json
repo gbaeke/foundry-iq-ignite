@@ -1,0 +1,17 @@
+{
+  "@odata.etag": "\"0x8DF45A5A7483052\"",
+  "name": "kestrel-entities-ks-datasource",
+  "description": "Data source for knowledge source 'kestrel-entities-ks'",
+  "type": "azureblob",
+  "subtype": null,
+  "indexerPermissionOptions": [],
+  "credentials": {},
+  "container": {
+    "name": "kestrel-corpus",
+    "query": null
+  },
+  "dataChangeDetectionPolicy": null,
+  "dataDeletionDetectionPolicy": null,
+  "encryptionKey": null,
+  "identity": null
+}

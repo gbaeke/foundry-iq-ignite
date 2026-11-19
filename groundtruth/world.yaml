@@ -1,0 +1,546 @@
+# Ground truth for the synthetic corpus.
+# This file is the single source of truth for every fact in corpus/.
+# It must NEVER be uploaded to the knowledge base: the eval answers are derived from it.
+#
+# Design rules for the corpus generated from this file:
+# - Facts are spread across documents. No document lists a full team history,
+#   all projects of a person, or all projects using a technology.
+# - People are introduced by full name, then often referred to by first name or initials.
+# - Deliberate ambiguity to test entity resolution:
+#     Tine Desmet (Verhaeghe) vs Pieter De Smet (Kestrel)
+#     Evelien Claes (AquaNova) vs Sofie Claes (Kestrel)
+#     Jan Wouters (Scaldis) vs Ruben Wouters (Kestrel)
+#     Koen Verstraete (Scaldis) vs Koen Martens (AquaNova)
+# - Facts change over time (dates slip, people change employer, budgets overrun).
+# - Recurring themes for the topic graph appear across customers without being named as such.
+
+consultancy:
+  id: kestrel
+  name: Kestrel Consulting
+  city: Ghent
+  description: Microsoft-focused data and AI consultancy, about 25 people.
+
+partners:
+  - id: dataforge
+    name: DataForge
+    city: Utrecht (NL)
+    description: Databricks and data engineering boutique, used as subcontractor.
+
+customers:
+  - id: scaldis
+    name: Scaldis Logistics
+    short: Scaldis
+    industry: Logistics / container terminal operations
+    city: Antwerp
+  - id: mediva
+    name: Mediva Care Group
+    short: Mediva
+    industry: Healthcare (hospital group, three campuses)
+    city: Ghent
+  - id: fortalis
+    name: Fortalis Verzekeringen
+    short: Fortalis
+    industry: Insurance (property and casualty)
+    city: Brussels
+  - id: verhaeghe
+    name: Verhaeghe Foods
+    short: Verhaeghe
+    industry: Food manufacturing (frozen vegetables)
+    city: Roeselare
+  - id: aquanova
+    name: AquaNova
+    short: AquaNova
+    industry: Water utility
+    city: Leuven
+
+people:
+  # Kestrel Consulting
+  - {id: lotte, name: Lotte Willems, employer: kestrel, title: Managing Partner}
+  - {id: pieter, name: Pieter De Smet, employer: kestrel, title: Lead AI Architect}
+  - {id: sofie, name: Sofie Claes, employer: kestrel, title: Senior Data Engineer}
+  - {id: jonas, name: Jonas Peeters, employer: kestrel, title: Cloud Platform Engineer}
+  - {id: amira, name: Amira El Idrissi, employer: kestrel, title: "ML Engineer (Lead AI Engineer from 2025-12-01)"}
+  - {id: thomas, name: Thomas Maes, employer: kestrel, title: Project Manager, note: "60% from 2025-07-01; left Kestrel 2025-12-31"}
+  - {id: elien, name: Elien Jacobs, employer: kestrel, title: UX and Frontend Developer}
+  - {id: ruben, name: Ruben Wouters, employer: kestrel, title: Junior Developer, note: "joined 2025-01-06"}
+  # DataForge
+  - {id: bram, name: Bram Visser, employer: dataforge, title: Databricks Specialist}
+  # Scaldis Logistics
+  - {id: koen_v, name: Koen Verstraete, employer: scaldis, title: CIO, initials: KV}
+  - {id: nathalie, name: Nathalie Dumont, employer: scaldis, title: Head of Terminal Operations}
+  - {id: wim, name: Wim Goossens, employer: scaldis, title: IT Security Officer}
+  - {id: jan, name: Jan Wouters, employer: scaldis, title: Customs Coordinator}
+  # Mediva Care Group
+  - {id: hilde, name: Dr. Hilde Van Damme, employer: mediva, title: Chief Medical Information Officer}
+  - {id: jeroen, name: Jeroen Lambrecht, employer: mediva, title: IT Manager}
+  - {id: sarah, name: Sarah Mertens, employer: mediva, title: Data Protection Officer}
+  # Fortalis Verzekeringen
+  - {id: marc, name: Marc Dubois, employer: fortalis, title: Chief Digital Officer}
+  - {id: laura, name: Laura Vermeulen, employer: fortalis, title: Claims Operations Manager}
+  - {id: kevin, name: Kevin Hermans, employer: "fortalis until 2025-06-30, aquanova from 2025-09-01", title: "Enterprise Architect (Fortalis), IT Architect (AquaNova)"}
+  # Verhaeghe Foods
+  - {id: ann, name: Ann Verhaeghe, employer: verhaeghe, title: CEO}
+  - {id: dries, name: Dries Callens, employer: verhaeghe, title: Quality Manager}
+  - {id: tine, name: Tine Desmet, employer: verhaeghe, title: IT Coordinator}
+  # AquaNova
+  - {id: filip, name: Filip Wuyts, employer: aquanova, title: Director Asset Management}
+  - {id: evelien, name: Evelien Claes, employer: aquanova, title: GIS Lead}
+  - {id: koen_m, name: Koen Martens, employer: aquanova, title: OT Engineer}
+
+technologies:
+  - Azure Machine Learning
+  - Databricks
+  - Azure Data Lake Storage Gen2
+  - Azure OpenAI
+  - Azure AI Search
+  - SharePoint
+  - Microsoft Teams
+  - Azure AI Document Intelligence
+  - Power BI
+  - Azure Synapse Analytics
+  - Microsoft Foundry
+  - Foundry IQ
+  - Azure Logic Apps
+  - Bicep
+  - Microsoft Entra ID
+  - Azure Policy
+  - Microsoft Fabric
+  - Azure IoT Hub
+  - Azure AI Vision
+  - Azure IoT Edge
+  - ArcGIS
+  - Foundry Agent Service
+
+projects:
+  - id: P1
+    name: Container Dwell-Time Forecasting
+    customer: scaldis
+    period: 2023-09-04 to 2024-03-29
+    status: completed
+    contract: fixed price, EUR 185,000
+    sponsor: koen_v
+    product_owner: nathalie
+    team: {thomas: project manager, sofie: data engineer, amira: ML engineer, bram: Databricks engineer (subcontracted via DataForge)}
+    technologies: [Azure Machine Learning, Databricks, Azure Data Lake Storage Gen2]
+    issues:
+      - {category: data quality, text: "duplicate and missing gate-in events from the terminal operating system (TOS)", resolved_by: sofie}
+    outcomes: "MAPE 11.8% against a 15% target; handed over to Nathalie's operations analytics team"
+  - id: P2
+    name: Scaldis Ops Copilot
+    customer: scaldis
+    period: "2025-01-20 to 2025-09-22 (planned go-live 2025-07-01, re-planned 2025-09-15, actual 2025-09-22)"
+    status: completed
+    contract: time and materials, estimate EUR 150,000
+    sponsor: koen_v
+    product_owner: nathalie
+    other_contacts: {wim: security review}
+    team: {pieter: lead architect, thomas: project manager, elien: UX and frontend, ruben: Teams bot developer}
+    technologies: [Azure OpenAI, Azure AI Search, SharePoint, Microsoft Teams]
+    issues:
+      - {category: security review, text: "security review required document-level permission trimming on SharePoint content; go-live slipped", raised_by: wim}
+    outcomes: "live 2025-09-22, 340 users in first month"
+  - id: P3
+    name: Customs Document Extraction
+    customer: scaldis
+    period: 2025-10-06 to ongoing
+    status: ongoing
+    contract: time and materials, first phase EUR 95,000
+    sponsor: koen_v
+    product_owner: jan
+    team: {pieter: architect, amira: ML engineer}
+    technologies: [Azure AI Document Intelligence, Azure Logic Apps]
+    issues:
+      - {category: data quality, text: "handwritten annotations on CMR consignment notes reduce extraction accuracy"}
+    outcomes: "as of 2026-06: 14 document types supported, 94% field-level accuracy"
+  - id: P4
+    name: Discharge Letter Summarisation
+    customer: mediva
+    period: "2024-03-18 to 2024-10-25 (planned start 2024-02-05, delayed 6 weeks by DPIA)"
+    status: completed
+    contract: fixed price, EUR 120,000
+    sponsor: hilde
+    other_contacts: {jeroen: IT manager, sarah: DPO}
+    team: {pieter: architect, amira: ML engineer, thomas: project manager}
+    technologies: [Azure OpenAI]
+    issues:
+      - {category: privacy / DPIA, text: "DPIA required before any patient data could be processed; pseudonymisation required; delayed start by 6 weeks", raised_by: sarah}
+    outcomes: "evaluated with 12 physicians; about 9 minutes saved per discharge letter"
+    follow_up: P6
+  - id: P5
+    name: Bed Capacity Dashboard
+    customer: mediva
+    period: 2023-05-08 to 2023-11-30
+    status: completed
+    contract: fixed price, EUR 60,000
+    sponsor: jeroen
+    team: {lotte: engagement lead and project manager, sofie: data engineer, elien: dashboard designer}
+    technologies: [Power BI, Azure Synapse Analytics]
+    issues:
+      - {category: adoption / change management, text: "night shift nurses kept using the whiteboard; solved with a large-screen view per ward"}
+    outcomes: "used on all three campuses"
+  - id: P6
+    name: Clinical Knowledge Assistant
+    customer: mediva
+    period: 2026-01-12 to ongoing
+    status: ongoing (pilot)
+    contract: time and materials, first phase EUR 140,000
+    sponsor: hilde
+    other_contacts: {jeroen: IT manager, sarah: DPO}
+    team: {pieter: lead architect, amira: lead AI engineer, ruben: developer}
+    technologies: [Microsoft Foundry, Foundry IQ, Azure OpenAI]
+    follows_up: P4
+    issues:
+      - {category: content governance, text: "outdated clinical guideline versions in the source library produced conflicting answers"}
+    outcomes: "as of 2026-09: pilot in cardiology and emergency departments, evaluation set of 200 questions"
+  - id: P7
+    name: Fortalis Landing Zone
+    customer: fortalis
+    period: 2023-10-02 to 2024-02-23
+    status: completed (on time)
+    contract: fixed price, EUR 75,000
+    sponsor: marc
+    other_contacts: {kevin: enterprise architect}
+    team: {jonas: lead engineer}
+    technologies: [Bicep, Microsoft Entra ID, Azure Policy]
+    outcomes: "hub-spoke landing zone with policy-as-code"
+  - id: P8
+    name: Claims Triage Automation
+    customer: fortalis
+    period: 2024-04-08 to 2025-02-28
+    status: completed (over budget)
+    contract: "fixed price EUR 240,000, final cost EUR 276,000 after change request CR-07"
+    sponsor: marc
+    product_owner: laura
+    team: {thomas: project manager, jonas: platform engineer, amira: ML engineer}
+    technologies: [Azure AI Document Intelligence, Azure Machine Learning, Azure Logic Apps]
+    issues:
+      - {category: scope / budget, text: "water damage claim types added; 15% overrun; change request CR-07 approved by Marc"}
+      - {category: model quality, text: "model drift after the autumn storm season; monthly retraining introduced"}
+    outcomes: "38% of incoming claims auto-triaged"
+  - id: P9
+    name: Broker Portal Modernisation
+    customer: fortalis
+    period: 2025-04-14 to 2025-06-20
+    status: cancelled after discovery
+    contract: discovery phase time and materials, EUR 30,000
+    sponsor: marc
+    product_owner: laura
+    team: {elien: UX lead, thomas: project manager}
+    technologies: []
+    issues:
+      - {category: budget, text: "budget reallocated to Fortalis' DORA compliance programme; project cancelled 2025-06-20"}
+  - id: P10
+    name: Line Sensor Data Platform
+    customer: verhaeghe
+    period: 2024-06-03 to 2025-01-31
+    status: completed
+    contract: fixed price, EUR 130,000
+    sponsor: ann
+    product_owner: dries
+    other_contacts: {tine: IT coordinator}
+    team: {sofie: lead and data engineer, jonas: IoT and platform engineer, bram: Databricks engineer (subcontracted via DataForge)}
+    technologies: [Microsoft Fabric, Azure IoT Hub, Databricks]
+    issues:
+      - {category: OT network access, text: "firewall between OT and IT network delayed sensor connectivity by 5 weeks; Tine arranged a firewall change"}
+    outcomes: "6 production lines connected"
+  - id: P11
+    name: Quality Inspection Vision
+    customer: verhaeghe
+    period: 2025-03-10 to 2025-11-14
+    status: completed
+    contract: fixed price, EUR 110,000
+    sponsor: ann
+    product_owner: dries
+    other_contacts: {tine: IT coordinator}
+    team: {amira: lead and ML engineer, jonas: edge engineer, ruben: labelling tool developer}
+    technologies: [Azure AI Vision, Azure IoT Edge]
+    issues:
+      - {category: data quality, text: "inconsistent lighting on line 3 caused false positives; solved with a camera enclosure"}
+    outcomes: "4,000 labelled images; 96% defect recall"
+  - id: P12
+    name: Leak Detection Analytics
+    customer: aquanova
+    period: 2024-09-02 to 2025-05-30
+    status: completed
+    contract: fixed price, EUR 160,000
+    sponsor: filip
+    product_owner: evelien
+    other_contacts: {koen_m: OT engineer}
+    team: {sofie: lead and data engineer, amira: ML engineer, bram: Databricks engineer (subcontracted via DataForge)}
+    technologies: [Microsoft Fabric, Azure Machine Learning, ArcGIS, Databricks]
+    issues:
+      - {category: OT network access, text: "SCADA data only reachable through the OT DMZ; access approval took 7 weeks; Koen Martens set up a data diode export"}
+    outcomes: "23 leaks detected in the pilot zone; model owned by Evelien's GIS team"
+  - id: P13
+    name: Asset Management Agent
+    customer: aquanova
+    period: 2026-02-02 to ongoing
+    status: ongoing
+    contract: time and materials, first phase EUR 125,000
+    sponsor: filip
+    other_contacts: {kevin: IT architect}
+    team: {pieter: lead architect, jonas: platform engineer, ruben: developer}
+    technologies: [Foundry Agent Service, Foundry IQ, Microsoft Foundry]
+    issues:
+      - {category: data quality, text: "duplicate asset IDs in the asset register between two legacy systems"}
+
+# Which document carries which facts. Writers must include every listed fact and avoid
+# restating facts that belong to other documents beyond what the plan says.
+documents:
+  # ---------------- Scaldis Logistics ----------------
+  - file: scaldis/2023-07-14_proposal_container-dwell-time-forecasting.md
+    type: proposal
+    author: lotte
+    project: P1
+    facts:
+      - sponsor Koen Verstraete, product owner Nathalie Dumont
+      - proposed team Thomas Maes (PM), Sofie Claes, Amira El Idrissi, plus Bram Visser of DataForge as subcontractor for Databricks
+      - fixed price EUR 185,000, planned 2023-09-04 to 2024-03-29
+      - Azure Machine Learning, Databricks, ADLS Gen2; target MAPE 15%
+  - file: scaldis/2023-12-08_status-report_container-dwell-time-forecasting.md
+    type: status report
+    author: thomas
+    project: P1
+    facts:
+      - duplicate and missing gate-in events from the TOS; Sofie wrote deduplication rules
+      - Bram completed the Databricks feature pipelines
+      - status amber -> green
+  - file: scaldis/2024-03-29_closing-report_container-dwell-time-forecasting.md
+    type: closing report
+    author: thomas
+    project: P1
+    facts:
+      - MAPE 11.8%; handed over to Nathalie's operations analytics team
+      - lesson learned involve the TOS vendor early
+  - file: scaldis/2025-01-20_kickoff-notes_ops-copilot.md
+    type: meeting notes
+    author: pieter
+    project: P2
+    facts:
+      - attendees Koen Verstraete (referred to as KV in action items), Nathalie Dumont, Wim Goossens, Pieter, Thomas, Elien, Ruben
+      - Azure OpenAI, Azure AI Search over SOPs in SharePoint, Teams bot; target go-live 2025-07-01
+      - time and materials, estimate EUR 150,000
+  - file: scaldis/2025-05-16_status-report_ops-copilot.md
+    type: status report
+    author: thomas
+    project: P2
+    facts:
+      - Wim's security review requires document-level permission trimming
+      - go-live re-planned to 2025-09-15
+      - Ruben built the Teams bot front end; status red
+  - file: scaldis/2025-09-26_go-live-note_ops-copilot.md
+    type: go-live note
+    author: pieter
+    project: P2
+    facts:
+      - live on 2025-09-22, one week after the re-planned date; 340 users in first month
+      - lesson learned plan the security review in the first sprint
+  - file: scaldis/2025-09-30_sow_customs-document-extraction.md
+    type: statement of work
+    author: lotte
+    project: P3
+    facts:
+      - product owner Jan Wouters (Customs Coordinator), sponsor Koen Verstraete
+      - Pieter architect, Amira ML engineer; T&M first phase EUR 95,000; start 2025-10-06
+      - Azure AI Document Intelligence custom models, Logic Apps
+  - file: scaldis/2026-06-12_status-report_customs-document-extraction.md
+    type: status report
+    author: pieter
+    project: P3
+    facts:
+      - 14 document types, 94% field-level accuracy
+      - handwritten annotations on CMR notes are the main accuracy issue
+      - ongoing
+
+  # ---------------- Mediva Care Group ----------------
+  - file: mediva/2023-11-30_closing-report_bed-capacity-dashboard.md
+    type: closing report
+    author: lotte
+    project: P5
+    facts:
+      - sponsor Jeroen Lambrecht; Lotte as engagement lead and PM; Sofie and Elien
+      - Power BI on Azure Synapse; fixed price EUR 60,000; all three campuses
+      - night shift nurses kept using the whiteboard; large-screen ward view
+  - file: mediva/2024-01-15_proposal_discharge-letter-summarisation.md
+    type: proposal
+    author: lotte
+    project: P4
+    facts:
+      - sponsor Dr. Hilde Van Damme; contacts Jeroen Lambrecht and Sarah Mertens (DPO)
+      - team Pieter, Amira, Thomas; fixed price EUR 120,000; planned start 2024-02-05
+      - Azure OpenAI, EU data residency
+  - file: mediva/2024-03-11_meeting-notes_dpia-discharge-letters.md
+    type: meeting notes
+    author: amira
+    project: P4
+    facts:
+      - attendees Sarah Mertens, Jeroen Lambrecht, Amira, Pieter
+      - DPIA completed; start delayed 6 weeks to 2024-03-18; pseudonymisation mandatory; no patient data leaves the EU
+  - file: mediva/2024-10-25_closing-report_discharge-letter-summarisation.md
+    type: closing report
+    author: thomas
+    project: P4
+    facts:
+      - evaluated with 12 physicians; about 9 minutes saved per letter
+      - recommends a follow-up clinical knowledge assistant
+  - file: mediva/2025-12-10_sow_clinical-knowledge-assistant.md
+    type: statement of work
+    author: lotte
+    project: P6
+    facts:
+      - follow-up of the Discharge Letter Summarisation project
+      - Pieter lead architect, Amira lead AI engineer, Ruben developer; T&M first phase EUR 140,000; start 2026-01-12
+      - Microsoft Foundry, Foundry IQ knowledge base with agentic retrieval, Azure OpenAI
+  - file: mediva/2026-09-18_status-report_clinical-knowledge-assistant.md
+    type: status report
+    author: pieter
+    project: P6
+    facts:
+      - pilot in cardiology and emergency; 200-question evaluation set
+      - outdated guideline versions caused conflicting answers; content governance with Hilde's team
+
+  # ---------------- Fortalis Verzekeringen ----------------
+  - file: fortalis/2024-02-23_closing-report_landing-zone.md
+    type: closing report
+    author: jonas
+    project: P7
+    facts:
+      - sponsor Marc Dubois, counterpart Kevin Hermans (Enterprise Architect)
+      - Bicep, Entra ID, Azure Policy; hub-spoke; on time; fixed price EUR 75,000
+  - file: fortalis/2024-03-18_proposal_claims-triage-automation.md
+    type: proposal
+    author: lotte
+    project: P8
+    facts:
+      - sponsor Marc Dubois, product owner Laura Vermeulen
+      - team Thomas, Jonas, Amira; fixed price EUR 240,000; start 2024-04-08
+      - Document Intelligence, Azure ML, Logic Apps; builds on the landing zone
+  - file: fortalis/2024-09-20_status-report_claims-triage-automation.md
+    type: status report
+    author: thomas
+    project: P8
+    facts:
+      - water damage claim types added; forecast 15% overrun; change request CR-07 approved by Marc
+  - file: fortalis/2025-02-28_closing-report_claims-triage-automation.md
+    type: closing report
+    author: thomas
+    project: P8
+    facts:
+      - 38% auto-triaged; final cost EUR 276,000
+      - model drift after the autumn storm season; monthly retraining
+  - file: fortalis/2025-05-30_discovery-report_broker-portal-modernisation.md
+    type: discovery report
+    author: elien
+    project: P9
+    facts:
+      - Elien UX lead, Thomas PM; product owner Laura Vermeulen; discovery T&M EUR 30,000
+      - findings and proposed roadmap; no technology chosen yet
+  - file: fortalis/2025-06-20_memo_broker-portal-cancelled.md
+    type: internal memo
+    author: lotte
+    project: P9
+    facts:
+      - project cancelled; budget reallocated to Fortalis' DORA compliance programme
+      - mentions Kevin Hermans leaves Fortalis at the end of June 2025
+
+  # ---------------- Verhaeghe Foods ----------------
+  - file: verhaeghe/2024-05-22_proposal_line-sensor-data-platform.md
+    type: proposal
+    author: lotte
+    project: P10
+    facts:
+      - sponsor Ann Verhaeghe, product owner Dries Callens, IT contact Tine Desmet
+      - team Sofie (lead), Jonas, Bram Visser via DataForge; fixed price EUR 130,000; start 2024-06-03
+      - Microsoft Fabric, Azure IoT Hub, Databricks
+  - file: verhaeghe/2024-10-11_status-report_line-sensor-data-platform.md
+    type: status report
+    author: sofie
+    project: P10
+    facts:
+      - OT/IT firewall delayed sensor connectivity by 5 weeks; Tine arranged firewall change
+      - 3 production lines connected so far
+  - file: verhaeghe/2025-01-31_closing-report_line-sensor-data-platform.md
+    type: closing report
+    author: sofie
+    project: P10
+    facts:
+      - 6 production lines connected; lesson learned arrange OT access before kickoff
+  - file: verhaeghe/2025-03-10_kickoff-notes_quality-inspection-vision.md
+    type: meeting notes
+    author: amira
+    project: P11
+    facts:
+      - attendees Dries Callens, Tine Desmet, Amira, Jonas
+      - Azure AI Vision custom model on Azure IoT Edge; plan to label 4,000 images; fixed price EUR 110,000
+  - file: verhaeghe/2025-11-14_closing-report_quality-inspection-vision.md
+    type: closing report
+    author: amira
+    project: P11
+    facts:
+      - 96% defect recall; lighting on line 3 caused false positives, solved with enclosure
+      - Ruben built the labelling tool
+
+  # ---------------- AquaNova ----------------
+  - file: aquanova/2024-08-19_proposal_leak-detection-analytics.md
+    type: proposal
+    author: lotte
+    project: P12
+    facts:
+      - sponsor Filip Wuyts, product owner Evelien Claes, OT contact Koen Martens
+      - team Sofie (lead), Amira, Bram Visser via DataForge; fixed price EUR 160,000; start 2024-09-02
+      - Microsoft Fabric, Azure ML, ArcGIS, Databricks
+  - file: aquanova/2025-01-24_status-report_leak-detection-analytics.md
+    type: status report
+    author: sofie
+    project: P12
+    facts:
+      - SCADA data only via OT DMZ; approval took 7 weeks; Koen (Martens) set up a data diode export
+  - file: aquanova/2025-05-30_closing-report_leak-detection-analytics.md
+    type: closing report
+    author: sofie
+    project: P12
+    facts:
+      - 23 leaks detected in pilot zone; model handed to Evelien's GIS team
+  - file: aquanova/2026-01-23_sow_asset-management-agent.md
+    type: statement of work
+    author: lotte
+    project: P13
+    facts:
+      - sponsor Filip Wuyts; IT architect Kevin Hermans (at AquaNova since 2025-09-01, previously at Fortalis)
+      - team Pieter (lead architect), Jonas, Ruben; T&M first phase EUR 125,000; start 2026-02-02
+      - Foundry Agent Service, Foundry IQ, Microsoft Foundry
+  - file: aquanova/2026-10-09_status-report_asset-management-agent.md
+    type: status report
+    author: pieter
+    project: P13
+    facts:
+      - duplicate asset IDs between two legacy systems; Ruben building agent tools; ongoing
+
+  # ---------------- Kestrel internal ----------------
+  - file: kestrel/2024-12-16_staffing-plan-2025.md
+    type: internal plan
+    author: lotte
+    facts:
+      - Ruben Wouters joins 2025-01-06 as junior developer
+      - Thomas Maes moves to 60% from 2025-07-01
+      - DataForge framework contract with Bram extended for 2025
+      - mentions planned assignments for H1 2025 only partially (Ops Copilot, Quality Inspection Vision, Leak Detection wrap-up)
+  - file: kestrel/2025-06-27_lessons-learned-session.md
+    type: internal meeting notes
+    author: elien
+    facts:
+      - knowledge sharing session covering only Ops Copilot (security review), Claims Triage (scope creep) and Line Sensor (OT access)
+      - does NOT mention Leak Detection, DPIA or other projects
+  - file: kestrel/2025-11-21_org-update.md
+    type: internal memo
+    author: lotte
+    facts:
+      - Thomas Maes leaves Kestrel on 2025-12-31
+      - Amira El Idrissi becomes Lead AI Engineer from 2025-12-01
+      - Lotte takes over project management of remaining work
+  - file: kestrel/2026-03-06_tech-radar-2026.md
+    type: internal note
+    author: pieter
+    facts:
+      - adopt Microsoft Foundry and Foundry IQ; trial knowledge graphs; hold on fine-tuning
+      - references the Clinical Knowledge Assistant and Asset Management Agent without listing teams

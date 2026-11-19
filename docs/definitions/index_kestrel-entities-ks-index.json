@@ -1,0 +1,256 @@
+{
+  "@odata.etag": "\"0x8DF45A59B800F16\"",
+  "name": "kestrel-entities-ks-index",
+  "description": "Search index for knowledge source 'kestrel-entities-ks'",
+  "defaultScoringProfile": null,
+  "permissionFilterOption": null,
+  "purviewEnabled": false,
+  "fields": [
+    {
+      "name": "uid",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": true,
+      "facetable": false,
+      "key": true,
+      "indexAnalyzer": null,
+      "searchAnalyzer": null,
+      "analyzer": "keyword",
+      "normalizer": null,
+      "dimensions": null,
+      "vectorSearchProfile": null,
+      "topicGraphProfile": null,
+      "vectorEncoding": null,
+      "permissionFilter": null,
+      "sensitivityLabelId": null,
+      "sensitivityLabelName": null,
+      "sourceDocumentId": null,
+      "sharepointSiteUrl": null,
+      "organizationAccessExpiration": null,
+      "synonymMaps": []
+    },
+    {
+      "name": "snippet_parent_id",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false,
+      "indexAnalyzer": null,
+      "searchAnalyzer": null,
+      "analyzer": null,
+      "normalizer": null,
+      "dimensions": null,
+      "vectorSearchProfile": null,
+      "topicGraphProfile": null,
+      "vectorEncoding": null,
+      "permissionFilter": null,
+      "sensitivityLabelId": null,
+      "sensitivityLabelName": null,
+      "sourceDocumentId": null,
+      "sharepointSiteUrl": null,
+      "organizationAccessExpiration": null,
+      "synonymMaps": []
+    },
+    {
+      "name": "blob_url",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false,
+      "indexAnalyzer": null,
+      "searchAnalyzer": null,
+      "analyzer": null,
+      "normalizer": null,
+      "dimensions": null,
+      "vectorSearchProfile": null,
+      "topicGraphProfile": null,
+      "vectorEncoding": null,
+      "permissionFilter": null,
+      "sensitivityLabelId": null,
+      "sensitivityLabelName": null,
+      "sourceDocumentId": null,
+      "sharepointSiteUrl": null,
+      "organizationAccessExpiration": null,
+      "synonymMaps": []
+    },
+    {
+      "name": "snippet",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false,
+      "indexAnalyzer": null,
+      "searchAnalyzer": null,
+      "analyzer": null,
+      "normalizer": null,
+      "dimensions": null,
+      "vectorSearchProfile": null,
+      "topicGraphProfile": null,
+      "vectorEncoding": null,
+      "permissionFilter": null,
+      "sensitivityLabelId": null,
+      "sensitivityLabelName": null,
+      "sourceDocumentId": null,
+      "sharepointSiteUrl": null,
+      "organizationAccessExpiration": null,
+      "synonymMaps": []
+    },
+    {
+      "name": "image_snippet_parent_id",
+      "type": "Edm.String",
+      "searchable": false,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false,
+      "indexAnalyzer": null,
+      "searchAnalyzer": null,
+      "analyzer": null,
+      "normalizer": null,
+      "dimensions": null,
+      "vectorSearchProfile": null,
+      "topicGraphProfile": null,
+      "vectorEncoding": null,
+      "permissionFilter": null,
+      "sensitivityLabelId": null,
+      "sensitivityLabelName": null,
+      "sourceDocumentId": null,
+      "sharepointSiteUrl": null,
+      "organizationAccessExpiration": null,
+      "synonymMaps": []
+    },
+    {
+      "name": "snippet_vector",
+      "type": "Collection(Edm.Single)",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "key": false,
+      "indexAnalyzer": null,
+      "searchAnalyzer": null,
+      "analyzer": null,
+      "normalizer": null,
+      "dimensions": 1536,
+      "vectorSearchProfile": "kestrel-entities-ks-vector-search-profile",
+      "topicGraphProfile": null,
+      "vectorEncoding": null,
+      "permissionFilter": null,
+      "sensitivityLabelId": null,
+      "sensitivityLabelName": null,
+      "sourceDocumentId": null,
+      "sharepointSiteUrl": null,
+      "organizationAccessExpiration": null,
+      "synonymMaps": []
+    }
+  ],
+  "scoringProfiles": [],
+  "corsOptions": null,
+  "suggesters": [],
+  "analyzers": [],
+  "normalizers": [],
+  "tokenizers": [],
+  "tokenFilters": [],
+  "charFilters": [],
+  "encryptionKey": null,
+  "similarity": {
+    "@odata.type": "#Microsoft.Azure.Search.BM25Similarity",
+    "k1": null,
+    "b": null
+  },
+  "semantic": {
+    "defaultConfiguration": "kestrel-entities-ks-semantic-configuration",
+    "configurations": [
+      {
+        "name": "kestrel-entities-ks-semantic-configuration",
+        "flightingOptIn": false,
+        "rankingOrder": "BoostedRerankerScore",
+        "prioritizedFields": {
+          "titleField": null,
+          "prioritizedContentFields": [
+            {
+              "fieldName": "snippet"
+            }
+          ],
+          "prioritizedKeywordsFields": []
+        }
+      }
+    ]
+  },
+  "vectorSearch": {
+    "algorithms": [
+      {
+        "name": "kestrel-entities-ks-vector-search-algorithm",
+        "kind": "hnsw",
+        "hnswParameters": {
+          "metric": "cosine",
+          "m": 4,
+          "efConstruction": 400,
+          "efSearch": 500
+        },
+        "exhaustiveKnnParameters": null
+      }
+    ],
+    "profiles": [
+      {
+        "name": "kestrel-entities-ks-vector-search-profile",
+        "algorithm": "kestrel-entities-ks-vector-search-algorithm",
+        "vectorizer": "kestrel-entities-ks-vectorizer",
+        "compression": "kestrel-entities-ks-vector-search-scalar-quantization"
+      }
+    ],
+    "vectorizers": [
+      {
+        "name": "kestrel-entities-ks-vectorizer",
+        "kind": "azureOpenAI",
+        "azureOpenAIParameters": {
+          "resourceUri": "https://aif-kestrel-kg.openai.azure.com",
+          "deploymentId": "text-embedding-3-small",
+          "apiKey": null,
+          "modelName": "text-embedding-3-small",
+          "authIdentity": null
+        },
+        "customWebApiParameters": null,
+        "aiServicesVisionParameters": null,
+        "amlParameters": null
+      }
+    ],
+    "compressions": [
+      {
+        "name": "kestrel-entities-ks-vector-search-scalar-quantization",
+        "kind": "scalarQuantization",
+        "truncationDimension": null,
+        "scalarQuantizationParameters": {
+          "quantizedDataType": "int8"
+        },
+        "rescoringOptions": {
+          "enableRescoring": true,
+          "defaultOversampling": 4.0,
+          "rescoreStorageMethod": "preserveOriginals"
+        }
+      }
+    ],
+    "topicGraphProfiles": []
+  },
+  "sharePointConnectorAppRegistration": null,
+  "oneLakeSecuritySource": null
+}

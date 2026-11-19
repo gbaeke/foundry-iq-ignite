@@ -1,0 +1,160 @@
+# Eval questions for the Kestrel corpus. Answers are derived from world.yaml.
+# category: lookup | counting | negative | multi_hop | entity_resolution | temporal | synthesis
+# required_facts: what a correct answer must contain (used for fact-recall scoring).
+# Lookup questions are the control group: plain RAG should do fine there.
+
+questions:
+  # ---------- lookup (control) ----------
+  - id: L1
+    category: lookup
+    question: What was the final cost of the Claims Triage Automation project for Fortalis?
+    answer: EUR 276,000, up from the EUR 240,000 fixed price after change request CR-07.
+    required_facts: ["EUR 276,000", "CR-07"]
+  - id: L2
+    category: lookup
+    question: How many leaks did the AquaNova leak detection pilot find?
+    answer: 23 leaks in the pilot zone.
+    required_facts: ["23 leaks"]
+  - id: L3
+    category: lookup
+    question: What defect recall did the Quality Inspection Vision project reach at Verhaeghe Foods?
+    answer: 96% defect recall.
+    required_facts: ["96%"]
+
+  # ---------- counting ----------
+  - id: C1
+    category: counting
+    question: How many projects has Amira El Idrissi worked on, and which ones?
+    answer: Seven projects.
+    required_facts:
+      - Container Dwell-Time Forecasting
+      - Customs Document Extraction
+      - Discharge Letter Summarisation
+      - Clinical Knowledge Assistant
+      - Claims Triage Automation
+      - Quality Inspection Vision
+      - Leak Detection Analytics
+  - id: C2
+    category: counting
+    question: Which projects used Databricks?
+    answer: Three projects, all with Bram Visser of DataForge as subcontractor.
+    required_facts: [Container Dwell-Time Forecasting, Line Sensor Data Platform, Leak Detection Analytics]
+  - id: C3
+    category: counting
+    question: How many projects did Thomas Maes manage as project manager?
+    answer: Five.
+    required_facts: [Container Dwell-Time Forecasting, Scaldis Ops Copilot, Discharge Letter Summarisation, Claims Triage Automation, Broker Portal Modernisation]
+  - id: C4
+    category: counting
+    question: Which projects used Azure OpenAI?
+    answer: Three.
+    required_facts: [Scaldis Ops Copilot, Discharge Letter Summarisation, Clinical Knowledge Assistant]
+  - id: C5
+    category: counting
+    question: What is the total contract value of all Kestrel projects for Scaldis Logistics?
+    answer: EUR 430,000 (185,000 fixed price + 150,000 T&M estimate + 95,000 first phase).
+    required_facts: ["EUR 185,000", "EUR 150,000", "EUR 95,000", "EUR 430,000"]
+
+  # ---------- negative ----------
+  - id: N1
+    category: negative
+    question: Has Kestrel ever used Databricks on a project for Mediva Care Group?
+    answer: No. Mediva projects used Power BI, Azure Synapse, Azure OpenAI, Microsoft Foundry and Foundry IQ.
+    required_facts: ["No"]
+  - id: N2
+    category: negative
+    question: Did Bram Visser work on any project for Fortalis or Mediva?
+    answer: No. He only worked for Scaldis, Verhaeghe and AquaNova projects.
+    required_facts: ["No", Scaldis, Verhaeghe, AquaNova]
+  - id: N3
+    category: negative
+    question: Has Elien Jacobs worked on any project for Verhaeghe Foods?
+    answer: No. Her projects were Bed Capacity Dashboard (Mediva), Scaldis Ops Copilot and Broker Portal Modernisation (Fortalis).
+    required_facts: ["No"]
+
+  # ---------- multi-hop ----------
+  - id: M1
+    category: multi_hop
+    question: Which Kestrel consultant has worked with Kevin Hermans at two different employers?
+    answer: Jonas Peeters, on the Fortalis Landing Zone and on the AquaNova Asset Management Agent.
+    required_facts: [Jonas Peeters, Fortalis Landing Zone, Asset Management Agent]
+  - id: M2
+    category: multi_hop
+    question: On which projects did Sofie Claes and Amira El Idrissi work together?
+    answer: Container Dwell-Time Forecasting (Scaldis) and Leak Detection Analytics (AquaNova).
+    required_facts: [Container Dwell-Time Forecasting, Leak Detection Analytics]
+  - id: M3
+    category: multi_hop
+    question: What did the predecessor of Mediva's Clinical Knowledge Assistant deliver, and who was involved in both projects from Kestrel?
+    answer: Discharge Letter Summarisation, about 9 minutes saved per letter, evaluated with 12 physicians. Pieter De Smet and Amira El Idrissi worked on both.
+    required_facts: [Discharge Letter Summarisation, 9 minutes, Pieter De Smet, Amira El Idrissi]
+  - id: M4
+    category: multi_hop
+    question: Which of the projects managed by Thomas Maes were delayed, went over budget or were cancelled?
+    answer: Scaldis Ops Copilot (delayed), Discharge Letter Summarisation (6 week delayed start), Claims Triage Automation (over budget) and Broker Portal Modernisation (cancelled). Container Dwell-Time Forecasting had an internal milestone delay but closed on its planned date, so also mentioning it is acceptable, not a wrong item.
+    required_facts: [Scaldis Ops Copilot, Discharge Letter Summarisation, Claims Triage Automation, Broker Portal Modernisation]
+
+  # ---------- entity resolution ----------
+  - id: E1
+    category: entity_resolution
+    question: Which projects involved someone called Koen, and who are they?
+    answer: Two different people. Koen Verstraete, CIO at Scaldis, sponsored Container Dwell-Time Forecasting, Scaldis Ops Copilot and Customs Document Extraction. Koen Martens, OT engineer at AquaNova, was the OT contact on Leak Detection Analytics.
+    required_facts: [Koen Verstraete, Koen Martens, Leak Detection Analytics, Scaldis Ops Copilot]
+  - id: E2
+    category: entity_resolution
+    question: What has Tine Desmet worked on?
+    answer: She is IT Coordinator at Verhaeghe Foods, contact on Line Sensor Data Platform and Quality Inspection Vision. She is not Pieter De Smet of Kestrel.
+    required_facts: [Verhaeghe Foods, Line Sensor Data Platform, Quality Inspection Vision]
+  - id: E3
+    category: entity_resolution
+    question: Who is Jan Wouters?
+    answer: Customs Coordinator at Scaldis Logistics and product owner of Customs Document Extraction. Not related to Ruben Wouters of Kestrel.
+    required_facts: [Scaldis, Customs Coordinator, Customs Document Extraction]
+
+  # ---------- temporal ----------
+  - id: T1
+    category: temporal
+    question: When did the Scaldis Ops Copilot go live compared to the original plan?
+    answer: Planned 2025-07-01, re-planned to 2025-09-15 after the security review, live on 2025-09-22.
+    required_facts: ["2025-07-01", "2025-09-15", "2025-09-22"]
+  - id: T2
+    category: temporal
+    question: Where does Kevin Hermans work today?
+    answer: AquaNova, as IT architect since 2025-09-01. He previously worked at Fortalis until the end of June 2025.
+    required_facts: [AquaNova, Fortalis]
+  - id: T3
+    category: temporal
+    question: Who handles project management at Kestrel in 2026?
+    answer: Lotte Willems took over project management from 2026-01-01, after Thomas Maes left Kestrel on 2025-12-31.
+    required_facts: [Lotte Willems, Thomas Maes]
+
+  # ---------- synthesis ----------
+  - id: S1
+    category: synthesis
+    question: What recurring problems caused delays or extra cost across Kestrel's projects?
+    answer: Security and privacy reviews, OT network access at industrial customers, data quality in source systems, and scope changes.
+    required_facts:
+      - Security review at Scaldis (Ops Copilot) delayed go-live
+      - DPIA at Mediva delayed the start by 6 weeks
+      - OT firewall at Verhaeghe delayed connectivity by 5 weeks
+      - OT DMZ / SCADA access at AquaNova took 7 weeks
+      - Scope change at Fortalis (water damage claims) caused a 15% overrun
+      - Data quality issues (TOS gate events, CMR handwriting, duplicate asset IDs)
+  - id: S2
+    category: synthesis
+    question: What has Kestrel learned about delivering projects for industrial and utility customers?
+    answer: Arrange OT network access before kickoff; expect long approval times and IT/OT firewall changes; data quality and physical conditions (lighting) matter.
+    required_facts:
+      - OT access delayed Line Sensor Data Platform by 5 weeks
+      - SCADA access through the OT DMZ took 7 weeks at AquaNova
+      - data diode export set up by Koen Martens
+      - lighting on line 3 solved with an enclosure
+  - id: S3
+    category: synthesis
+    question: How has the type of AI work Kestrel does evolved between 2023 and 2026?
+    answer: From classic ML and BI (forecasting, dashboards, triage models, vision) to generative AI with Azure OpenAI and RAG (2024-2025), to Foundry-based agents and Foundry IQ knowledge bases (2026).
+    required_facts:
+      - 2023 forecasting with Azure ML and dashboards with Power BI
+      - 2024-2025 generative AI with Azure OpenAI (discharge letters, Ops Copilot)
+      - 2026 Microsoft Foundry and Foundry IQ (Clinical Knowledge Assistant, Asset Management Agent)
+      - tech radar 2026 adopts Foundry IQ and trials knowledge graphs

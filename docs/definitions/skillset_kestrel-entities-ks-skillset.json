@@ -1,0 +1,306 @@
+{
+  "@odata.etag": "\"0x8DF45A59D27DB3D\"",
+  "name": "kestrel-entities-ks-skillset",
+  "description": "Skillset for knowledge source 'kestrel-entities-ks'",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Text.SplitSkill",
+      "name": "SplitSkill",
+      "description": "Split document content into chunks",
+      "context": "/document",
+      "defaultLanguageCode": "en",
+      "textSplitMode": "pages",
+      "maximumPageLength": 2000,
+      "pageOverlapLength": 200,
+      "maximumPagesToTake": 0,
+      "unit": "characters",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/content",
+          "sourceContext": null,
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "textItems",
+          "targetName": "pages"
+        }
+      ],
+      "azureOpenAITokenizerParameters": null
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill",
+      "name": "AzureOpenAIEmbeddingSkill",
+      "description": "Generate embeddings",
+      "context": "/document/pages/*",
+      "resourceUri": "https://aif-kestrel-kg.openai.azure.com",
+      "apiKey": null,
+      "deploymentId": "text-embedding-3-small",
+      "dimensions": 1536,
+      "modelName": "text-embedding-3-small",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/pages/*",
+          "sourceContext": null,
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "embedding",
+          "targetName": "text_vector"
+        }
+      ],
+      "authIdentity": null
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Graph.TripleExtractionSkill",
+      "name": "TripleExtractionSkill",
+      "description": "Extract knowledge-graph triples from chunk text.",
+      "context": "/document/pages/*",
+      "graphName": "kestrel",
+      "schemaId": "32455134c6ad7097c0ffa7933057848d",
+      "minEdgeConfidence": null,
+      "pageDegreeOfParallelism": 2,
+      "groundingDegreeOfParallelism": 16,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/pages/*",
+          "sourceContext": null,
+          "inputs": []
+        },
+        {
+          "name": "parent_id",
+          "source": "/document/document_id",
+          "sourceContext": null,
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "triples",
+          "targetName": "raw_triples"
+        }
+      ],
+      "chat": {
+        "endpoint": "https://aif-kestrel-kg.openai.azure.com",
+        "deployment": "gpt-5.6-luna",
+        "modelName": "gpt-5.6-luna",
+        "apiKey": null,
+        "authResourceId": "https://cognitiveservices.azure.com",
+        "apiVersion": "2024-10-21",
+        "authIdentity": null
+      },
+      "embedding": {
+        "endpoint": "https://aif-kestrel-kg.openai.azure.com",
+        "deployment": "text-embedding-3-small",
+        "modelName": "text-embedding-3-small",
+        "apiKey": null,
+        "authResourceId": "https://cognitiveservices.azure.com",
+        "apiVersion": "2024-10-21",
+        "dimensions": null,
+        "authIdentity": null
+      },
+      "ontology": {
+        "indexName": null,
+        "inlineJsonLd": "{\"@context\":{\"owl\":\"http://www.w3.org/2002/07/owl#\",\"rdfs\":\"http://www.w3.org/2000/01/rdf-schema#\",\"ex\":\"https://schema.search.azure.com/entities#\"},\"@graph\":[{\"@id\":\"ex:Organization\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A company or organization: the consultancy Kestrel Consulting, one of its customers, or a subcontracting partner such as DataForge. Use the full legal or common name, e.g. 'Scaldis Logistics', not 'Scaldis'.\"},{\"@id\":\"ex:Person\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A named individual: a consultant, a customer contact or a partner employee. Resolve first names, initials and titles to the full name, e.g. 'KV' or 'Koen' to 'Koen Verstraete' only when the context makes it unambiguous.\"},{\"@id\":\"ex:Project\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A named engagement that the consultancy Kestrel Consulting delivered or is delivering for one customer, e.g. 'Claims Triage Automation'. Use the full project name without customer prefixes. Not a phase, sprint, product or workstream; 'Teams' or 'SharePoint' are technologies, not projects.\"},{\"@id\":\"ex:Technology\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A named product, cloud service or platform used to build a solution, e.g. 'Azure AI Search', 'Databricks', 'Microsoft Fabric'.\"},{\"@id\":\"ex:Issue\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A problem, blocker or risk that materially affected a project's schedule, cost or quality, e.g. a delayed security review, a data quality problem, an OT network access delay or a scope change. Summarise it in a short phrase.\"},{\"@id\":\"ex:Outcome\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A measurable result a project delivered, with its number, e.g. '38% of claims auto-triaged' or '23 leaks detected'.\"},{\"@id\":\"ex:Place\",\"@type\":\"owl:Class\",\"rdfs:comment\":\"A city or country.\"},{\"@id\":\"ex:worksFor\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Organization\"},\"rdfs:comment\":\"The person's employer. Kestrel consultants work for Kestrel Consulting; customer contacts work for the customer. A person can have different employers over time; extract each one.\"},{\"@id\":\"ex:locatedIn\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Organization\"},\"rdfs:range\":{\"@id\":\"ex:Place\"},\"rdfs:comment\":\"The city where the organization is based.\"},{\"@id\":\"ex:workedOn\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"A Kestrel Consulting consultant or a subcontractor employee who is or was on the delivery team of the project, in any role. Customer employees never have workedOn; they use sponsors, productOwnerOf or contactFor.\"},{\"@id\":\"ex:managedProject\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"The person who is or was the project manager of the project.\"},{\"@id\":\"ex:sponsors\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"The customer-side executive sponsor of the project.\"},{\"@id\":\"ex:productOwnerOf\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"The customer-side product owner of the project.\"},{\"@id\":\"ex:contactFor\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"A customer employee involved in the project in another role than sponsor or product owner, e.g. IT manager, enterprise architect, security officer, data protection officer or OT engineer.\"},{\"@id\":\"ex:deliveredFor\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Organization\"},\"rdfs:comment\":\"The CUSTOMER organization the project is delivered for (Scaldis Logistics, Mediva Care Group, Fortalis Verzekeringen, Verhaeghe Foods or AquaNova). Never Kestrel Consulting.\"},{\"@id\":\"ex:deliveredBy\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Organization\"},\"rdfs:comment\":\"The consultancy that delivers the project: always Kestrel Consulting for projects in these documents.\"},{\"@id\":\"ex:subcontractedTo\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Organization\"},\"rdfs:comment\":\"A partner organization that delivered part of the project as a subcontractor.\"},{\"@id\":\"ex:usesTechnology\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Technology\"},\"rdfs:comment\":\"A technology the project uses or used in its solution.\"},{\"@id\":\"ex:followsUp\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Project\"},\"rdfs:comment\":\"The project is a follow-up or next phase of an earlier project.\"},{\"@id\":\"ex:hadIssue\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Issue\"},\"rdfs:comment\":\"A problem, blocker or risk that affected the project.\"},{\"@id\":\"ex:raisedIssue\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Issue\"},\"rdfs:comment\":\"The person who raised or imposed the issue, e.g. a security officer requiring a review.\"},{\"@id\":\"ex:resolvedIssue\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Person\"},\"rdfs:range\":{\"@id\":\"ex:Issue\"},\"rdfs:comment\":\"The person who resolved or worked around the issue.\"},{\"@id\":\"ex:achieved\",\"@type\":\"owl:ObjectProperty\",\"rdfs:domain\":{\"@id\":\"ex:Project\"},\"rdfs:range\":{\"@id\":\"ex:Outcome\"},\"rdfs:comment\":\"A measurable result the project delivered.\"}]}",
+        "version": "v1",
+        "endpoint": null,
+        "apiKey": null,
+        "authResourceId": null,
+        "authIdentity": null
+      },
+      "extraction": {
+        "temperature": 0.3,
+        "maxTokens": 16384,
+        "reasoningEffort": "low"
+      },
+      "alignment": {
+        "mode": "lenient",
+        "minPredicateConfidence": 0.5,
+        "batchSize": 64
+      },
+      "grounding": null,
+      "extractionTokens": {
+        "contextWindow": 1000000,
+        "tokensAvailable": 700000,
+        "maxOutputTokens": 16384,
+        "tokensPerMinute": 2000000,
+        "maxConcurrentChunks": 8
+      },
+      "alignmentTokens": {
+        "contextWindow": null,
+        "tokensAvailable": 280000,
+        "maxOutputTokens": 8192,
+        "tokensPerMinute": null,
+        "maxConcurrentChunks": null
+      }
+    }
+  ],
+  "cognitiveServices": null,
+  "knowledgeStore": null,
+  "indexProjections": {
+    "selectors": [
+      {
+        "targetIndexName": "kestrel-entities-ks-index",
+        "parentKeyFieldName": "snippet_parent_id",
+        "sourceContext": "/document/pages/*",
+        "mappings": [
+          {
+            "name": "snippet_vector",
+            "source": "/document/pages/*/text_vector",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "snippet",
+            "source": "/document/pages/*",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "blob_url",
+            "source": "/document/blob_url",
+            "sourceContext": null,
+            "inputs": []
+          }
+        ]
+      },
+      {
+        "targetIndexName": "kestrel-entities-ks-graph-index",
+        "parentKeyFieldName": "chunk_id",
+        "sourceContext": "/document/pages/*/raw_triples/*",
+        "mappings": [
+          {
+            "name": "subject",
+            "source": "/document/pages/*/raw_triples/*/subject",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "subject_type",
+            "source": "/document/pages/*/raw_triples/*/subject_type",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "subject_id",
+            "source": "/document/pages/*/raw_triples/*/subject_id",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "predicate",
+            "source": "/document/pages/*/raw_triples/*/predicate",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "object",
+            "source": "/document/pages/*/raw_triples/*/object",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "object_type",
+            "source": "/document/pages/*/raw_triples/*/object_type",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "object_id",
+            "source": "/document/pages/*/raw_triples/*/object_id",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "s_confidence",
+            "source": "/document/pages/*/raw_triples/*/s_confidence",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "p_confidence",
+            "source": "/document/pages/*/raw_triples/*/p_confidence",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "o_confidence",
+            "source": "/document/pages/*/raw_triples/*/o_confidence",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "edge_confidence",
+            "source": "/document/pages/*/raw_triples/*/edge_confidence",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "object_string",
+            "source": "/document/pages/*/raw_triples/*/object_string",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "object_double",
+            "source": "/document/pages/*/raw_triples/*/object_double",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "object_bool",
+            "source": "/document/pages/*/raw_triples/*/object_bool",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "object_datetime",
+            "source": "/document/pages/*/raw_triples/*/object_datetime",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "graph_name",
+            "source": "/document/pages/*/raw_triples/*/graph_name",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "parent_id",
+            "source": "/document/pages/*/raw_triples/*/parent_id",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "subject_id_display_name",
+            "source": "/document/pages/*/raw_triples/*/subject_id_display_name",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "object_id_display_name",
+            "source": "/document/pages/*/raw_triples/*/object_id_display_name",
+            "sourceContext": null,
+            "inputs": []
+          },
+          {
+            "name": "edge_hash",
+            "source": "/document/pages/*/raw_triples/*/id",
+            "sourceContext": null,
+            "inputs": []
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "projectionMode": "skipIndexingParentDocuments"
+    }
+  },
+  "encryptionKey": null
+}
